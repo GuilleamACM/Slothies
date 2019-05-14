@@ -13,4 +13,27 @@ class Slothometer {
     
     //estes comentarios foram escritos sem muito pensamento
     //se achar melhor, sinta-se disposto a ignora-los
+    
+    //max, min value of slothometer bar. temporary values
+    static let maxValue: Int = 1000
+    static let minValue: Int = 0
+    
+    //current total slothometer
+    var totalValue: Int
+    
+    //values for each sloth
+    var individualValues: Dictionary<Sloth, Int>
+    
+    init () {
+        totalValue = 700
+        individualValues = Dictionary<Sloth, Int>()
+    }
+    
+    func addSloth (slothy: Sloth) {
+        individualValues[slothy] = 100
+    }
+    
+    func updateValue () {
+        //stub. update slothometer values
+    }
 }

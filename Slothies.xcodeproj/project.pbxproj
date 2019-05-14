@@ -26,7 +26,7 @@
 		DC62C5082289E82D00ADCB9E /* SlothDisplayScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C5072289E82D00ADCB9E /* SlothDisplayScreen.storyboard */; };
 		DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C5092289E92400ADCB9E /* RoomGroup.swift */; };
 		DC62C50C2289E9A500ADCB9E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C50B2289E9A500ADCB9E /* Player.swift */; };
-		DC62C50E2289EB0000ADCB9E /* SlothsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C50D2289EB0000ADCB9E /* SlothsGroup.swift */; };
+		DC62C50E2289EB0000ADCB9E /* SlothGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */; };
 		DC62C5102289EB9900ADCB9E /* Sloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C50F2289EB9900ADCB9E /* Sloth.swift */; };
 		DC62C5122289EC9C00ADCB9E /* Slothometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C5112289EC9C00ADCB9E /* Slothometer.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +74,7 @@
 		DC62C5072289E82D00ADCB9E /* SlothDisplayScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlothDisplayScreen.storyboard; sourceTree = "<group>"; };
 		DC62C5092289E92400ADCB9E /* RoomGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGroup.swift; sourceTree = "<group>"; };
 		DC62C50B2289E9A500ADCB9E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		DC62C50D2289EB0000ADCB9E /* SlothsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothsGroup.swift; sourceTree = "<group>"; };
+		DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothGroup.swift; sourceTree = "<group>"; };
 		DC62C50F2289EB9900ADCB9E /* Sloth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sloth.swift; sourceTree = "<group>"; };
 		DC62C5112289EC9C00ADCB9E /* Slothometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slothometer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,7 +142,7 @@
 				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
 				DC62C5092289E92400ADCB9E /* RoomGroup.swift */,
 				DC62C50B2289E9A500ADCB9E /* Player.swift */,
-				DC62C50D2289EB0000ADCB9E /* SlothsGroup.swift */,
+				DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */,
 				DC62C50F2289EB9900ADCB9E /* Sloth.swift */,
 				DC62C5112289EC9C00ADCB9E /* Slothometer.swift */,
 				DC62C4CE2289E59100ADCB9E /* Assets.xcassets */,
@@ -306,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC62C50E2289EB0000ADCB9E /* SlothsGroup.swift in Sources */,
+				DC62C50E2289EB0000ADCB9E /* SlothGroup.swift in Sources */,
 				DC62C5002289E79300ADCB9E /* SlothCreationViewController.swift in Sources */,
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
 				DC62C4FC2289E70E00ADCB9E /* SelectionViewController.swift in Sources */,

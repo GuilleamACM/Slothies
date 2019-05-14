@@ -13,4 +13,34 @@ class RoomGroup {
     
     //estes comentarios foram escritos sem muito pensamento
     //se achar melhor, sinta-se disposto a ignora-los
+    
+    //nome e senha da sala
+    let name: String
+    let pass: String
+    
+    //lista de jogadores
+    var players: [Player]
+    
+    //data de último acesso ao aplicativo, use para atualizar preguiçometro
+    var lastAccess: Date
+    
+    //referencia ao grupo de preguiças
+    var slothGroup: SlothGroup
+    
+    init (na:String, pa:String, pl:Player) {
+        name = na
+        pass = pa
+        players = []
+        players[0] = pl
+        lastAccess = Date()
+        slothGroup = SlothGroup()
+    }
+    
+    //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias
+    func createSloth (player: Player, name: String, sex: sex, index: Int) {
+        var slothy = Sloth(na: name, se: sex)
+        slothy.player = player
+        player.slothy = slothy
+        slothGroup.addSloth(sloth: slothy, i: index)
+    }
 }
