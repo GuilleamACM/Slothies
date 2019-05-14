@@ -132,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				DC62C4C72289E59000ADCB9E /* AppDelegate.swift */,
+				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
+				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
 				DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */,
 				DC62C513228B0ABC00ADCB9E /* LoginScreen.storyboard */,
 				DC62C4F72289E65900ADCB9E /* LobbyViewController.swift */,
@@ -144,8 +146,6 @@
 				DC62C5012289E7C900ADCB9E /* GameScreen.storyboard */,
 				DC62C5052289E82100ADCB9E /* SlothDisplayViewController.swift */,
 				DC62C5072289E82D00ADCB9E /* SlothDisplayScreen.storyboard */,
-				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
-				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
 				DC62C5092289E92400ADCB9E /* RoomGroup.swift */,
 				DC62C50B2289E9A500ADCB9E /* Player.swift */,
 				DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */,
