@@ -27,11 +27,10 @@ class RoomGroup {
     //referencia ao grupo de preguiças
     var slothGroup: SlothGroup
     
-    init (na:String, pa:String, pl:Player) {
+    init (na:String, pa:String) {
         name = na
         pass = pa
         players = []
-        players[0] = pl
         lastAccess = Date()
         slothGroup = SlothGroup()
     }
@@ -41,6 +40,7 @@ class RoomGroup {
         var slothy = Sloth(na: name, se: sex)
         slothy.player = player
         player.slothy = slothy
+        players[index] = player
         slothGroup.addSloth(sloth: slothy, i: index)
     }
 }
