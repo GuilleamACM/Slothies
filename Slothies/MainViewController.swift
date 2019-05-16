@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func toLoginScreen(_ sender: Any) {
+        self.performSegue(withIdentifier: "ToLoginScreen", sender: self)
+    }
+    
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G1l-pC-96F">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,6 +29,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="toLoginScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UxY-5l-Ha4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46647977828979492" green="0.84134000539779663" blue="0.44697064161300659" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -43,9 +46,38 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="GQa-Qc-alo"/>
+                    <connections>
+                        <segue destination="twL-G6-wxr" kind="show" identifier="ToLoginScreen" id="07W-Xw-3I8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="541" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rSd-wo-GY9">
+            <objects>
+                <navigationController id="G1l-pC-96F" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kUN-g5-8np">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GIf-h1-ZMp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRZ-HB-n6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="152"/>
+        </scene>
+        <!--LoginScreen-->
+        <scene sceneID="SRv-bq-uqa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginScreen" id="twL-G6-wxr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgY-0o-xUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="-261"/>
         </scene>
     </scenes>
     <resources>
