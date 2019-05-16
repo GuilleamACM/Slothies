@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08E63891228D7E3700B6C664 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63890228D7E3700B6C664 /* GradientView.swift */; };
+		08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63892228D8AFC00B6C664 /* NetworkHandler.swift */; };
 		DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C72289E59000ADCB9E /* AppDelegate.swift */; };
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		08E63890228D7E3700B6C664 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		08E63892228D8AFC00B6C664 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		DC62C4C42289E59000ADCB9E /* Slothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4C72289E59000ADCB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */,
 				DC62C50F2289EB9900ADCB9E /* Sloth.swift */,
 				DC62C5112289EC9C00ADCB9E /* Slothometer.swift */,
+				08E63892228D8AFC00B6C664 /* NetworkHandler.swift */,
 				DC62C4CE2289E59100ADCB9E /* Assets.xcassets */,
 				DC62C4D02289E59100ADCB9E /* LaunchScreen.storyboard */,
 				DC62C4D32289E59100ADCB9E /* Info.plist */,
@@ -324,6 +327,7 @@
 				DC62C5062289E82100ADCB9E /* SlothDisplayViewController.swift in Sources */,
 				DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */,
 				DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */,
+				08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */,
 				DC62C5042289E7D400ADCB9E /* GameViewController.swift in Sources */,
 				DC62C5102289EB9900ADCB9E /* Sloth.swift in Sources */,
 				DC62C50C2289E9A500ADCB9E /* Player.swift in Sources */,
