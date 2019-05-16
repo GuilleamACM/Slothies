@@ -8,6 +8,9 @@
 
 import UIKit
 
+let secondsPerDay = 86400
+let daysPerWeek = 7
+
 class Slothometer {
     //deve incluir informacoes e metodos referentes ao funcionamento de um preguicometro
     
@@ -15,7 +18,7 @@ class Slothometer {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //max, min value of slothometer bar. temporary values
-    static let maxValue: Int = 1000
+    static let maxValue: Int = secondsPerDay * daysPerWeek
     static let minValue: Int = 0
     
     //current total slothometer
@@ -25,23 +28,37 @@ class Slothometer {
     var individualValues: Dictionary<Sloth, Int>
     
     init () {
-        totalValue = 700
+        totalValue = secondsPerDay * (daysPerWeek - 1)
         individualValues = Dictionary<Sloth, Int>()
     }
     
+    //place slothy into dictionary with initial value
     func addSloth (slothy: Sloth) {
-        individualValues[slothy] = 100
+        individualValues[slothy] = secondsPerDay * (daysPerWeek - 1)
     }
     
+    //subtract seconds passed from values
     func longUpdate (prevTime: Date, currTime: Date) {
-        let elapsed = currTime.timeIntervalSince(prevTime)
+        let elapsed = Int(currTime.timeIntervalSince(prevTime))
+        individualValues.keys.forEach {
+            individualValues[$0] = individualValues[$0]! - elapsed
+        }
+        updateTotalValue()
     }
     
-    func updateSpecificValue (slothy: Sloth, info: Any) {
-        
+    //check workout information, sum appropriate number into values
+    func longUpdateSpecificValue (slothy: Sloth, info: Any) {
+        //TODO: check workout information to see if everything is okay
+        individualValues[slothy] = individualValues[slothy]! + 2 * secondsPerDay
+        updateTotalValue()
     }
     
+    //currently, average all sloth values
     func updateTotalValue () {
-        //stub. update slothometer values
+        var accu = 0
+        individualValues.keys.forEach {
+            accu += individualValues[$0]!
+        }
+        totalValue = accu / individualValues.keys.count
     }
 }
