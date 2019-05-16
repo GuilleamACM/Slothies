@@ -15,7 +15,8 @@ class Player {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //identificador unico ao jogador. não é definitivo
-    let identifier: UUID
+    let identifier: String
+    let password: String
     
     //preguicinha
     var slothy: Sloth?
@@ -25,8 +26,19 @@ class Player {
     //ainda não olhamos healthkit: não sabemos se é necessário, ou de que dado se trata
     var previousHealthStatus: Int
     
-    init() {
-        identifier = UIDevice().identifierForVendor!
-        previousHealthStatus = 0
+    
+    init(username: String, password: String) {
+        self.identifier = username
+        self.password = password
+        self.previousHealthStatus = 0
+    }
+    
+    //fetch user's activity since previous access and update sloth with it
+    func longUpdate (prevTime: Date, currTime: Date) {
+        let info = self //TODO: fetch from HealthHandler
+        
+        if let slothy = slothy {
+            slothy.longUpdate(info: info)
+        }
     }
 }

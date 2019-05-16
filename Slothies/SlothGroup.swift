@@ -31,8 +31,15 @@ class SlothGroup {
         slothometer = Slothometer()
     }
     
+    //add a sloth to the group. associate slothometer and slothy
     func addSloth(sloth: Sloth, i: Int) {
+        sloth.slothometer = slothometer
         slothies[i] = sloth
         slothometer.addSloth(slothy: sloth)
+    }
+    
+    //pass to slothometer
+    func longUpdate (prevTime: Date, currTime: Date) {
+        slothometer.longUpdate(prevTime: prevTime, currTime: currTime)
     }
 }

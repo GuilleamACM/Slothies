@@ -45,6 +45,9 @@ class Sloth : Hashable {
     //jogador associado
     var player: Player?
     
+    //preguicometro
+    var slothometer: Slothometer?
+    
     //estado
     var state: state
     
@@ -54,5 +57,12 @@ class Sloth : Hashable {
         hunger = 100
         sleep = 100
         state = .idle
+    }
+    
+    //pass information to slothometer
+    func longUpdate (info: Any) {
+        if let slothometer = slothometer {
+            slothometer.longUpdateSpecificValue(slothy: self, info: info)
+        }
     }
 }
