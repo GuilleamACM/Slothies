@@ -10,9 +10,12 @@ import UIKit
 
 class LobbyViewController: UIViewController {
 
+    @IBOutlet weak var EnterPartyPanel: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        EnterPartyPanel.layer.cornerRadius = 10
+        EnterPartyPanel.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     
