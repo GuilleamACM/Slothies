@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08E6388F228D7B6A00B6C664 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6388E228D7B6A00B6C664 /* GradientView.swift */; };
+		08E63891228D7E3700B6C664 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63890228D7E3700B6C664 /* GradientView.swift */; };
 		DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C72289E59000ADCB9E /* AppDelegate.swift */; };
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
@@ -52,7 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08E6388E228D7B6A00B6C664 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		08E63890228D7E3700B6C664 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DC62C4C42289E59000ADCB9E /* Slothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4C72289E59000ADCB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 				DC62C4C72289E59000ADCB9E /* AppDelegate.swift */,
 				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
 				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
+				08E63890228D7E3700B6C664 /* GradientView.swift */,
 				DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */,
-				08E6388E228D7B6A00B6C664 /* GradientView.swift */,
 				DC62C513228B0ABC00ADCB9E /* LoginScreen.storyboard */,
 				DC62C4F72289E65900ADCB9E /* LobbyViewController.swift */,
 				DC62C4F52289E63700ADCB9E /* LobbyScreen.storyboard */,
@@ -320,7 +320,7 @@
 				DC62C5002289E79300ADCB9E /* SlothCreationViewController.swift in Sources */,
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
 				DC62C4FC2289E70E00ADCB9E /* SelectionViewController.swift in Sources */,
-				08E6388F228D7B6A00B6C664 /* GradientView.swift in Sources */,
+				08E63891228D7E3700B6C664 /* GradientView.swift in Sources */,
 				DC62C5062289E82100ADCB9E /* SlothDisplayViewController.swift in Sources */,
 				DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */,
 				DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */,
