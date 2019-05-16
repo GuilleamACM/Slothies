@@ -107,6 +107,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="wcC-IX-dV7"/>
                     <connections>
+                        <outlet property="EnterPasswordField" destination="mpB-ML-nnR" id="ePX-dO-lbx"/>
+                        <outlet property="EnterUsernameField" destination="CPZ-ce-g6A" id="q0A-7O-Loq"/>
                         <outlet property="LoginPanelView" destination="Ic4-6m-Zwo" id="1Nc-qn-gxe"/>
                     </connections>
                 </viewController>
