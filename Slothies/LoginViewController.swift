@@ -27,7 +27,22 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginButton(_ sender: Any) {
+        if let username = self.EnterUsernameField.text as? String {
+            if let password = self.EnterPasswordField.text as? String {
+                let player = Player(username: username, password: password)
+                
+                accounts.append(player)
+                dump(accounts)
+            }
+        }
+        
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        print("Cancel pressed")
+    }
+    
     /*
     // MARK: - Navigation
 
