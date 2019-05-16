@@ -17,4 +17,11 @@ class NetworkHandler {
     func fetchRoom(na: String, pa: String) -> RoomGroup? {
         return tempStaticRoom
     }
+    
+    init() {
+        let p1 = Player()
+        let p2 = Player()
+        tempStaticRoom.createSloth(player: p1, name: "preguilleam", sex: .male, index: 1)
+        tempStaticRoom.createSloth(player: p2, name: "preguilin", sex: .female, index: 2)
+    }
 }

@@ -22,7 +22,7 @@ class RoomGroup {
     var players: [Player]
     
     //data de último acesso ao aplicativo, use para atualizar preguiçometro
-    var lastAccess: Date
+    var prevTime: Date
     
     //referencia ao grupo de preguiças
     var slothGroup: SlothGroup
@@ -31,8 +31,25 @@ class RoomGroup {
         name = na
         pass = pa
         players = []
-        lastAccess = Date()
+        prevTime = Date()
         slothGroup = SlothGroup()
+    }
+    
+    //update to call upon opening the app/joining the room
+    func longUpdate (currentTime: Date) {
+        let timeElapsed = Int(currentTime.timeIntervalSince(prevTime))
+        
+        slothGroup.longUpdate(prevTime: prevTime, currTime: currentTime)
+        for player in players {
+            player.longUpdate(prevTime: prevTime, currTime: currentTime)
+        }
+        prevTime = currentTime
+    }
+    
+    //update to call while the app is running
+    func update (currentTime: Date) {
+        
+        prevTime = currentTime
     }
     
     //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias

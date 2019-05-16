@@ -33,7 +33,15 @@ class Slothometer {
         individualValues[slothy] = 100
     }
     
-    func updateValue () {
+    func longUpdate (prevTime: Date, currTime: Date) {
+        let elapsed = currTime.timeIntervalSince(prevTime)
+    }
+    
+    func updateSpecificValue (slothy: Sloth, info: Any) {
+        
+    }
+    
+    func updateTotalValue () {
         //stub. update slothometer values
     }
 }

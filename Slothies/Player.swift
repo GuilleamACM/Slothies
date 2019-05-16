@@ -29,4 +29,12 @@ class Player {
         identifier = UIDevice().identifierForVendor!
         previousHealthStatus = 0
     }
+    
+    //fetch user's activity since previous access and update sloth with it
+    func longUpdate (prevTime: Date, currTime: Date) {
+        
+        if let slothy = slothy {
+            slothy.longUpdate(info: self)
+        }
+    }
 }

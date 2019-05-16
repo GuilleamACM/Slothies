@@ -55,4 +55,8 @@ class Sloth : Hashable {
         sleep = 100
         state = .idle
     }
+    
+    func longUpdate (info: Any) {
+        
+    }
 }
