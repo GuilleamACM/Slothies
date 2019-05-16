@@ -9,6 +9,8 @@
 import UIKit
 
 var tempStaticRoom = RoomGroup(na: "room", pa: "pass")
+var accounts: [Player] = []
+
 
 class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
@@ -19,9 +21,8 @@ class NetworkHandler {
     }
     
     init() {
-        let p1 = Player()
-        let p2 = Player()
-        tempStaticRoom.createSloth(player: p1, name: "preguilleam", sex: .male, index: 1)
-        tempStaticRoom.createSloth(player: p2, name: "preguilin", sex: .female, index: 2)
+        for (index, player) in accounts.enumerated() {
+            tempStaticRoom.createSloth(player: player, name: "player"+String(index), sex: .male, index: index )
+        }
     }
 }

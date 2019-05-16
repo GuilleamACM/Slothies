@@ -43,6 +43,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButton:" destination="Bfw-kq-XoV" eventType="touchUpInside" id="PXH-Sr-pye"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpB-ML-nnR">
                                         <rect key="frame" x="18" y="110" width="235" height="30"/>
@@ -84,6 +87,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="Bfw-kq-XoV" eventType="touchUpInside" id="uBb-Zo-Ij1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96471482515335083" green="0.96469420194625854" blue="0.96469825506210327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
