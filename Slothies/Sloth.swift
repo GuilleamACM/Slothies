@@ -15,9 +15,18 @@ enum sex {
 
 enum state {
     case idle
+    case sleeping
     case sleepy
+    case eating
     case hungry
+    case exercising
     case dying
+}
+
+enum autopsyResult {
+    case hunger
+    case noSleep
+    case sloth
 }
 
 class Sloth : Hashable {
@@ -34,6 +43,12 @@ class Sloth : Hashable {
     var hashValue: Int {
         return name.hashValue
     }
+    
+    //key values for sleep and hunger
+    static let statusMaxValue = secondsPerDay * 2
+    static let statusMinValue = 0
+    static let statusInitValue = Sloth.statusMaxValue
+    static let hungerFeedingValue = secondsPerDay
     
     //nome, sexo
     let name: String
@@ -54,15 +69,28 @@ class Sloth : Hashable {
     init(na: String, se: sex) {
         name = na
         sex = se
-        hunger = 100
-        sleep = 100
+        hunger = Sloth.statusInitValue
+        sleep = Sloth.statusInitValue
         state = .idle
     }
     
-    //pass information to slothometer
-    func longUpdate (info: Any) {
+    func longUpdate (prevTime: Date, currTime: Date, info: Any) {
         if let slothometer = slothometer {
+            //pass information to slothometer
             slothometer.longUpdateSpecificValue(slothy: self, info: info)
+        }
+        
+        let elapsed = Int(currTime.timeIntervalSince(prevTime))
+
+        //
+        switch state {
+        case .sleeping:
+            sleep += elapsed
+            hunger -= elapsed
+            break
+        default:
+            sleep -= elapsed
+            hunger -= elapsed
         }
     }
 }

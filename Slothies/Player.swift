@@ -38,7 +38,7 @@ class Player {
         let info = self //TODO: fetch from HealthHandler
         
         if let slothy = slothy {
-            slothy.longUpdate(info: info)
+            slothy.longUpdate(prevTime: prevTime, currTime: currTime, info: info)
         }
     }
 }
