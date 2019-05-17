@@ -15,19 +15,19 @@ class Slothometer {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //key values for sloth
-    static let maxValue: Int = secondsPerDay * daysPerWeek
-    static let minValue: Int = 0
-    static let initValue: Int = secondsPerDay * (daysPerWeek - 1)
+    static let maxValue: Double = secondsPerDay * daysPerWeek
+    static let minValue: Double = 0
+    static let initValue: Double = secondsPerDay * (daysPerWeek - 1)
     
     //current total slothometer
-    var totalValue: Int
+    var totalValue: Double
     
     //values for each sloth
-    var individualValues: Dictionary<Sloth, Int>
+    var individualValues: Dictionary<Sloth, Double>
     
     init () {
         totalValue = Slothometer.initValue
-        individualValues = Dictionary<Sloth, Int>()
+        individualValues = Dictionary<Sloth, Double>()
     }
     
     //currently, min of all sloth values
@@ -50,7 +50,7 @@ class Slothometer {
         updateTotalValue()
     }
     
-    private func addSpecificValue(slothy: Sloth, val: Int) {
+    private func addSpecificValue(slothy: Sloth, val: Double) {
         var result = individualValues[slothy]! + val
         result = min(result, Slothometer.maxValue)
         updateTotalValue()
@@ -58,7 +58,7 @@ class Slothometer {
     
     //subtract seconds passed from values
     func longUpdate (prevTime: Date, currTime: Date) {
-        let elapsed = Int(currTime.timeIntervalSince(prevTime))
+        let elapsed = Double(currTime.timeIntervalSince(prevTime))
         individualValues.keys.forEach {
             addSpecificValue(slothy: $0, val: -elapsed)
         }

@@ -8,5 +8,5 @@
 
 import Foundation
 
-let secondsPerDay = 86400
-let daysPerWeek = 7
+let secondsPerDay: Double = 86400
+let daysPerWeek: Double = 7

@@ -45,17 +45,17 @@ class Sloth : Hashable {
     }
     
     //key values for sleep and hunger
-    static let statusMaxValue = secondsPerDay * 2
-    static let statusMinValue = 0
-    static let statusInitValue = Sloth.statusMaxValue
-    static let hungerFeedingValue = secondsPerDay
+    static let statusMaxValue: Double = secondsPerDay * 2
+    static let statusMinValue: Double = 0
+    static let statusInitValue: Double = Sloth.statusMaxValue
+    static let hungerFeedingValue: Double = secondsPerDay
     
     //nome, sexo
     let name: String
     let sex: sex
     
     //fome, sono
-    var hunger, sleep: Int
+    var hunger, sleep: Double
     
     //jogador associado
     var player: Player?
@@ -80,7 +80,7 @@ class Sloth : Hashable {
             slothometer.longUpdateSpecificValue(slothy: self, info: info)
         }
         
-        let elapsed = Int(currTime.timeIntervalSince(prevTime))
+        let elapsed = Double(currTime.timeIntervalSince(prevTime))
 
         //
         switch state {
