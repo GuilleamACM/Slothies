@@ -10,6 +10,7 @@ import UIKit
 
 var tempStaticRoom = RoomGroup(na: "room", pa: "pass")
 var accounts: [Player] = []
+var current_player: Player? = nil
 
 
 class NetworkHandler {
@@ -21,9 +22,19 @@ class NetworkHandler {
         return tempStaticRoom
     }
     
-    init() {
-        for (index, player) in accounts.enumerated() {
-            tempStaticRoom.createSloth(player: player, name: "player"+String(index), sex: .male, index: index )
+    func fetchPlayer(username: String, password: String) -> Bool {
+        if accounts.firstIndex(where: {$0.identifier == username && $0.password == password}) != nil {
+            current_player = Player(username: username, password: password)
+            print("\(username) login ok")
+            return true
         }
+        return false
+
+    }
+    
+    init() {
+//        for (index, player) in accounts.enumerated() {
+//            tempStaticRoom.createSloth(player: player, name: "player"+String(index), sex: .male, index: index )
+//        }
     }
 }

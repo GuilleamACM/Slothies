@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         LoginButton.layer.cornerRadius = 10
         LoginButton.layer.masksToBounds = true
         
+        //hardcoded admin account
         let admin = Player(username: "admin" , password: "admin123")
         accounts.append(admin)
 
@@ -32,11 +33,10 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         if let username = self.EnterUsernameField.text as? String {
             if let password = self.EnterPasswordField.text as? String {
-                if accounts.firstIndex(where: {$0.identifier == username && $0.password == password}) != nil {
-                    print("\(username) login ok")
-                    performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-                } else {
-                    print("acc not found")
+                print("\(username):\(password)")
+                if NetworkHandler.singleton.fetchPlayer(username: username, password: password) {
+                    print("performSegue")
+                    //performSegue(withIdentifier: "ToLobbyScreen", sender: nil)
                 }
                 
             }
@@ -44,9 +44,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    func checkLogin(player: Player) -> Bool {
-        return accounts.firstIndex(where: {$0.identifier == player.identifier && $0.password == player.password}) != nil
-    }
     
     /*
     // MARK: - Navigation
