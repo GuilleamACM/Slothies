@@ -10,8 +10,12 @@ import UIKit
 
 class SelectionViewController: UIViewController {
 
+    var roomCode:String? = nil
+
+    @IBOutlet var SlotsButton: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

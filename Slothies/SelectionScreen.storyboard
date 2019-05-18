@@ -42,6 +42,12 @@
                         <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Yz3-Pt-HSv"/>
                     </view>
+                    <connections>
+                        <outletCollection property="SlotsButton" destination="7Gf-Fv-Way" collectionClass="NSMutableArray" id="AVh-V0-N0Y"/>
+                        <outletCollection property="SlotsButton" destination="tMz-aB-dvN" collectionClass="NSMutableArray" id="pTJ-uf-SM6"/>
+                        <outletCollection property="SlotsButton" destination="sWF-3d-sRr" collectionClass="NSMutableArray" id="PYC-We-fNM"/>
+                        <outletCollection property="SlotsButton" destination="RUQ-Qb-jzs" collectionClass="NSMutableArray" id="ytL-8E-Nlz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTQ-nK-0Rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

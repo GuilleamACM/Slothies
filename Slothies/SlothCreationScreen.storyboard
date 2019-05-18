@@ -45,7 +45,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-Fa-UwZ" userLabel="Male Slothy">
                                 <rect key="frame" x="133" y="226" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="image 2"/>
+                                <state key="normal" image="MGender Icon"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
                                 <rect key="frame" x="87" y="355" width="240" height="128"/>
@@ -63,7 +63,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyM-d8-6Yt" userLabel="Female Slothy">
                                 <rect key="frame" x="231" y="226" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="image 2.1">
+                                <state key="normal" image="FGender Icon">
                                     <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
@@ -91,7 +91,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image 2" width="50" height="50"/>
-        <image name="image 2.1" width="50" height="50"/>
+        <image name="FGender Icon" width="50" height="50"/>
+        <image name="MGender Icon" width="50" height="50"/>
     </resources>
 </document>
