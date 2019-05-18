@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum sex {
+enum Sex {
     case male
     case female
 }
 
-enum state {
+enum State {
     case idle
     case sleeping
     case sleepy
@@ -23,7 +23,7 @@ enum state {
     case dying
 }
 
-enum autopsyResult {
+enum AutopsyResult {
     case hunger
     case noSleep
     case sloth
@@ -52,7 +52,7 @@ class Sloth : Hashable {
     
     //nome, sexo
     let name: String
-    let sex: sex
+    let sex: Sex
     
     //fome, sono
     var hunger, sleep: Double
@@ -64,9 +64,9 @@ class Sloth : Hashable {
     var slothometer: Slothometer?
     
     //estado
-    var state: state
+    var state: State
     
-    init(na: String, se: sex) {
+    init(na: String, se: Sex) {
         name = na
         sex = se
         hunger = Sloth.statusInitValue
