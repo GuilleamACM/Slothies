@@ -21,19 +21,31 @@ class LoginViewController: UIViewController {
 
         LoginButton.layer.cornerRadius = 10
         LoginButton.layer.masksToBounds = true
+        
+        let admin = Player(username: "admin" , password: "admin123")
+        accounts.append(admin)
+
         // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func loginButton(_ sender: Any) {
         if let username = self.EnterUsernameField.text as? String {
             if let password = self.EnterPasswordField.text as? String {
-                let player = Player(username: username, password: password)
+                if accounts.firstIndex(where: {$0.identifier == username && $0.password == password}) != nil {
+                    print("\(username) login ok")
+                    performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+                } else {
+                    print("acc not found")
+                }
                 
-                accounts.append(player)
-                dump(accounts)
             }
         }
         
+    }
+    
+    func checkLogin(player: Player) -> Bool {
+        return accounts.firstIndex(where: {$0.identifier == player.identifier && $0.password == player.password}) != nil
     }
     
     /*
