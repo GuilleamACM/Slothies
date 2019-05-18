@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="YXc-2E-pUy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-Fv-Way" userLabel="Slothy1 Button">
+                                <rect key="frame" x="80" y="268" width="67" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plus" backgroundImage="Button background"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
+                                <rect key="frame" x="53" y="392" width="67" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plus" backgroundImage="Button background"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-aB-dvN" userLabel="Slothy4 Button">
+                                <rect key="frame" x="246" y="293" width="67" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plus" backgroundImage="Button background"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Qb-jzs" userLabel="Slothy2 Button">
+                                <rect key="frame" x="218" y="407" width="67" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Plus" backgroundImage="Button background"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Yz3-Pt-HSv"/>
                     </view>
                 </viewController>
@@ -26,4 +48,8 @@
             <point key="canvasLocation" x="410" y="25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button background" width="67" height="67"/>
+        <image name="Plus" width="25" height="25"/>
+    </resources>
 </document>
