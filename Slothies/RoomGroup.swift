@@ -27,9 +27,9 @@ class RoomGroup {
     //referencia ao grupo de preguiças
     var slothGroup: SlothGroup
     
-    init (na:String, pa:String) {
-        name = na
-        pass = pa
+    init (name:String, pass:String) {
+        self.name = name
+        self.pass = pass
         players = []
         prevTime = Date()
         slothGroup = SlothGroup()

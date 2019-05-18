@@ -8,9 +8,8 @@
 
 import UIKit
 
-var tempStaticRoom = RoomGroup(na: "room", pa: "pass")
 var accounts: [Player] = []
-var current_player: Player? = nil
+var rooms: [RoomGroup] = []
 
 
 class NetworkHandler {
@@ -18,17 +17,18 @@ class NetworkHandler {
     static let singleton: NetworkHandler = NetworkHandler()
 
     
-    func fetchRoom(na: String, pa: String) -> RoomGroup? {
-        return tempStaticRoom
+    func fetchRoom(code: String, pass: String) -> RoomGroup? {
+        if let index = rooms.firstIndex(where: {$0.name == code && $0.pass == pass}) {
+            return rooms[index]
+        }
+        return nil
     }
     
-    func fetchPlayer(username: String, password: String) -> Bool {
-        if accounts.firstIndex(where: {$0.identifier == username && $0.password == password}) != nil {
-            current_player = Player(username: username, password: password)
-            print("\(username) login ok")
-            return true
+    func fetchPlayer(username: String, pass: String) -> Player? {
+        if let index = accounts.firstIndex(where: {$0.identifier == username && $0.password == pass}) {
+            return accounts[index]
         }
-        return false
+        return nil
 
     }
     
