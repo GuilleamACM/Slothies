@@ -74,10 +74,10 @@ class Sloth : Hashable {
         state = .idle
     }
     
-    func longUpdate (prevTime: Date, currTime: Date, info: Any) {
+    func update (prevTime: Date, currTime: Date, info: Any) {
         if let slothometer = slothometer {
             //pass information to slothometer
-            slothometer.longUpdateSpecificValue(slothy: self, info: info)
+            slothometer.updateSpecificValue(slothy: self, info: info)
         }
         
         let elapsed = Double(currTime.timeIntervalSince(prevTime))

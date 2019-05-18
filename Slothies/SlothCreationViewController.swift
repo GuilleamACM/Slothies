@@ -9,18 +9,14 @@
 import UIKit
 
 class SlothCreationViewController: UIViewController {
-
-    @IBOutlet weak var EnterSlothyNameField: UITextField!
     
     @IBOutlet weak var CreateSlothyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        EnterSlothyNameField.layer.cornerRadius = 10
-        EnterSlothyNameField.layer.masksToBounds = true
+        
         CreateSlothyButton.layer.cornerRadius = 10
-        EnterSlothyNameField.layer.masksToBounds = true
+        CreateSlothyButton.layer.masksToBounds = true
     }
     
 

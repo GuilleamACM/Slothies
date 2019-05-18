@@ -36,19 +36,12 @@ class RoomGroup {
     }
     
     //update to call upon opening the app/joining the room
-    func longUpdate (currentTime: Date) {
-        let timeElapsed = Int(currentTime.timeIntervalSince(prevTime))
-        
-        slothGroup.longUpdate(prevTime: prevTime, currTime: currentTime)
+    func update () {
+        let currentTime = Date()
+        slothGroup.update(prevTime: prevTime, currTime: currentTime)
         for player in players {
-            player.longUpdate(prevTime: prevTime, currTime: currentTime)
+            player.update(prevTime: prevTime, currTime: currentTime)
         }
-        prevTime = currentTime
-    }
-    
-    //update to call while the app is running
-    func update (currentTime: Date) {
-        
         prevTime = currentTime
     }
     
