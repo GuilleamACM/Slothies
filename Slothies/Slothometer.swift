@@ -57,7 +57,7 @@ class Slothometer {
     }
     
     //subtract seconds passed from values
-    func longUpdate (prevTime: Date, currTime: Date) {
+    func update (prevTime: Date, currTime: Date) {
         let elapsed = Double(currTime.timeIntervalSince(prevTime))
         individualValues.keys.forEach {
             addSpecificValue(slothy: $0, val: -elapsed)
@@ -66,7 +66,7 @@ class Slothometer {
     }
     
     //check workout information, sum appropriate number into values
-    func longUpdateSpecificValue (slothy: Sloth, info: Any) {
+    func updateSpecificValue (slothy: Sloth, info: Any) {
         //TODO: check workout information to see if everything is okay
         addSpecificValue(slothy: slothy, val: 2 * secondsPerDay)
         //TODO: better define sloth reward for working out

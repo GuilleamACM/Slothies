@@ -34,11 +34,11 @@ class Player {
     }
     
     //fetch user's activity since previous access and update sloth with it
-    func longUpdate (prevTime: Date, currTime: Date) {
+    func update (prevTime: Date, currTime: Date) {
         let info = self //TODO: fetch from HealthHandler
         
         if let slothy = slothy {
-            slothy.longUpdate(prevTime: prevTime, currTime: currTime, info: info)
+            slothy.update(prevTime: prevTime, currTime: currTime, info: info)
         }
     }
 }

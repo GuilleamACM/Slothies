@@ -39,7 +39,7 @@ class SlothGroup {
     }
     
     //pass to slothometer
-    func longUpdate (prevTime: Date, currTime: Date) {
-        slothometer.longUpdate(prevTime: prevTime, currTime: currTime)
+    func update (prevTime: Date, currTime: Date) {
+        slothometer.update(prevTime: prevTime, currTime: currTime)
     }
 }
