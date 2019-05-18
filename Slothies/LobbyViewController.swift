@@ -15,7 +15,7 @@ class LobbyViewController: UIViewController {
     @IBOutlet weak var PasswordField: UITextField!
     
     //hardcoded room
-    let tempRoom = RoomGroup(name: "room", pass: "pass")
+    //let tempRoom = RoomGroup(name: "room", pass: "pass")
     
 
     
@@ -23,7 +23,7 @@ class LobbyViewController: UIViewController {
         super.viewDidLoad()
         ConfirmButton.layer.cornerRadius = 10
         ConfirmButton.layer.masksToBounds = true
-        rooms.append(tempRoom)
+        //rooms.append(tempRoom)
         // Do any additional setup after loading the view.
     }
     

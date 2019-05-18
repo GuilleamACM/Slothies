@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
         LoginButton.layer.masksToBounds = true
         
         //hardcoded admin account
-        let admin = Player(username: "admin" , pass: "admin123")
-        accounts.append(admin)
+        //let admin = Player(username: "admin" , pass: "admin123")
+        //accounts.append(admin)
 
         // Do any additional setup after loading the view.
         

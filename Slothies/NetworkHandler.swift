@@ -11,7 +11,6 @@ import UIKit
 var accounts: [Player] = []
 var rooms: [RoomGroup] = []
 
-
 class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
@@ -33,8 +32,10 @@ class NetworkHandler {
     }
     
     init() {
-//        for (index, player) in accounts.enumerated() {
-//            tempStaticRoom.createSloth(player: player, name: "player"+String(index), sex: .male, index: index )
-//        }
+        let tempRoom = RoomGroup(name: "room", pass: "pass")
+        rooms.append(tempRoom)
+        
+        let admin = Player(username: "admin" , pass: "admin123")
+        accounts.append(admin)
     }
 }
