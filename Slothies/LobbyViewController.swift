@@ -31,7 +31,7 @@ class LobbyViewController: UIViewController {
         if let roomCode = self.RoomCodeField.text as? String {
             if let password = self.PasswordField.text as? String {
                 if let currentRoom = NetworkHandler.singleton.fetchRoom(code: roomCode, pass: password) {
-                    //performSegue
+                    performSegue(withIdentifier: "ToSelectionScreen", sender: nil)
                 }
             }
         }

@@ -115,11 +115,20 @@
                         <outlet property="ConfirmButton" destination="wOn-GV-p0o" id="2PR-Lt-Wjv"/>
                         <outlet property="PasswordField" destination="57T-wc-eRH" id="0v2-hn-IGz"/>
                         <outlet property="RoomCodeField" destination="FO7-Sf-7qg" id="S37-ee-yQu"/>
+                        <segue destination="V1V-Cd-yUZ" kind="show" identifier="ToSelectionScreen" id="qNV-Gt-8RH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ble-W1-TZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="156.69642857142856"/>
+        </scene>
+        <!--SelectionScreen-->
+        <scene sceneID="qE1-OE-0Vc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectionScreen" id="V1V-Cd-yUZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yxn-bg-nUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="157"/>
         </scene>
     </scenes>
     <resources>

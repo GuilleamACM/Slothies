@@ -123,11 +123,20 @@
                         <outlet property="EnterPasswordField" destination="mpB-ML-nnR" id="ePX-dO-lbx"/>
                         <outlet property="EnterUsernameField" destination="CPZ-ce-g6A" id="q0A-7O-Loq"/>
                         <outlet property="LoginButton" destination="60t-YO-gcJ" id="xbr-S4-2qV"/>
+                        <segue destination="O1a-RX-xE5" kind="show" identifier="ToLobbyScreen" id="RhS-8V-QT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn1-Zs-Ahb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373.91304347826087" y="-205.58035714285714"/>
+        </scene>
+        <!--LobbyScreen-->
+        <scene sceneID="1aG-Ns-IIr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LobbyScreen" id="O1a-RX-xE5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mkr-bY-A5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385" y="-207"/>
         </scene>
     </scenes>
     <resources>
