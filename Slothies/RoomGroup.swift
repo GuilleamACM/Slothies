@@ -19,7 +19,7 @@ class RoomGroup {
     let pass: String
     
     //lista de jogadores
-    var players: [Player]
+    var players: [Player?]
     
     //data de último acesso ao aplicativo, use para atualizar preguiçometro
     var prevTime: Date
@@ -30,7 +30,7 @@ class RoomGroup {
     init (name:String, pass:String) {
         self.name = name
         self.pass = pass
-        players = []
+        players = [Player?](repeating: nil, count: 4)
         prevTime = Date()
         slothGroup = SlothGroup()
     }
@@ -39,8 +39,10 @@ class RoomGroup {
     func update () {
         let currentTime = Date()
         slothGroup.update(prevTime: prevTime, currTime: currentTime)
-        for player in players {
-            player.update(prevTime: prevTime, currTime: currentTime)
+        for maybePlayer in players {
+            if let player = maybePlayer {
+                player.update(prevTime: prevTime, currTime: currentTime)
+            }
         }
         prevTime = currentTime
     }
