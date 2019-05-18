@@ -10,6 +10,9 @@
 		08E63891228D7E3700B6C664 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63890228D7E3700B6C664 /* GradientView.swift */; };
 		08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63892228D8AFC00B6C664 /* NetworkHandler.swift */; };
 		84F9D612228E880D005A6413 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D611228E880D005A6413 /* SharedConstants.swift */; };
+		BECAD4EF2290680B00583BCB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */; };
+		BECAD4F12290773C00583BCB /* HealthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAD4F02290773C00583BCB /* HealthHandler.swift */; };
+		BECAD4F522908DF200583BCB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECAD4F422908DF200583BCB /* HealthKit.framework */; };
 		DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C72289E59000ADCB9E /* AppDelegate.swift */; };
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
@@ -57,6 +60,10 @@
 		08E63890228D7E3700B6C664 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		08E63892228D8AFC00B6C664 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		84F9D611228E880D005A6413 /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
+		BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		BECAD4F02290773C00583BCB /* HealthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHandler.swift; sourceTree = "<group>"; };
+		BECAD4F222908DF200583BCB /* Slothies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Slothies.entitlements; sourceTree = "<group>"; };
+		BECAD4F422908DF200583BCB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		DC62C4C42289E59000ADCB9E /* Slothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4C72289E59000ADCB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECAD4F522908DF200583BCB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BECAD4F322908DF200583BCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BECAD4F422908DF200583BCB /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC62C4BB2289E59000ADCB9E = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,7 @@
 				DC62C4DB2289E59100ADCB9E /* SlothiesTests */,
 				DC62C4E62289E59100ADCB9E /* SlothiesUITests */,
 				DC62C4C52289E59000ADCB9E /* Products */,
+				BECAD4F322908DF200583BCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +154,7 @@
 		DC62C4C62289E59000ADCB9E /* Slothies */ = {
 			isa = PBXGroup;
 			children = (
+				BECAD4F222908DF200583BCB /* Slothies.entitlements */,
 				DC62C4C72289E59000ADCB9E /* AppDelegate.swift */,
 				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
 				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
@@ -163,6 +181,8 @@
 				DC62C4CE2289E59100ADCB9E /* Assets.xcassets */,
 				DC62C4D02289E59100ADCB9E /* LaunchScreen.storyboard */,
 				DC62C4D32289E59100ADCB9E /* Info.plist */,
+				BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */,
+				BECAD4F02290773C00583BCB /* HealthHandler.swift */,
 			);
 			path = Slothies;
 			sourceTree = "<group>";
@@ -253,6 +273,11 @@
 				TargetAttributes = {
 					DC62C4C32289E59000ADCB9E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					DC62C4D72289E59100ADCB9E = {
 						CreatedOnToolsVersion = 10.1;
@@ -322,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECAD4F12290773C00583BCB /* HealthHandler.swift in Sources */,
 				DC62C50E2289EB0000ADCB9E /* SlothGroup.swift in Sources */,
 				DC62C5002289E79300ADCB9E /* SlothCreationViewController.swift in Sources */,
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
@@ -333,6 +359,7 @@
 				DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */,
 				08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */,
 				DC62C5042289E7D400ADCB9E /* GameViewController.swift in Sources */,
+				BECAD4EF2290680B00583BCB /* HealthKitSetupAssistant.swift in Sources */,
 				DC62C5102289EB9900ADCB9E /* Sloth.swift in Sources */,
 				DC62C50C2289E9A500ADCB9E /* Player.swift in Sources */,
 				DC62C5122289EC9C00ADCB9E /* Slothometer.swift in Sources */,
@@ -512,7 +539,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Slothies/Slothies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UD7CQDF66S;
 				INFOPLIST_FILE = Slothies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +558,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Slothies/Slothies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UD7CQDF66S;
 				INFOPLIST_FILE = Slothies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
