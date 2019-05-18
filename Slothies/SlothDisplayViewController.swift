@@ -10,8 +10,20 @@ import UIKit
 
 class SlothDisplayViewController: UIViewController {
 
+    @IBOutlet weak var SlothyNameLabel: UILabel!
+    
+    @IBOutlet weak var StatusContainerView: UIView!
+    
+    @IBOutlet weak var HungerProgressBar: UIProgressView!
+    
+    @IBOutlet weak var SleepProgressBar: UIProgressView!
+    
+    @IBOutlet weak var SlothometerProgressBar: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        StatusContainerView.layer.cornerRadius = 10
+        StatusContainerView.layer.masksToBounds = true
 
         // Do any additional setup after loading the view.
     }
