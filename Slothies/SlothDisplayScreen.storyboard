@@ -112,6 +112,7 @@
                         <outlet property="SlothometerProgressBar" destination="3wb-Do-0VI" id="Oxi-Cm-lyl"/>
                         <outlet property="SlothyNameLabel" destination="sEk-sJ-aDu" id="ncz-3L-fjr"/>
                         <outlet property="StatusContainerView" destination="4Ax-KH-K8P" id="Zbh-uk-5vg"/>
+                        <outlet property="pageControl" destination="H1l-p1-xdr" id="gm8-Ty-3JY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJR-5y-ZYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

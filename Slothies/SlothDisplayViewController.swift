@@ -20,12 +20,28 @@ class SlothDisplayViewController: UIViewController {
     
     @IBOutlet weak var SlothometerProgressBar: UIProgressView!
     
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    var room: RoomGroup?
+    var slothIndex: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func updateInterfaceValues () {
+        
+        if let room = room {
+            if let index = slothIndex {
+                let slothy = room.slothGroup.slothies[index]
+                SlothyNameLabel.text = slothy.name
+                HungerProgressBar.progress = Float(slothy.hunger / Sloth.statusMaxValue)
+                SleepProgressBar.progress = Float(slothy.sleep / Sloth.statusMaxValue)
+                SlothometerProgressBar.progress = Float(slothy.sloth / Slothometer.maxValue)
+            }
+        }
     }
     
 
