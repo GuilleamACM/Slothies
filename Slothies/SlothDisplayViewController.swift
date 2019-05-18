@@ -29,12 +29,44 @@ class SlothDisplayViewController: UIViewController {
         super.viewDidLoad()
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
-    func updateInterfaceValues () {
+    @objc
+    func handleGesture(gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction {
+        case .left:
+            moveLeft()
+            break
+        case .right:
+            moveRight()
+            break
+        default:
+            let _ = 1 + 1
+        }
+        updateInterface()
+    }
+    
+    func moveLeft() {
         
+    }
+    
+    func moveRight() {
+        
+    }
+    
+    func updateInterface () {
         if let room = room {
+            pageControl.numberOfPages = room.players.count
             if let index = slothIndex {
+                pageControl.currentPage = index
                 let slothy = room.slothGroup.slothies[index]
                 SlothyNameLabel.text = slothy.name
                 HungerProgressBar.progress = Float(slothy.hunger / Sloth.statusMaxValue)
