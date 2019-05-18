@@ -14,7 +14,7 @@
         <scene sceneID="LXK-Ig-Lqi">
             <objects>
                 <viewController id="Bfw-kq-XoV" customClass="LoginViewController" customModule="Slothies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vMX-PY-icZ" customClass="GradientView" customModule="Slothies" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="vMX-PY-icZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -99,7 +99,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.46647977828979492" green="0.84134000539779663" blue="0.44697064161300659" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="JfI-sb-GLR"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">

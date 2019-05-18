@@ -14,7 +14,7 @@
         <scene sceneID="tBa-Xn-kDm">
             <objects>
                 <viewController id="hlg-Nj-Nwj" customClass="SlothCreationViewController" customModule="Slothies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eKO-yh-OkC" customClass="GradientView" customModule="Slothies" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="eKO-yh-OkC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -59,7 +59,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.46647977829999998" green="0.84134000539999998" blue="0.4469706416" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="fxt-IZ-g91"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">

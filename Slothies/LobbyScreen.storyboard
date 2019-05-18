@@ -13,9 +13,8 @@
         <!--Lobby View Controller-->
         <scene sceneID="RGf-eW-mX7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ble-W1-TZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hIJ-3H-0hh" customClass="LobbyViewController" customModule="Slothies" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xm3-PZ-DZl" customClass="GradientView" customModule="Slothies" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="xm3-PZ-DZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -67,7 +66,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.46647977829999998" green="0.84134000539999998" blue="0.4469706416" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="jej-CU-iZ0"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -84,6 +83,7 @@
                         <outlet property="EnterPartyPanel" destination="J4C-FO-gP3" id="gTT-iN-unw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ble-W1-TZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="156.69642857142856"/>
         </scene>
