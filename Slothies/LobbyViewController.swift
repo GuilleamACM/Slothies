@@ -10,12 +10,12 @@ import UIKit
 
 class LobbyViewController: UIViewController {
 
-    @IBOutlet weak var EnterPartyPanel: UIView!
+    @IBOutlet weak var ConfirmButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        EnterPartyPanel.layer.cornerRadius = 10
-        EnterPartyPanel.layer.masksToBounds = true
+        ConfirmButton.layer.cornerRadius = 10
+        ConfirmButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     

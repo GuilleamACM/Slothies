@@ -108,6 +108,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="ckz-Fr-li6"/>
+                    <connections>
+                        <outlet property="ConfirmButton" destination="wOn-GV-p0o" id="2PR-Lt-Wjv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ble-W1-TZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
