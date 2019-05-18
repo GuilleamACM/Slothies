@@ -10,20 +10,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var LoginPanelView: UIView!
-
     @IBOutlet weak var EnterUsernameField: UITextField!
     
     @IBOutlet weak var EnterPasswordField: UITextField!
     
+    @IBOutlet weak var LoginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginPanelView.layer.cornerRadius = 10
-        LoginPanelView.layer.masksToBounds = true
-        EnterUsernameField.layer.cornerRadius = 10
-        EnterUsernameField.layer.masksToBounds = true
-        EnterPasswordField.layer.cornerRadius = 10
-        EnterPasswordField.layer.masksToBounds = true
+
+        LoginButton.layer.cornerRadius = 10
+        LoginButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
     
@@ -37,10 +34,6 @@ class LoginViewController: UIViewController {
             }
         }
         
-    }
-    
-    @IBAction func cancelButton(_ sender: Any) {
-        print("Cancel pressed")
     }
     
     /*
