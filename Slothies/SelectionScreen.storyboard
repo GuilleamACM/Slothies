@@ -22,21 +22,33 @@
                                 <rect key="frame" x="80" y="268" width="67" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
+                                <connections>
+                                    <action selector="Slot1Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="09m-Jr-GnK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
                                 <rect key="frame" x="53" y="392" width="67" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
+                                <connections>
+                                    <action selector="Slot3Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="2zD-oc-Ak2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-aB-dvN" userLabel="Slothy4 Button">
                                 <rect key="frame" x="246" y="293" width="67" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
+                                <connections>
+                                    <action selector="Slot2Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="AK2-jG-w4D"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Qb-jzs" userLabel="Slothy2 Button">
                                 <rect key="frame" x="218" y="407" width="67" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
+                                <connections>
+                                    <action selector="Slot4Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="Zpf-X5-0Kj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -47,11 +59,20 @@
                         <outletCollection property="SlotsButton" destination="tMz-aB-dvN" collectionClass="NSMutableArray" id="pTJ-uf-SM6"/>
                         <outletCollection property="SlotsButton" destination="sWF-3d-sRr" collectionClass="NSMutableArray" id="PYC-We-fNM"/>
                         <outletCollection property="SlotsButton" destination="RUQ-Qb-jzs" collectionClass="NSMutableArray" id="ytL-8E-Nlz"/>
+                        <segue destination="tvk-vg-CPp" kind="show" identifier="ToSlothCreationScreen" id="XZE-dX-xKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTQ-nK-0Rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410" y="25"/>
+        </scene>
+        <!--SlothCreationScreen-->
+        <scene sceneID="q7C-JB-e0c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SlothCreationScreen" id="tvk-vg-CPp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JM-9H-cNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="24"/>
         </scene>
     </scenes>
     <resources>

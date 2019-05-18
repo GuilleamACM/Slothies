@@ -70,9 +70,9 @@ class Sloth : Hashable {
     //estado
     var state: State
     
-    init(na: String, se: Sex) {
-        name = na
-        sex = se
+    init(name: String, sex: Sex) {
+        self.name = name
+        self.sex = sex
         hunger = Sloth.statusInitValue
         sleep = Sloth.statusInitValue
         state = .idle

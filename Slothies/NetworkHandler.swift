@@ -32,18 +32,22 @@ class NetworkHandler {
     }
     
     init() {
+        print("calling NetworkHandler INIT")
         let tempRoom = RoomGroup(name: "room", pass: "pass")
         
-        let sloth1 = Player(username: "sloth1" , pass: "s1")
-        accounts.append(sloth1)
-        let sloth2 = Player(username: "sloth2" , pass: "s2")
-        accounts.append(sloth2)
-        let sloth3 = Player(username: "sloth3" , pass: "s3")
-        accounts.append(sloth3)
+        let p1 = Player(username: "player1" , pass: "p1")
+        p1.setSloth(sloth: Sloth(name: "sloth1", sex: .male))
+        accounts.append(p1)
         
-        tempRoom.players.append(sloth1)
-        tempRoom.players.append(sloth2)
-        tempRoom.players.append(sloth3)
+        let p2 = Player(username: "player2" , pass: "p2")
+        p2.setSloth(sloth: Sloth(name: "sloth2", sex: .female))
+        accounts.append(p2)
+        
+        let p3 = Player(username: "player3" , pass: "p3")
+        accounts.append(p3)
+        
+        tempRoom.players.append(p1)
+        tempRoom.players.append(p2)
         
         rooms.append(tempRoom)
 
