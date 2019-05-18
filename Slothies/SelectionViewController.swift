@@ -35,29 +35,29 @@ class SelectionViewController: UIViewController {
     }
     
     @IBAction func Slot1Pressed(_ sender: Any) {
-        slotPressed = 1
+        slotPressed = 0
         performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
     }
     
     @IBAction func Slot2Pressed(_ sender: Any) {
-        slotPressed = 2
+        slotPressed = 1
         performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
 
     }
     
     @IBAction func Slot3Pressed(_ sender: Any) {
-        slotPressed = 3
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
+        slotPressed = 2
+        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
 
     }
     
     @IBAction func Slot4Pressed(_ sender: Any) {
-        slotPressed = 4
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
+        slotPressed = 3
+        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
 
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -65,9 +65,9 @@ class SelectionViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let SlothCreationScreen = segue.destination as? SlothCreationViewController {
-            SlothCreationScreen.receiveData()
+            SlothCreationScreen.receiveData(player: Player(username: "Lin", pass: "Lolin"), group: NetworkHandler.singleton.fetchRoom(code: roomCode!, pass: roomPass!)!, index: slotPressed!)
         }
     }
-    */
+    
 
 }

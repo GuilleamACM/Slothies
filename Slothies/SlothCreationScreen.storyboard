@@ -46,6 +46,9 @@
                                 <rect key="frame" x="133" y="226" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="MGender Icon"/>
+                                <connections>
+                                    <action selector="MaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="sI4-cz-Bf3"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
                                 <rect key="frame" x="87" y="355" width="240" height="128"/>
@@ -59,6 +62,9 @@
                                 <state key="normal" title="Create">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="CreateSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="NFT-69-1X7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyM-d8-6Yt" userLabel="Female Slothy">
                                 <rect key="frame" x="231" y="226" width="50" height="50"/>
@@ -66,6 +72,9 @@
                                 <state key="normal" image="FGender Icon">
                                     <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="FemaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="mRo-wq-0Je"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -83,11 +92,22 @@
                     <connections>
                         <outlet property="CreateSlothyButton" destination="nZ3-JM-6Eb" id="m9N-OS-wbA"/>
                         <outlet property="EnterSlothyNameField" destination="KG2-LH-2fc" id="CMo-km-XPE"/>
+                        <outlet property="SlothyNameField" destination="KG2-LH-2fc" id="W5p-tS-bI0"/>
+                        <outlet property="SlothySprite" destination="JDo-EM-D4J" id="VqQ-Db-cML"/>
+                        <segue destination="P3W-OH-7DY" kind="show" identifier="ToGameScreen" id="8e6-ee-5W1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUa-ug-1jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="37"/>
+        </scene>
+        <!--GameScreen-->
+        <scene sceneID="Rko-Xt-xhz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameScreen" id="P3W-OH-7DY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k15-k7-0hO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="-53"/>
         </scene>
     </scenes>
     <resources>
