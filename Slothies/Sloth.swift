@@ -57,6 +57,10 @@ class Sloth : Hashable {
     //fome, sono
     var hunger, sleep: Double
     
+    var sloth: Double {
+        return slothometer!.individualValues[self]!
+    }
+    
     //jogador associado
     var player: Player?
     
