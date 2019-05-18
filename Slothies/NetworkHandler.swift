@@ -15,6 +15,7 @@ var accounts: [Player] = []
 class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
+
     
     func fetchRoom(na: String, pa: String) -> RoomGroup? {
         return tempStaticRoom
