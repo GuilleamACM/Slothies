@@ -89,6 +89,9 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="ConfirmRoomButton:" destination="hIJ-3H-0hh" eventType="touchUpInside" id="NVj-e1-q5a"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lock Icon" translatesAutoresizingMaskIntoConstraints="NO" id="d42-wU-LJL">
                                 <rect key="frame" x="72" y="559" width="25" height="25"/>
@@ -110,6 +113,8 @@
                     <navigationItem key="navigationItem" id="ckz-Fr-li6"/>
                     <connections>
                         <outlet property="ConfirmButton" destination="wOn-GV-p0o" id="2PR-Lt-Wjv"/>
+                        <outlet property="PasswordField" destination="57T-wc-eRH" id="0v2-hn-IGz"/>
+                        <outlet property="RoomCodeField" destination="FO7-Sf-7qg" id="S37-ee-yQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ble-W1-TZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,15 +11,32 @@ import UIKit
 class LobbyViewController: UIViewController {
 
     @IBOutlet weak var ConfirmButton: UIButton!
+    @IBOutlet weak var RoomCodeField: UITextField!
+    @IBOutlet weak var PasswordField: UITextField!
+    
+    //hardcoded room
+    let tempRoom = RoomGroup(name: "room", pass: "pass")
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfirmButton.layer.cornerRadius = 10
         ConfirmButton.layer.masksToBounds = true
+        rooms.append(tempRoom)
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func ConfirmRoomButton(_ sender: Any) {
+        if let roomCode = self.RoomCodeField.text as? String {
+            if let password = self.PasswordField.text as? String {
+                if let currentRoom = NetworkHandler.singleton.fetchRoom(code: roomCode, pass: password) {
+                    //performSegue
+                }
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

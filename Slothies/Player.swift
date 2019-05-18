@@ -27,9 +27,9 @@ class Player {
     var previousHealthStatus: Int
     
     
-    init(username: String, password: String) {
+    init(username: String, pass: String) {
         self.identifier = username
-        self.password = password
+        self.password = pass
         self.previousHealthStatus = 0
     }
     

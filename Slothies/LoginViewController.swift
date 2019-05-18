@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         LoginButton.layer.masksToBounds = true
         
         //hardcoded admin account
-        let admin = Player(username: "admin" , password: "admin123")
+        let admin = Player(username: "admin" , pass: "admin123")
         accounts.append(admin)
 
         // Do any additional setup after loading the view.
@@ -34,9 +34,8 @@ class LoginViewController: UIViewController {
         if let username = self.EnterUsernameField.text as? String {
             if let password = self.EnterPasswordField.text as? String {
                 print("\(username):\(password)")
-                if NetworkHandler.singleton.fetchPlayer(username: username, password: password) {
-                    print("performSegue")
-                    //performSegue(withIdentifier: "ToLobbyScreen", sender: nil)
+                if let currentPlayer = NetworkHandler.singleton.fetchPlayer(username: username, pass: password) {
+                    performSegue(withIdentifier: "ToLobbyScreen", sender: nil)
                 }
                 
             }
