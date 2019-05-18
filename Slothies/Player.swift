@@ -33,6 +33,10 @@ class Player {
         self.previousHealthStatus = 0
     }
     
+    func setSloth(sloth: Sloth) {
+        self.slothy = sloth
+    }
+    
     //fetch user's activity since previous access and update sloth with it
     func update (prevTime: Date, currTime: Date) {
         let info = self //TODO: fetch from HealthHandler
