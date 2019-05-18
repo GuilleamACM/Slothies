@@ -15,7 +15,7 @@ class SlothGroup {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //list of sloths
-    var slothies: [Sloth]
+    var slothies: [Sloth?]
     
     //slothometer
     var slothometer: Slothometer
@@ -25,7 +25,7 @@ class SlothGroup {
     var money: Int
     
     init() {
-        slothies = []
+        slothies = [Sloth?](repeating: nil, count: 4)
         food = 100
         money = 100
         slothometer = Slothometer()
