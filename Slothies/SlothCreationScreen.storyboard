@@ -50,10 +50,6 @@
                                     <action selector="MaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="sI4-cz-Bf3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
-                                <rect key="frame" x="87" y="355" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ3-JM-6Eb" userLabel="Create">
                                 <rect key="frame" x="160" y="740" width="95" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,6 +72,10 @@
                                     <action selector="FemaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="mRo-wq-0Je"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
+                                <rect key="frame" x="87" y="316" width="240" height="346"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="fxt-IZ-g91"/>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUa-ug-1jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="37"/>
+            <point key="canvasLocation" x="340.57971014492756" y="36.830357142857139"/>
         </scene>
         <!--GameScreen-->
         <scene sceneID="Rko-Xt-xhz">
