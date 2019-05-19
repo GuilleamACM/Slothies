@@ -21,6 +21,7 @@ class SlothDisplayViewController: UIViewController {
     @IBOutlet weak var SlothometerProgressBar: UIProgressView!
     
     var room: RoomGroup?
+    var player: Player?//current player - use to check for feeding/sleeping permissions
     var slothy: Sloth?
     
     override func viewDidLoad() {
@@ -46,9 +47,10 @@ class SlothDisplayViewController: UIViewController {
         updateBars(anime: true)
     }
     
-    func receiveData(room: RoomGroup, slothy: Sloth) {
+    func receiveData(room: RoomGroup, slothy: Sloth, player: Player) {
         self.room = room
         self.slothy = slothy
+        self.player = player
         firstUpdateInterface()
     }
     
