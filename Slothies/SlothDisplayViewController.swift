@@ -20,91 +20,36 @@ class SlothDisplayViewController: UIViewController {
     
     @IBOutlet weak var SlothometerProgressBar: UIProgressView!
     
-    @IBOutlet weak var pageControl: UIPageControl!
-    
     var room: RoomGroup?
-    var slothIndex: Int?
+    var slothy: Sloth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeDown.direction = .down
-        self.view.addGestureRecognizer(swipeDown)
     }
     
-    @objc
-    func handleGesture(gesture: UISwipeGestureRecognizer) {
-        switch gesture.direction {
-        case .left:
-            moveLeft()
-            break
-        case .right:
-            moveRight()
-            break
-        default:
-            break
-        }
-        updateInterface()
+    func updateBars (anime: Bool) {
+        HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
+        SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.statusMaxValue), animated: anime)
+        SlothometerProgressBar.setProgress(Float(slothy!.sloth / Slothometer.maxValue), animated: anime)
     }
     
-    func moveLeft() {
-        if var index = slothIndex {
-            if let room = room {
-                index = index - 1
-                while(index > -1) {
-                    if let _ = room.players[index] {
-                        slothIndex = index
-                        updateInterface()
-                        return
-                    }
-                    index = index - 1
-                }
-            }
-        }
-    }
-    
-    func moveRight() {
-        if var index = slothIndex {
-            if let room = room {
-                index = index + 1
-                while(index < maxPlayers) {
-                    if let _ = room.players[index] {
-                        slothIndex = index
-                        updateInterface()
-                        return
-                    }
-                    index = index + 1
-                }
-            }
+    func firstUpdateInterface () {
+        if let slothy = slothy {
+            SlothyNameLabel.text = slothy.name
+            updateBars(anime: false)
         }
     }
     
     func updateInterface () {
-        if let room = room {
-            pageControl.numberOfPages = room.players.count
-            if let index = slothIndex {
-                pageControl.currentPage = index
-                if let slothy = room.slothGroup.slothies[index] {
-                    SlothyNameLabel.text = slothy.name
-                    HungerProgressBar.progress = Float(slothy.hunger / Sloth.statusMaxValue)
-                    SleepProgressBar.progress = Float(slothy.sleep / Sloth.statusMaxValue)
-                    SlothometerProgressBar.progress = Float(slothy.sloth / Slothometer.maxValue)
-                }
-            }
-        }
+        updateBars(anime: true)
     }
     
-    func receiveData(room: RoomGroup, slothIndex: Int) {
-        assert(slothIndex >= 0 && slothIndex < maxPlayers)
+    func receiveData(room: RoomGroup, slothy: Sloth) {
         self.room = room
-        self.slothIndex = slothIndex
+        self.slothy = slothy
+        firstUpdateInterface()
     }
     
     // MARK: - Navigation
