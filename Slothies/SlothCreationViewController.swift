@@ -47,8 +47,6 @@ class SlothCreationViewController: UIViewController {
         super.viewDidLoad()
         CreateSlothyButton.layer.cornerRadius = 10
         CreateSlothyButton.layer.masksToBounds = true
-        
-        
     }
     
     func receiveData (player: Player, group: RoomGroup, index: Int) {

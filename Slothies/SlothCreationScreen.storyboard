@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hlg-Nj-Nwj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hlg-Nj-Nwj">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +91,6 @@
                     </view>
                     <connections>
                         <outlet property="CreateSlothyButton" destination="nZ3-JM-6Eb" id="m9N-OS-wbA"/>
-                        <outlet property="EnterSlothyNameField" destination="KG2-LH-2fc" id="CMo-km-XPE"/>
                         <outlet property="SlothyNameField" destination="KG2-LH-2fc" id="W5p-tS-bI0"/>
                         <outlet property="SlothySprite" destination="JDo-EM-D4J" id="VqQ-Db-cML"/>
                         <segue destination="P3W-OH-7DY" kind="show" identifier="ToGameScreen" id="8e6-ee-5W1"/>
