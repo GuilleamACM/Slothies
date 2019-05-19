@@ -49,21 +49,22 @@ class SlothDisplayViewController: UIViewController {
             moveRight()
             break
         default:
-            let _ = 1 + 1
+            break
         }
         updateInterface()
     }
     
     func moveLeft() {
         if var index = slothIndex {
-            index = index - 1
-            while(index > -1) {
-                if let roo = room {
-                    if let _ = roo.players[index] {
+            if let room = room {
+                index = index - 1
+                while(index > -1) {
+                    if let _ = room.players[index] {
                         slothIndex = index
                         updateInterface()
                         return
                     }
+                    index = index - 1
                 }
             }
         }
@@ -71,14 +72,15 @@ class SlothDisplayViewController: UIViewController {
     
     func moveRight() {
         if var index = slothIndex {
-            index = index + 1
-            while(index < maxPlayers) {
-                if let roo = room {
-                    if let _ = roo.players[index] {
+            if let room = room {
+                index = index + 1
+                while(index < maxPlayers) {
+                    if let _ = room.players[index] {
                         slothIndex = index
                         updateInterface()
                         return
                     }
+                    index = index + 1
                 }
             }
         }

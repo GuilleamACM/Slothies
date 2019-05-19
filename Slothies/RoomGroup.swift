@@ -48,11 +48,15 @@ class RoomGroup {
     }
     
     //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias
-    func createSloth (player: Player, name: String, sex: Sex, index: Int) {
-        var slothy = Sloth(name: name, sex: sex)
+    func createSloth (player: Player, name: String, sex: Sex, index: Int) -> Bool {
+        if (slothGroup.hasSloth(withName: name)) {
+            return false
+        }
+        let slothy = Sloth(name: name, sex: sex)
         slothy.player = player
         player.slothy = slothy
         players[index] = player
         slothGroup.addSloth(sloth: slothy, i: index)
+        return true
     }
 }

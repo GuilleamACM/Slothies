@@ -36,8 +36,12 @@ class SlothCreationViewController: UIViewController {
     @IBAction func CreateSlothyButton(_ sender: UIButton) {
         if let slothyName = SlothyNameField.text as String? {
             if let slothySex = self.sex as Sex? {
-                roomGroup?.createSloth(player: self.player!, name: slothyName, sex: slothySex, index: self.index!)
-                performSegue(withIdentifier: "ToGameScreen", sender: self)
+                let success = roomGroup!.createSloth(player: self.player!, name: slothyName, sex: slothySex, index: self.index!)
+                if (success) {
+                    performSegue(withIdentifier: "ToGameScreen", sender: self)
+                } else {
+                    //do something to warn the user
+                }
             }
         }
     }

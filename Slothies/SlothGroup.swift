@@ -42,4 +42,14 @@ class SlothGroup {
     func update (prevTime: Date, currTime: Date) {
         slothometer.update(prevTime: prevTime, currTime: currTime)
     }
+    
+    func hasSloth (withName: String) -> Bool {
+        var has = false
+        slothies.forEach({
+            if let slothy = $0 {
+                has = has || slothy.name.elementsEqual(withName)
+            }
+        })
+        return has
+    }
 }
