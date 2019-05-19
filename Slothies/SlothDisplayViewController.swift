@@ -28,6 +28,7 @@ class SlothDisplayViewController: UIViewController {
         super.viewDidLoad()
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
+        firstUpdateInterface()
     }
     
     func updateBars (anime: Bool) {
@@ -51,7 +52,6 @@ class SlothDisplayViewController: UIViewController {
         self.room = room
         self.slothy = slothy
         self.player = player
-        firstUpdateInterface()
     }
     
     // MARK: - Navigation
