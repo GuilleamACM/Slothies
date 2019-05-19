@@ -79,6 +79,15 @@
                         <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="3k3-ko-elF"/>
                     </view>
+                    <connections>
+                        <outlet property="FoodLabel" destination="Gje-N4-daI" id="qJf-vC-z1P"/>
+                        <outlet property="SlothometerUIProgressView" destination="LA8-Cz-tfR" id="4MU-mF-AAA"/>
+                        <outlet property="SlothyCoinsLabel" destination="OIn-os-Cyp" id="C6Y-q7-xJ3"/>
+                        <outletCollection property="SlothyButtons" destination="XTv-ST-KnM" collectionClass="NSMutableArray" id="74i-00-mcL"/>
+                        <outletCollection property="SlothyButtons" destination="Oww-g8-Vk6" collectionClass="NSMutableArray" id="WvJ-KN-cAJ"/>
+                        <outletCollection property="SlothyButtons" destination="2iv-m8-M4V" collectionClass="NSMutableArray" id="qkr-SZ-BFp"/>
+                        <outletCollection property="SlothyButtons" destination="nNE-bt-CBV" collectionClass="NSMutableArray" id="Yrv-yA-ouv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byf-mT-1rk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
