@@ -34,12 +34,12 @@ class SelectionViewController: UIViewController {
     
     @IBAction func Slot1Pressed(_ sender: Any) {
         slotPressed = 0
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
+        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
     }
     
     @IBAction func Slot2Pressed(_ sender: Any) {
         slotPressed = 1
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: nil)
+        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
 
     }
     
