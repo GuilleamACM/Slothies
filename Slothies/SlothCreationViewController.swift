@@ -11,7 +11,7 @@ import UIKit
 class SlothCreationViewController: UIViewController {
     
     var player: Player? = nil
-    var roomGroup: RoomGroup? = nil
+    var room: RoomGroup? = nil
     var index: Int? = nil
     var sex: Sex? = nil
     
@@ -36,7 +36,7 @@ class SlothCreationViewController: UIViewController {
     @IBAction func CreateSlothyButton(_ sender: UIButton) {
         if let slothyName = SlothyNameField.text as String? {
             if let slothySex = self.sex as Sex? {
-                let success = roomGroup!.createSloth(player: self.player!, name: slothyName, sex: slothySex, index: self.index!)
+                let success = room!.createSloth(player: self.player!, name: slothyName, sex: slothySex, index: self.index!)
                 if (success) {
                     performSegue(withIdentifier: "ToGameScreen", sender: self)
                 } else {
@@ -55,7 +55,7 @@ class SlothCreationViewController: UIViewController {
     
     func receiveData (player: Player, group: RoomGroup, index: Int) {
         self.player = player
-        self.roomGroup = group
+        self.room = group
         self.index = index
     }
     
@@ -65,7 +65,9 @@ class SlothCreationViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let game = segue.destination as? GameViewController {
+            game.receiveData(room: room!, player: player!)
+        }
     }
 
 }
