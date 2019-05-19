@@ -35,6 +35,10 @@ class RoomGroup {
         slothGroup = SlothGroup()
     }
     
+    func getSlothy (index: Int) -> Sloth? {
+        return slothGroup.getSlothy(index: index)
+    }
+    
     func forSlothy (fun: (Sloth?) -> ()) {
         slothGroup.forSlothy(fun: fun)
     }

@@ -31,6 +31,10 @@ class SlothGroup {
         slothometer = Slothometer()
     }
     
+    func getSlothy (index: Int) -> Sloth? {
+        return slothies[index]
+    }
+    
     func forSlothy (fun: (Sloth?) -> ()) {
         for sloth in slothies {
             fun(sloth)
