@@ -40,8 +40,8 @@ class Sloth : Hashable {
         return lhs.hashValue == rhs.hashValue
     }
     
-    var hashValue: Int {
-        return name.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
     
     //key values for sleep and hunger
