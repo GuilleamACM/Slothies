@@ -36,18 +36,17 @@ class NetworkHandler {
         let tempRoom = RoomGroup(name: "room", pass: "pass")
         
         let p1 = Player(username: "player1" , pass: "p1")
-        p1.setSloth(sloth: Sloth(name: "sloth1", sex: .male))
         accounts.append(p1)
         
         let p2 = Player(username: "player2" , pass: "p2")
-        p2.setSloth(sloth: Sloth(name: "sloth2", sex: .female))
+        tempRoom.createSloth(player: p2, name: "sloth2", sex: .female
+            , index: 1)
         accounts.append(p2)
         
         let p3 = Player(username: "player3" , pass: "p3")
+        tempRoom.createSloth(player: p3, name: "sloth3", sex: .male
+            , index: 2)
         accounts.append(p3)
-        
-        tempRoom.players.append(p1)
-        tempRoom.players.append(p2)
         
         rooms.append(tempRoom)
 
