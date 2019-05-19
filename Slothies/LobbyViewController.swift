@@ -52,7 +52,7 @@ class LobbyViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let selectionScreen = segue.destination as? SelectionViewController {
-            selectionScreen.receiveData(room: room!)
+            selectionScreen.receiveData(room: room!, player: player!)
         }
     }
  
