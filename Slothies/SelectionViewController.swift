@@ -22,11 +22,13 @@ class SelectionViewController: UIViewController {
     }
     
     func loadRoom(room: RoomGroup) {
-        for (index, players) in room.players.enumerated() {
-            let image = UIImage(named: "Slothy\(index+1) Face")
-            SlotsButton[index].setBackgroundImage(nil, for: .normal)
-            SlotsButton[index].setImage(image, for: .normal)
-            SlotsButton[index].isEnabled = false
+        for (index, player) in room.players.enumerated() {
+            if let _ = player {
+                let image = UIImage(named: "Slothy\(index+1) Face")
+                SlotsButton[index].setBackgroundImage(nil, for: .normal)
+                SlotsButton[index].setImage(image, for: .normal)
+                SlotsButton[index].isEnabled = false
+            }
         }
     }
     
