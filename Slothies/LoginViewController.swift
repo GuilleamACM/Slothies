@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var LoginButton: UIButton!
     
+    var player:Player? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,10 +33,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        if let username = self.EnterUsernameField.text as? String {
-            if let password = self.EnterPasswordField.text as? String {
+        if let username = self.EnterUsernameField.text {
+            if let password = self.EnterPasswordField.text {
                 print("\(username):\(password)")
                 if let currentPlayer = NetworkHandler.singleton.fetchPlayer(username: username, pass: password) {
+                    player = currentPlayer
                     performSegue(withIdentifier: "ToLobbyScreen", sender: nil)
                 }
                 
@@ -44,14 +47,16 @@ class LoginViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let dest = segue.destination as? LobbyViewController {
+            dest.receiveData(player: player!)
+        }
     }
-    */
-
+    
 }

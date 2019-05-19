@@ -10,22 +10,18 @@ import UIKit
 
 class SelectionViewController: UIViewController {
 
-    var roomCode: String? = nil
-    var roomPass: String? = nil
+    var room: RoomGroup? = nil
+    var player: Player? = nil
     var slotPressed: Int? = nil
 
     @IBOutlet var SlotsButton: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let room = NetworkHandler.singleton.fetchRoom(code: roomCode!, pass: roomPass!)
         loadRoom(room: room!)
-
-        
         // Do any additional setup after loading the view.
     }
     
     func loadRoom(room: RoomGroup) {
-        
         for (index, players) in room.players.enumerated() {
             let image = UIImage(named: "Slothy\(index+1) Face")
             SlotsButton[index].setBackgroundImage(nil, for: .normal)
@@ -57,6 +53,10 @@ class SelectionViewController: UIViewController {
 
     }
     
+    func receiveData(room: RoomGroup, player:Player) {
+        self.room = room
+        self.player = player
+    }
     
     // MARK: - Navigation
 
@@ -65,7 +65,7 @@ class SelectionViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let SlothCreationScreen = segue.destination as? SlothCreationViewController {
-            SlothCreationScreen.receiveData(player: Player(username: "Lin", pass: "Lolin"), group: NetworkHandler.singleton.fetchRoom(code: roomCode!, pass: roomPass!)!, index: slotPressed!)
+            SlothCreationScreen.receiveData(player: player!, group: room!, index: slotPressed!)
         }
     }
     
