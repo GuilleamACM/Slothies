@@ -35,6 +35,10 @@ class RoomGroup {
         slothGroup = SlothGroup()
     }
     
+    func forSlothy (fun: (Sloth?) -> ()) {
+        slothGroup.forSlothy(fun: fun)
+    }
+    
     //update to call upon opening the app/joining the room
     func update () {
         let currentTime = Date()

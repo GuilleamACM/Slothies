@@ -31,6 +31,12 @@ class SlothGroup {
         slothometer = Slothometer()
     }
     
+    func forSlothy (fun: (Sloth?) -> ()) {
+        for sloth in slothies {
+            fun(sloth)
+        }
+    }
+    
     //add a sloth to the group. associate slothometer and slothy
     func addSloth(sloth: Sloth, i: Int) {
         sloth.slothometer = slothometer
