@@ -28,7 +28,7 @@ class SlothCreationViewController: UIViewController {
     }
     
     @IBAction func FemaleSlothyButton(_ sender: UIButton) {
-        SlothySprite.image = UIImage(named: "Logo")
+        SlothySprite.image = UIImage(named: "Slothy Sleeping")
         sex = .female
     }
     

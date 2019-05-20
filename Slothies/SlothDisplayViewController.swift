@@ -20,12 +20,28 @@ class SlothDisplayViewController: UIViewController {
     
     @IBOutlet weak var SlothometerProgressBar: UIProgressView!
     
+    @IBOutlet weak var SlothyBubbleLabel: UILabel!
+    
+    @IBOutlet weak var EatButton: UIButton!
+    
+    @IBOutlet weak var SleepButton: UIButton!
+    
+    @IBOutlet weak var SlothySprite: UIButton!
+    
+    @IBAction func SlothyButton(_ sender: Any) {
+        
+    }
+    
     var room: RoomGroup?
     var player: Player?//current player - use to check for feeding/sleeping permissions
     var slothy: Sloth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let sloth = self.slothy as Sloth? {
+            renderSlothy(slothy: sloth)
+        }
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
         firstUpdateInterface()
@@ -53,6 +69,18 @@ class SlothDisplayViewController: UIViewController {
         self.room = room
         self.slothy = slothy
         self.player = player
+    }
+    
+    func renderSlothy(slothy: Sloth){
+        var slothSprite: UIImage
+        
+        if(slothy.sex == .male) {
+            slothSprite = UIImage(named: "Male Slothy Idle")!
+        } else {
+            slothSprite = UIImage(named: "Slothy Eating")!
+        }
+        
+        SlothySprite.setImage(slothSprite, for: .normal)
     }
     
     // MARK: - Navigation

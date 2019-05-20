@@ -72,7 +72,7 @@
                                     <action selector="FemaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="mRo-wq-0Je"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slothy Eating" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
                                 <rect key="frame" x="87" y="316" width="240" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -112,5 +112,6 @@
     <resources>
         <image name="FGender Icon" width="50" height="50"/>
         <image name="MGender Icon" width="50" height="50"/>
+        <image name="Slothy Eating" width="1980" height="2800"/>
     </resources>
 </document>
