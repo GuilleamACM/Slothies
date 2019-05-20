@@ -91,7 +91,7 @@ class SlothDisplayViewController: UIViewController {
         if(slothy.sex == .male) {
             slothSprite = UIImage(named: "Male Slothy Idle")!
         } else {
-            slothSprite = UIImage(named: "Slothy Eating")!
+            slothSprite = UIImage(named: "Female Slothy Idle")!
         }
         
         SlothySprite.setImage(slothSprite, for: .normal)

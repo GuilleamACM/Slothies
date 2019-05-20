@@ -22,6 +22,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet var SlothyButtons: [UIButton]!
     
+    @IBOutlet var SlothyNameLabels: [UILabel]!
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateInterface()
@@ -47,7 +50,12 @@ class GameViewController: UIViewController {
                 label.text = ""
             }
             if let _ = player {
-                let image = UIImage(named: "Slothy\(index+1) Face")
+                let image: UIImage
+                if (room!.getSlothy(index: index)!.sex == .male) {
+                    image = UIImage(named: "Male Slothy Face Idle")!
+                } else {
+                    image = UIImage(named: "Female Slothy Face Idle")!
+                }
                 SlothyButtons[index].setImage(image, for: .normal)
             }
         }
