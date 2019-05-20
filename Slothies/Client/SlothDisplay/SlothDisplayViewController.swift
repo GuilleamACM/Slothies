@@ -38,31 +38,45 @@ class SlothDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StatusContainerView.layer.cornerRadius = 10
+        StatusContainerView.layer.masksToBounds = true
         
         if let sloth = self.slothy as Sloth? {
             renderSlothy(slothy: sloth)
         }
-        StatusContainerView.layer.cornerRadius = 10
-        StatusContainerView.layer.masksToBounds = true
-        firstUpdateInterface()
+        
         navigationController!.setNavigationBarHidden(false, animated: true)
+        slothyInformationSetup()
+        permissionSetup()
     }
     
-    func updateBars (anime: Bool) {
-        HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
-        SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.statusMaxValue), animated: anime)
-        SlothometerProgressBar.setProgress(Float(slothy!.sloth / Slothometer.maxValue), animated: anime)
+    func permissionSetup () {
+        if let player = player {
+            if let slothy = slothy {
+                let playerNameConfirmed = player.identifier.elementsEqual(slothy.player!.identifier)
+                let slothyNameConfirmed = slothy.name.elementsEqual(player.slothy!.name)
+                if !(playerNameConfirmed && slothyNameConfirmed) {
+                    hideSpeechAndButtons()
+                }
+            }
+        }
     }
     
-    func firstUpdateInterface () {
+    func hideSpeechAndButtons() {
+        //TODO 
+    }
+    
+    func slothyInformationSetup () {
         if let slothy = slothy {
             SlothyNameLabel.text = slothy.name
             updateBars(anime: false)
         }
     }
     
-    func updateInterface () {
-        updateBars(anime: true)
+    func updateBars (anime: Bool) {
+        HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
+        SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.statusMaxValue), animated: anime)
+        SlothometerProgressBar.setProgress(Float(slothy!.sloth / Slothometer.maxValue), animated: anime)
     }
     
     func receiveData(room: RoomGroup, slothy: Sloth, player: Player) {
