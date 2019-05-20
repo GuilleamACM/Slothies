@@ -63,7 +63,7 @@ class SlothDisplayViewController: UIViewController {
     }
     
     func hideSpeechAndButtons() {
-        //TODO 
+        //TODO
     }
     
     func slothyInformationSetup () {
@@ -110,7 +110,7 @@ class SlothDisplayViewController: UIViewController {
     }
     
     @IBAction func feedButtonPressed(_ sender: Any) {
-        slothyEatsInterface()
+        
     }
     
     @IBAction func sleepButtonPressed(_ sender: Any) {
