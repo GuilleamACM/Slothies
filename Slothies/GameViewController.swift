@@ -47,15 +47,13 @@ class GameViewController: UIViewController {
     
     func loadRoom() {
         for (index, player) in room!.players.enumerated() {
+            SlothyButtons[index].setBackgroundImage(nil, for: .normal)
+            if let label = SlothyButtons[index].titleLabel {
+                label.text = ""
+            }
             if let _ = player {
                 let image = UIImage(named: "Slothy\(index+1) Face")
-                SlothyButtons[index].setBackgroundImage(nil, for: .normal)
                 SlothyButtons[index].setImage(image, for: .normal)
-            } else {
-                SlothyButtons[index].setBackgroundImage(nil, for: .normal)
-                if let label = SlothyButtons[index].titleLabel {
-                    label.text = ""
-                }
             }
         }
     }
