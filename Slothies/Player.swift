@@ -39,7 +39,31 @@ class Player {
     
     //fetch user's activity since previous access and update sloth with it
     func update (prevTime: Date, currTime: Date) {
-        let info = self //TODO: fetch from HealthHandler
+        var info:(steps: Double, distance: Double) = (0, 0) //TODO: fetch from HealthHandler
+        
+        HealthHandler.singleton.getWalkingRunningDistance(startDate: prevTime, endDate: currTime){ (value,error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }else if let value = value {
+                DispatchQueue.main.async {
+                    info.distance = value
+                }
+            }
+        }
+        
+        HealthHandler.singleton.getStepsCount(startDate: prevTime, endDate: currTime){ (value,error) in
+            if let error = error{
+                print(error.localizedDescription)
+                return
+            }else if let value = value{
+                DispatchQueue.main.async {
+                    info.steps = value
+                }
+            }
+        }
+        
         
         if let slothy = slothy {
             slothy.update(prevTime: prevTime, currTime: currTime, info: info)

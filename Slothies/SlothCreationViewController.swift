@@ -22,7 +22,7 @@ class SlothCreationViewController: UIViewController {
     @IBOutlet weak var SlothySprite: UIImageView!
     
     @IBAction func MaleSlothyButton(_ sender: UIButton) {
-        SlothySprite.image = UIImage(named: "MaleSlothyFull")
+        SlothySprite.image = UIImage(named: "Male Slothy Idle")
         sex = .male
         
     }
