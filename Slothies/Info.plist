@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Precisamos saber sua energia gasta e distancia percorrida</string>
+	<string>Precisamos saber seus passos e distancia percorrida</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Precisamos saber sua energia gasta e distancia percorrida</string>
+	<string>Precisamos saber seus passos e distancia percorrida</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
