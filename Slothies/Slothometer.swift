@@ -73,6 +73,7 @@ class Slothometer {
         
         addSpecificValue(slothy: slothy, val: slothmeters)
         //TODO: better define sloth reward for working out
+        
         updateTotalValue()
     }
 }

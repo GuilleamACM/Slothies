@@ -18,8 +18,12 @@ class Player {
     let identifier: String
     let password: String
     
+    var lastUpdate: Date
+    
     //preguicinha
     var slothy: Sloth?
+    //coins for the player
+    var coins: Int
     
     //algum valor anterior de exercicio (i.e. numero previo de passos)
     //use para atualizar preguiçometro
@@ -31,42 +35,66 @@ class Player {
         self.identifier = username
         self.password = pass
         self.previousHealthStatus = 0
+        self.coins = 0
+        self.lastUpdate = Date()
     }
     
     func setSloth(sloth: Sloth) {
         self.slothy = sloth
     }
     
-    //fetch user's activity since previous access and update sloth with it
-    func update (prevTime: Date, currTime: Date) {
-        var info:(steps: Double, distance: Double) = (0, 0) //TODO: fetch from HealthHandler
+    func sendDataToServer () {
         
-        HealthHandler.singleton.getWalkingRunningDistance(startDate: prevTime, endDate: currTime){ (value,error) in
+    }
+    
+    func getHealthData () -> (Double, Double)? {
+        var gotDistance = false
+        var gotSteps = false
+        var info: (steps: Double, distance: Double) = (steps: 0, distance: 0)
+        let now = Date()
+        
+        HealthHandler.singleton.getWalkingRunningDistance(startDate: lastUpdate, endDate: now){ (value,error) in
             
             if let error = error {
                 print(error.localizedDescription)
                 return
             }else if let value = value {
                 DispatchQueue.main.async {
+                    gotDistance = true
                     info.distance = value
                 }
             }
         }
         
-        HealthHandler.singleton.getStepsCount(startDate: prevTime, endDate: currTime){ (value,error) in
+        HealthHandler.singleton.getStepsCount(startDate: lastUpdate, endDate: now){ (value,error) in
             if let error = error{
                 print(error.localizedDescription)
                 return
             }else if let value = value{
                 DispatchQueue.main.async {
+                    gotSteps = true
                     info.steps = value
                 }
             }
         }
         
-        
-        if let slothy = slothy {
-            slothy.update(prevTime: prevTime, currTime: currTime, info: info)
+        if gotDistance && gotSteps {
+            lastUpdate = now
+            return info
+        } else {
+            return nil
         }
+    }
+    
+    //fetch user's activity since previous access and update sloth with it
+    func update (date: Date, info: (steps: Double, distance: Double)) {
+        if let slothy = slothy {
+            slothy.update(prevTime: lastUpdate, currTime: date, info: info)
+        }
+        lastUpdate = date
+    }
+    
+    func awardCoins(coins: Int){
+        self.coins += coins
     }
 }
