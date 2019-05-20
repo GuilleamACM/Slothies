@@ -83,6 +83,14 @@ class SlothDisplayViewController: UIViewController {
         SlothySprite.setImage(slothSprite, for: .normal)
     }
     
+    @IBAction func feedButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func sleepButtonPressed(_ sender: Any) {
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

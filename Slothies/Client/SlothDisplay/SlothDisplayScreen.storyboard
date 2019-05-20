@@ -105,11 +105,17 @@
                                 <rect key="frame" x="233" y="373" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Apple Icon"/>
+                                <connections>
+                                    <action selector="feedButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="6N3-MJ-T9x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-yx-eds" userLabel="Sleep Button">
                                 <rect key="frame" x="302" y="373" width="53" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Spleep Icon"/>
+                                <connections>
+                                    <action selector="sleepButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="apL-op-mbV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
