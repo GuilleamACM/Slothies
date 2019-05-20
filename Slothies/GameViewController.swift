@@ -13,8 +13,6 @@ class GameViewController: UIViewController {
     var room: RoomGroup?
     var player: Player?
     var slothometer: Slothometer?
-    var food = 0
-    var coins = 0
 
     @IBOutlet weak var SlothometerUIProgressView: UIProgressView!
     
@@ -32,15 +30,12 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        food = 100
-        coins = 100
         updateInterface()
         navigationController!.setNavigationBarHidden(true, animated: true)
     }
     
     func updateInterface() {
-        FoodLabel.text = "\(food)"
-        SlothyCoinsLabel.text = "\(coins)"
+        FoodLabel.text = "\(room!.slothGroup.food)"
         SlothometerUIProgressView.setProgress(Float(slothometer!.totalValue / Slothometer.maxValue), animated: true)
         loadRoom()
     }

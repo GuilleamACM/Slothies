@@ -22,12 +22,12 @@ class SlothGroup {
     
     //groupwide resources
     var food: Int
-    var money: Int
+    var distanceAccu: Double
     
     init() {
         slothies = [Sloth?](repeating: nil, count: 4)
         food = 100
-        money = 100
+        distanceAccu = 0
         slothometer = Slothometer()
     }
     
@@ -61,5 +61,13 @@ class SlothGroup {
             }
         })
         return has
+    }
+    
+    func walked(distance: Double){
+        self.distanceAccu += distance
+        if(self.distanceAccu>=1000){
+            self.distanceAccu -= 1000
+            self.food += 1
+        }
     }
 }
