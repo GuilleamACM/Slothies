@@ -24,11 +24,18 @@ class GameViewController: UIViewController {
     
     @IBOutlet var SlothyButtons: [UIButton]!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateInterface()
+        navigationController!.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         food = 100
         coins = 100
         updateInterface()
+        navigationController!.setNavigationBarHidden(true, animated: true)
     }
     
     func updateInterface() {

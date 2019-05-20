@@ -29,6 +29,7 @@ class SlothDisplayViewController: UIViewController {
         StatusContainerView.layer.cornerRadius = 10
         StatusContainerView.layer.masksToBounds = true
         firstUpdateInterface()
+        navigationController!.setNavigationBarHidden(false, animated: true)
     }
     
     func updateBars (anime: Bool) {
