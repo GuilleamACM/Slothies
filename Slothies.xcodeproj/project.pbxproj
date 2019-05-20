@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08E63891228D7E3700B6C664 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63890228D7E3700B6C664 /* GradientView.swift */; };
 		08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63892228D8AFC00B6C664 /* NetworkHandler.swift */; };
 		84F9D612228E880D005A6413 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D611228E880D005A6413 /* SharedConstants.swift */; };
 		BECAD4EF2290680B00583BCB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */; };
@@ -17,7 +16,6 @@
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
 		DC62C4CF2289E59100ADCB9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CE2289E59100ADCB9E /* Assets.xcassets */; };
-		DC62C4D22289E59100ADCB9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4D02289E59100ADCB9E /* LaunchScreen.storyboard */; };
 		DC62C4DD2289E59100ADCB9E /* SlothiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4DC2289E59100ADCB9E /* SlothiesTests.swift */; };
 		DC62C4E82289E59100ADCB9E /* SlothiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4E72289E59100ADCB9E /* SlothiesUITests.swift */; };
 		DC62C4F62289E63700ADCB9E /* LobbyScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4F52289E63700ADCB9E /* LobbyScreen.storyboard */; };
@@ -57,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08E63890228D7E3700B6C664 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		08E63892228D8AFC00B6C664 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		84F9D611228E880D005A6413 /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
 		BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC62C4CC2289E59000ADCB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC62C4CE2289E59100ADCB9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC62C4D12289E59100ADCB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC62C4D32289E59100ADCB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC62C4D82289E59100ADCB9E /* SlothiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlothiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4DC2289E59100ADCB9E /* SlothiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothiesTests.swift; sourceTree = "<group>"; };
@@ -155,34 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				BECAD4F222908DF200583BCB /* Slothies.entitlements */,
-				DC62C4C72289E59000ADCB9E /* AppDelegate.swift */,
-				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
-				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
-				DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */,
-				DC62C513228B0ABC00ADCB9E /* LoginScreen.storyboard */,
-				DC62C4F72289E65900ADCB9E /* LobbyViewController.swift */,
-				DC62C4F52289E63700ADCB9E /* LobbyScreen.storyboard */,
-				DC62C4FB2289E70E00ADCB9E /* SelectionViewController.swift */,
-				DC62C4F92289E6ED00ADCB9E /* SelectionScreen.storyboard */,
-				DC62C4FF2289E79300ADCB9E /* SlothCreationViewController.swift */,
-				DC62C4FD2289E77F00ADCB9E /* SlothCreationScreen.storyboard */,
-				DC62C5032289E7D400ADCB9E /* GameViewController.swift */,
-				DC62C5012289E7C900ADCB9E /* GameScreen.storyboard */,
-				DC62C5052289E82100ADCB9E /* SlothDisplayViewController.swift */,
-				DC62C5072289E82D00ADCB9E /* SlothDisplayScreen.storyboard */,
-				DC62C5092289E92400ADCB9E /* RoomGroup.swift */,
-				DC62C50B2289E9A500ADCB9E /* Player.swift */,
-				DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */,
-				DC62C5112289EC9C00ADCB9E /* Slothometer.swift */,
-				DC62C50F2289EB9900ADCB9E /* Sloth.swift */,
-				84F9D611228E880D005A6413 /* SharedConstants.swift */,
-				08E63892228D8AFC00B6C664 /* NetworkHandler.swift */,
-				08E63890228D7E3700B6C664 /* GradientView.swift */,
-				DC62C4CE2289E59100ADCB9E /* Assets.xcassets */,
-				DC62C4D02289E59100ADCB9E /* LaunchScreen.storyboard */,
 				DC62C4D32289E59100ADCB9E /* Info.plist */,
-				BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */,
-				BECAD4F02290773C00583BCB /* HealthHandler.swift */,
+				DC731E602293262500443D7D /* Client */,
+				DC731E612293265B00443D7D /* Data Model */,
+				84F9D611228E880D005A6413 /* SharedConstants.swift */,
+				DC62C4CE2289E59100ADCB9E /* Assets.xcassets */,
 			);
 			path = Slothies;
 			sourceTree = "<group>";
@@ -203,6 +176,115 @@
 				DC62C4E92289E59100ADCB9E /* Info.plist */,
 			);
 			path = SlothiesUITests;
+			sourceTree = "<group>";
+		};
+		DC731E602293262500443D7D /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C4C72289E59000ADCB9E /* AppDelegate.swift */,
+				DC731E632293282900443D7D /* Main */,
+				DC731E642293283000443D7D /* Login */,
+				DC731E652293283600443D7D /* Lobby */,
+				DC731E662293283F00443D7D /* Selection */,
+				DC731E672293284700443D7D /* SlothCreation */,
+				DC731E682293285700443D7D /* Game */,
+				DC731E692293285D00443D7D /* SlothDisplay */,
+				DC731E6A2293291300443D7D /* NetworkHandler */,
+				DC731E6B2293292600443D7D /* HealthHandler */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		DC731E612293265B00443D7D /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C5092289E92400ADCB9E /* RoomGroup.swift */,
+				DC62C50B2289E9A500ADCB9E /* Player.swift */,
+				DC62C50D2289EB0000ADCB9E /* SlothGroup.swift */,
+				DC62C5112289EC9C00ADCB9E /* Slothometer.swift */,
+				DC62C50F2289EB9900ADCB9E /* Sloth.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		DC731E632293282900443D7D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C4C92289E59000ADCB9E /* MainViewController.swift */,
+				DC62C4CB2289E59000ADCB9E /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DC731E642293283000443D7D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */,
+				DC62C513228B0ABC00ADCB9E /* LoginScreen.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DC731E652293283600443D7D /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C4F72289E65900ADCB9E /* LobbyViewController.swift */,
+				DC62C4F52289E63700ADCB9E /* LobbyScreen.storyboard */,
+			);
+			path = Lobby;
+			sourceTree = "<group>";
+		};
+		DC731E662293283F00443D7D /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C4FB2289E70E00ADCB9E /* SelectionViewController.swift */,
+				DC62C4F92289E6ED00ADCB9E /* SelectionScreen.storyboard */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		DC731E672293284700443D7D /* SlothCreation */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C4FF2289E79300ADCB9E /* SlothCreationViewController.swift */,
+				DC62C4FD2289E77F00ADCB9E /* SlothCreationScreen.storyboard */,
+			);
+			path = SlothCreation;
+			sourceTree = "<group>";
+		};
+		DC731E682293285700443D7D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C5032289E7D400ADCB9E /* GameViewController.swift */,
+				DC62C5012289E7C900ADCB9E /* GameScreen.storyboard */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		DC731E692293285D00443D7D /* SlothDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				DC62C5052289E82100ADCB9E /* SlothDisplayViewController.swift */,
+				DC62C5072289E82D00ADCB9E /* SlothDisplayScreen.storyboard */,
+			);
+			path = SlothDisplay;
+			sourceTree = "<group>";
+		};
+		DC731E6A2293291300443D7D /* NetworkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				08E63892228D8AFC00B6C664 /* NetworkHandler.swift */,
+			);
+			path = NetworkHandler;
+			sourceTree = "<group>";
+		};
+		DC731E6B2293292600443D7D /* HealthHandler */ = {
+			isa = PBXGroup;
+			children = (
+				BECAD4F02290773C00583BCB /* HealthHandler.swift */,
+				BECAD4EE2290680B00583BCB /* HealthKitSetupAssistant.swift */,
+			);
+			path = HealthHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC62C4FE2289E77F00ADCB9E /* SlothCreationScreen.storyboard in Resources */,
-				DC62C4D22289E59100ADCB9E /* LaunchScreen.storyboard in Resources */,
 				DC62C4CF2289E59100ADCB9E /* Assets.xcassets in Resources */,
 				DC62C5022289E7C900ADCB9E /* GameScreen.storyboard in Resources */,
 				DC62C514228B0ABC00ADCB9E /* LoginScreen.storyboard in Resources */,
@@ -352,7 +433,6 @@
 				DC62C5002289E79300ADCB9E /* SlothCreationViewController.swift in Sources */,
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
 				DC62C4FC2289E70E00ADCB9E /* SelectionViewController.swift in Sources */,
-				08E63891228D7E3700B6C664 /* GradientView.swift in Sources */,
 				DC62C5062289E82100ADCB9E /* SlothDisplayViewController.swift in Sources */,
 				DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */,
 				84F9D612228E880D005A6413 /* SharedConstants.swift in Sources */,
@@ -406,14 +486,6 @@
 				DC62C4CC2289E59000ADCB9E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DC62C4D02289E59100ADCB9E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC62C4D12289E59100ADCB9E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
