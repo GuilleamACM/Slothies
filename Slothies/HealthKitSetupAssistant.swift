@@ -22,17 +22,19 @@ class HealthKitSetupAssistant {
             return
         }
         
-        guard let activeEnergyBurned = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
-                
+        guard let stepsCount = HKObjectType.quantityType(forIdentifier: .stepCount),
+            let distance = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)
+            else {
                 completion(false, HealthkitSetupError.dataTypeNotAvailable)
                 return
         }
         
-        let healthKitTypesToWrite: Set<HKSampleType> = [activeEnergyBurned,
+        let healthKitTypesToWrite: Set<HKSampleType> = [stepsCount,
+                                                        distance,
                                                         HKObjectType.workoutType()]
         
-        let healthKitTypesToRead: Set<HKObjectType> = [HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-                                                        HKObjectType.workoutType()]
+        let healthKitTypesToRead: Set<HKObjectType> = [HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
+                                                       HKObjectType.workoutType()]
         
         HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite,
                                              read: healthKitTypesToRead) { (success, error) in
