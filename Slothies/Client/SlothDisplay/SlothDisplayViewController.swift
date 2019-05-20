@@ -83,12 +83,24 @@ class SlothDisplayViewController: UIViewController {
         SlothySprite.setImage(slothSprite, for: .normal)
     }
     
-    @IBAction func feedButtonPressed(_ sender: Any) {
+    func slothyEatsInterface() {
+    
+    }
+    
+    func slothySleepsInterface() {
         
     }
     
-    @IBAction func sleepButtonPressed(_ sender: Any) {
+    func slothyIdleInterface() {
         
+    }
+    
+    @IBAction func feedButtonPressed(_ sender: Any) {
+        slothyEatsInterface()
+    }
+    
+    @IBAction func sleepButtonPressed(_ sender: Any) {
+        slothySleepsInterface()
     }
     
     // MARK: - Navigation

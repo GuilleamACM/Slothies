@@ -16,11 +16,10 @@ enum Sex {
 enum State {
     case idle
     case sleeping
-    case sleepy
     case eating
-    case hungry
     case exercising
-    case dying
+    case sad
+    case dead
 }
 
 enum AutopsyResult {
