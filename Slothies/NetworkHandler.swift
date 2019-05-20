@@ -31,6 +31,14 @@ class NetworkHandler {
 
     }
     
+    func requestCreateSloth (room: RoomGroup, player: Player, name: String, sex: Sex, index: Int) -> RoomGroup? {
+        if room.createSloth(player: player, name: name, sex: sex, index: index) {
+            return room
+        } else {
+            return nil
+        }
+    }
+    
     init() {
         print("calling NetworkHandler INIT")
         let tempRoom = RoomGroup(name: "room", pass: "pass")
