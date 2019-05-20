@@ -66,9 +66,12 @@ class Slothometer {
     }
     
     //check workout information, sum appropriate number into values
-    func updateSpecificValue (slothy: Sloth, info: Any) {
+    func updateSpecificValue (slothy: Sloth, info: (steps: Double,distance: Double)) {
         //TODO: check workout information to see if everything is okay
-        addSpecificValue(slothy: slothy, val: 2 * secondsPerDay)
+        let stepsPercent = info.steps/stepsHealthPerDay
+        let slothmeters = stepsPercent*secondsPerDay
+        
+        addSpecificValue(slothy: slothy, val: slothmeters)
         //TODO: better define sloth reward for working out
         updateTotalValue()
     }

@@ -78,7 +78,7 @@ class Sloth : Hashable {
         state = .idle
     }
     
-    func update (prevTime: Date, currTime: Date, info: Any) {
+    func update (prevTime: Date, currTime: Date, info: (steps: Double, distance: Double)) {
         if let slothometer = slothometer {
             //pass information to slothometer
             slothometer.updateSpecificValue(slothy: self, info: info)

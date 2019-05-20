@@ -11,3 +11,4 @@ import Foundation
 let secondsPerDay: Double = 86400
 let daysPerWeek: Double = 7
 let maxPlayers = 4
+let stepsHealthPerDay:Double = 10000
