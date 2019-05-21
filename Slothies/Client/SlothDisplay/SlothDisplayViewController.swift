@@ -20,17 +20,15 @@ class SlothDisplayViewController: UIViewController {
     
     @IBOutlet weak var SlothometerProgressBar: UIProgressView!
     
+    @IBOutlet weak var SlothyBubble: UIImageView!
+    
     @IBOutlet weak var SlothyBubbleLabel: UILabel!
     
-    @IBOutlet weak var EatButton: UIButton!
+    @IBOutlet weak var AppleButton: UIButton!
     
     @IBOutlet weak var SleepButton: UIButton!
     
-    @IBOutlet weak var SlothySprite: UIButton!
-    
-    @IBAction func SlothyButton(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var SlothyButton: UIButton!
     
     var room: RoomGroup?
     var player: Player?//current player - use to check for feeding/sleeping permissions
@@ -45,6 +43,9 @@ class SlothDisplayViewController: UIViewController {
             renderSlothy(slothy: sloth)
         }
         
+        SlothyButton.isEnabled = false
+        AppleButton.isEnabled = false
+        SleepButton.isEnabled = false
         navigationController!.setNavigationBarHidden(false, animated: true)
         slothyInformationSetup()
         permissionSetup()
@@ -55,15 +56,26 @@ class SlothDisplayViewController: UIViewController {
             if let slothy = slothy {
                 let playerNameConfirmed = player.identifier.elementsEqual(slothy.player!.identifier)
                 let slothyNameConfirmed = slothy.name.elementsEqual(player.slothy!.name)
-                if !(playerNameConfirmed && slothyNameConfirmed) {
-                    hideSpeechAndButtons()
+                if playerNameConfirmed && slothyNameConfirmed {
+                    showSpeech()
+                    showAndEnableButtons()
                 }
             }
         }
     }
     
-    func hideSpeechAndButtons() {
-        //TODO
+    func showSpeech() {
+        SlothyBubble.isHidden = false
+        SlothyBubbleLabel.isHidden = false
+    }
+    
+    private var buttonsWorking = false
+    
+    func showAndEnableButtons () {
+        buttonsWorking = true
+        SlothyButton.isEnabled = true
+        AppleButton.isEnabled = true
+        SleepButton.isEnabled = true
     }
     
     func slothyInformationSetup () {
@@ -94,7 +106,17 @@ class SlothDisplayViewController: UIViewController {
             slothSprite = UIImage(named: "Female Slothy Idle")!
         }
         
-        SlothySprite.setImage(slothSprite, for: .normal)
+        SlothyButton.setImage(slothSprite, for: .normal)
+    }
+    
+    @IBAction func SlothyButton(_ sender: Any) {
+        if AppleButton.isHidden && buttonsWorking {
+            AppleButton.isHidden = false
+            SleepButton.isHidden = false
+        } else {
+            AppleButton.isHidden = true
+            SleepButton.isHidden = true
+        }
     }
     
     func slothyEatsInterface() {
