@@ -132,7 +132,14 @@ class SlothDisplayViewController: UIViewController {
     }
     
     @IBAction func feedButtonPressed(_ sender: Any) {
-        
+        if let (netRoom, netSlothy) = NetworkHandler.singleton.requestFeedSloth(room: room!, slothy: slothy!) {
+            room = netRoom
+            slothy = netSlothy
+            updateBars(anime: true)
+            slothyEatsInterface()
+            
+            //TODO: idle
+        }
     }
     
     @IBAction func sleepButtonPressed(_ sender: Any) {
