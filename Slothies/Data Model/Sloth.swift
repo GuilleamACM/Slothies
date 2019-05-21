@@ -48,6 +48,9 @@ class Sloth : Hashable {
     static let statusMinValue: Double = 0
     static let statusInitValue: Double = Sloth.statusMaxValue * 8 / 10
     static let hungerFeedingValue: Double = secondsPerDay / 2
+    static let feedingCooldown: Double = secondsPerMinute * 5
+    static let sleepingCooldown: Double = secondsPerMinute * 120
+    static let sleepingMultiplier: Double = 2000
     
     //nome, sexo
     let name: String
@@ -81,9 +84,20 @@ class Sloth : Hashable {
         lastUpdate = Date()
     }
     
+    func checkCanSleep () -> Bool {
+        if let slept = lastSlept {
+            return Sloth.sleepingCooldown < Date().timeIntervalSince(slept)
+        }
+        return true
+    }
+    
+    func putToSleep () {
+        state = .sleeping
+    }
+    
     func checkCanFeed () -> Bool {
         if let fed = lastFed {
-            return 5 * secondsPerMinute < Date().timeIntervalSince(fed)
+            return Sloth.feedingCooldown < Date().timeIntervalSince(fed)
         }
         return true
     }
@@ -107,13 +121,13 @@ class Sloth : Hashable {
         
         switch state {
         case .sleeping:
-            sleep += elapsed
+            sleep += elapsed * Sloth.sleepingMultiplier	
             hunger -= elapsed
             break
         case .eating:
             sleep -= elapsed
             hunger -= elapsed
-            if 5 * secondsPerMinute < currTime.timeIntervalSince(lastFed!) {
+            if Sloth.feedingCooldown < currTime.timeIntervalSince(lastFed!) {
                 state = .idle
             }
             break

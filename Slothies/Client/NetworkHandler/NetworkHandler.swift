@@ -48,6 +48,16 @@ class NetworkHandler {
         return nil
     }
     
+    func requestSleepSloth (room: RoomGroup, slothy: Sloth) -> (RoomGroup, Sloth)? {
+        if let slothy = room.getSlothy(withName: slothy.name){
+            if slothy.checkCanSleep() {
+                slothy.putToSleep()
+                return (room, slothy)
+            }
+        }
+        return nil
+    }
+    
     init() {
         print("calling NetworkHandler INIT")
         let tempRoom = RoomGroup(name: "room", pass: "pass")

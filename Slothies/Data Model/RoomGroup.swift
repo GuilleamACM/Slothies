@@ -15,8 +15,8 @@ class RoomGroup {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //nome e senha da sala
-    let name: String
-    let pass: String
+    var name: String
+    var pass: String
     
     //lista de jogadores
     var players: [Player?]
@@ -33,6 +33,13 @@ class RoomGroup {
         players = [Player?](repeating: nil, count: 4)
         prevTime = Date()
         slothGroup = SlothGroup()
+    }
+    
+    func copyFrom (room: RoomGroup) {
+        name = room.name
+        pass = room.pass
+        players = room.players
+        slothGroup = room.slothGroup
     }
     
     func getPlayer (withName: String) -> Player? {

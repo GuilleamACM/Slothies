@@ -10,6 +10,8 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    private static let updateInterval: Double = secondsPerMinute * 10
+    
     var room: RoomGroup?
     var player: Player?
     var slothometer: Slothometer?
@@ -33,14 +35,23 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        updateInterface()
         navigationController!.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateInterface()
+        initiatePeriodicUpdating()
         navigationController!.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func initiatePeriodicUpdating() {
+        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
+            if let netRoom = NetworkHandler.singleton.fetchRoom(code: self.room!.name, pass: self.room!.pass) {
+                self.room!.copyFrom(room: netRoom)
+                self.updateInterface()
+            }
+        })
     }
     
     func updateInterface() {
