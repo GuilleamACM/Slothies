@@ -24,7 +24,12 @@ class SelectionViewController: UIViewController {
     func loadRoom(room: RoomGroup) {
         for (index, player) in room.players.enumerated() {
             if let _ = player {
-                let image = UIImage(named: "Slothy\(index+1) Face")
+                let image: UIImage
+                if(room.getSlothy(index: index)!.sex == .male) {
+                    image = UIImage(named: "Male Slothy Face Idle")!
+                } else {
+                    image = UIImage(named: "Female Slothy Face Idle")!
+                }
                 SlotsButton[index].setBackgroundImage(nil, for: .normal)
                 SlotsButton[index].setImage(image, for: .normal)
                 SlotsButton[index].isEnabled = false

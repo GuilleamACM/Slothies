@@ -47,12 +47,12 @@ class NetworkHandler {
         accounts.append(p1)
         
         let p2 = Player(username: "player2" , pass: "p2")
-        let _ = tempRoom.createSloth(player: p2, name: "sloth2", sex: .female
+        let _ = tempRoom.createSloth(player: p2, name: "Atashi", sex: .female
             , index: 1)
         accounts.append(p2)
         
         let p3 = Player(username: "player3" , pass: "p3")
-        let _ = tempRoom.createSloth(player: p3, name: "sloth3", sex: .male
+        let _ = tempRoom.createSloth(player: p3, name: "Lolin", sex: .male
             , index: 2)
         accounts.append(p3)
         

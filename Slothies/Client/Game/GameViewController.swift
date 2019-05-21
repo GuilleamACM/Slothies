@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
                     image = UIImage(named: "Female Slothy Face Idle")!
                 }
                 SlothyButtons[index].setImage(image, for: .normal)
+                SlothyNameLabels[index].text = room!.getSlothy(index: index)!.name
             }
         }
     }
