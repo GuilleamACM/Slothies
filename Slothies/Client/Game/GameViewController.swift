@@ -46,9 +46,6 @@ class GameViewController: UIViewController {
     func loadRoom() {
         for (index, player) in room!.players.enumerated() {
             SlothyButtons[index].setBackgroundImage(nil, for: .normal)
-            if let label = SlothyButtons[index].titleLabel {
-                label.text = ""
-            }
             if let _ = player {
                 let image: UIImage
                 if (room!.getSlothy(index: index)!.sex == .male) {
@@ -58,6 +55,8 @@ class GameViewController: UIViewController {
                 }
                 SlothyButtons[index].setImage(image, for: .normal)
                 SlothyNameLabels[index].text = room!.getSlothy(index: index)!.name
+            } else {
+                SlothyNameLabels[index].text = ""
             }
         }
     }
