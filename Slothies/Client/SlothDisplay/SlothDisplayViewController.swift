@@ -30,6 +30,8 @@ class SlothDisplayViewController: UIViewController {
     
     @IBOutlet weak var SlothyButton: UIButton!
     
+    @IBOutlet weak var SlothySprite: UIImageView!
+    
     var room: RoomGroup?
     var player: Player?//current player - use to check for feeding/sleeping permissions
     var slothy: Sloth?
@@ -43,7 +45,7 @@ class SlothDisplayViewController: UIViewController {
             renderSlothy(slothy: sloth)
         }
         
-        SlothyButton.isEnabled = false
+        SlothyButton.isHidden = true
         AppleButton.isEnabled = false
         SleepButton.isEnabled = false
         navigationController!.setNavigationBarHidden(false, animated: true)
@@ -73,7 +75,7 @@ class SlothDisplayViewController: UIViewController {
     
     func showAndEnableButtons () {
         buttonsWorking = true
-        SlothyButton.isEnabled = true
+        SlothyButton.isHidden = false
         AppleButton.isEnabled = true
         SleepButton.isEnabled = true
     }
@@ -105,7 +107,7 @@ class SlothDisplayViewController: UIViewController {
         } else {
             slothSprite = UIImage(named: "Female Slothy Idle")!
         }
-        
+        SlothySprite.image = slothSprite
         SlothyButton.setImage(slothSprite, for: .normal)
     }
     

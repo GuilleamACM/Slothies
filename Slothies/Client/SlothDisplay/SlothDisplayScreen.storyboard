@@ -82,7 +82,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-gf-TpO" userLabel="Slothy Sprite Button">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Idle" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-zb-mG0" userLabel="Slothy Sprite">
+                                <rect key="frame" x="37" y="385" width="272" height="409"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-gf-TpO" userLabel="Slothy Sprite Button">
                                 <rect key="frame" x="37" y="385" width="272" height="409"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Slothy Eating"/>
@@ -141,6 +145,7 @@
                         <outlet property="SlothyBubbleLabel" destination="T9y-iC-7wo" id="caC-Zw-gr3"/>
                         <outlet property="SlothyButton" destination="1mA-gf-TpO" id="2MR-Gv-Uli"/>
                         <outlet property="SlothyNameLabel" destination="sEk-sJ-aDu" id="ncz-3L-fjr"/>
+                        <outlet property="SlothySprite" destination="4hQ-zb-mG0" id="awl-dB-bGH"/>
                         <outlet property="StatusContainerView" destination="4Ax-KH-K8P" id="Zbh-uk-5vg"/>
                     </connections>
                 </viewController>
@@ -152,6 +157,7 @@
     <resources>
         <image name="Apple Icon" width="256" height="256"/>
         <image name="Chat Bubble" width="87" height="30"/>
+        <image name="Female Slothy Idle" width="1980" height="2800"/>
         <image name="Sloth Icon" width="500" height="500"/>
         <image name="Slothy Eating" width="1980" height="2800"/>
         <image name="Spleep Icon" width="409.60000610351562" height="409.60000610351562"/>
