@@ -46,8 +46,8 @@ class Sloth : Hashable {
     //key values for sleep and hunger
     static let statusMaxValue: Double = secondsPerDay * 2
     static let statusMinValue: Double = 0
-    static let statusInitValue: Double = Sloth.statusMaxValue
-    static let hungerFeedingValue: Double = secondsPerDay
+    static let statusInitValue: Double = Sloth.statusMaxValue * 8 / 10
+    static let hungerFeedingValue: Double = secondsPerDay / 2
     
     //nome, sexo
     let name: String
@@ -55,6 +55,9 @@ class Sloth : Hashable {
     
     //fome, sono
     var hunger, sleep: Double
+    //ultima alimentacao e soneca
+    var lastUpdate: Date
+    var lastFed, lastSlept: Date?
     
     var sloth: Double {
         return slothometer!.individualValues[self]!
@@ -75,25 +78,49 @@ class Sloth : Hashable {
         hunger = Sloth.statusInitValue
         sleep = Sloth.statusInitValue
         state = .idle
+        lastUpdate = Date()
     }
     
-    func update (prevTime: Date, currTime: Date, info: (steps: Double, distance: Double)) {
+    func checkCanFeed () -> Bool {
+        if let fed = lastFed {
+            return 5 * secondsPerMinute < Date().timeIntervalSince(fed)
+        }
+        return true
+    }
+    
+    func feed () {
+        hunger += Sloth.hungerFeedingValue
+        state = .eating
+    }
+    
+    func updateWithInfo (currTime: Date, info: (steps: Double, distance: Double)) {
         if let slothometer = slothometer {
-            //pass information to slothometer
             slothometer.updateSpecificValue(slothy: self, info: info)
         }
         
-        let elapsed = Double(currTime.timeIntervalSince(prevTime))
-
-        //
+        update(currTime)
+    }
+    
+    func update(_ currTime: Date) {
+        let elapsed = Double(currTime.timeIntervalSince(lastUpdate))
+        lastUpdate = Date()
+        
         switch state {
         case .sleeping:
             sleep += elapsed
             hunger -= elapsed
             break
+        case .eating:
+            sleep -= elapsed
+            hunger -= elapsed
+            if 5 * secondsPerMinute < currTime.timeIntervalSince(lastFed!) {
+                state = .idle
+            }
+            break
         default:
             sleep -= elapsed
             hunger -= elapsed
+            break
         }
     }
 }

@@ -31,8 +31,29 @@ class SlothGroup {
         slothometer = Slothometer()
     }
     
+    func getSlothy (withName: String) -> Sloth? {
+        for maybeSlothy in slothies {
+            if let slothy = maybeSlothy {
+                if slothy.name.elementsEqual(withName) {
+                    return slothy
+                }
+            }
+        }
+        return nil
+    }
+    
     func getSlothy (index: Int) -> Sloth? {
         return slothies[index]
+    }
+    
+    func hasSlothy (withName: String) -> Bool {
+        var has = false
+        slothies.forEach({
+            if let slothy = $0 {
+                has = has || slothy.name.elementsEqual(withName)
+            }
+        })
+        return has
     }
     
     func forSlothy (fun: (Sloth?) -> ()) {
@@ -48,19 +69,13 @@ class SlothGroup {
         slothometer.addSloth(slothy: sloth)
     }
     
-    //pass to slothometer
     func update (prevTime: Date, currTime: Date) {
-        slothometer.update(prevTime: prevTime, currTime: currTime)
-    }
-    
-    func hasSloth (withName: String) -> Bool {
-        var has = false
-        slothies.forEach({
-            if let slothy = $0 {
-                has = has || slothy.name.elementsEqual(withName)
+        for maybeSlothy in slothies {
+            if let slothy = maybeSlothy {
+                slothy.update(currTime)
             }
-        })
-        return has
+        }
+        slothometer.update(prevTime: prevTime, currTime: currTime)
     }
     
     func walked(distance: Double){

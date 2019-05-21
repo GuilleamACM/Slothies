@@ -89,7 +89,7 @@ class Player {
     //fetch user's activity since previous access and update sloth with it
     func update (date: Date, info: (steps: Double, distance: Double)) {
         if let slothy = slothy {
-            slothy.update(prevTime: lastUpdate, currTime: date, info: info)
+            slothy.updateWithInfo(currTime: date, info: info)
         }
         lastUpdate = date
     }

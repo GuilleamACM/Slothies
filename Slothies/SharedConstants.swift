@@ -8,6 +8,7 @@
 
 import Foundation
 
+let secondsPerMinute: Double = 60
 let secondsPerDay: Double = 86400
 let daysPerWeek: Double = 7
 let maxPlayers = 4

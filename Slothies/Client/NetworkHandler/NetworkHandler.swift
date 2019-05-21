@@ -14,7 +14,6 @@ var rooms: [RoomGroup] = []
 class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
-
     
     func fetchRoom(code: String, pass: String) -> RoomGroup? {
         if let index = rooms.firstIndex(where: {$0.name == code && $0.pass == pass}) {
@@ -39,6 +38,16 @@ class NetworkHandler {
         }
     }
     
+    func requestFeedSloth (room: RoomGroup, slothy: Sloth) -> (RoomGroup, Sloth)? {
+        if let slothy = room.getSlothy(withName: slothy.name){
+            if slothy.checkCanFeed() {
+                slothy.feed()
+                return (room, slothy)
+            }
+        }
+        return nil
+    }
+    
     init() {
         print("calling NetworkHandler INIT")
         let tempRoom = RoomGroup(name: "room", pass: "pass")
@@ -57,9 +66,5 @@ class NetworkHandler {
         accounts.append(p3)
         
         rooms.append(tempRoom)
-
-        
-        
-
     }
 }

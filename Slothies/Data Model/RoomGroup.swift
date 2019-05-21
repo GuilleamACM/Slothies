@@ -35,6 +35,10 @@ class RoomGroup {
         slothGroup = SlothGroup()
     }
     
+    func getSlothy (withName: String) -> Sloth? {
+        return slothGroup.getSlothy(withName: withName)
+    }
+    
     func getSlothy (index: Int) -> Sloth? {
         return slothGroup.getSlothy(index: index)
     }
@@ -70,7 +74,7 @@ class RoomGroup {
     
     //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias
     func createSloth (player: Player, name: String, sex: Sex, index: Int) -> Bool {
-        if (slothGroup.hasSloth(withName: name)) {
+        if (slothGroup.hasSlothy(withName: name)) {
             return false
         }
         let slothy = Sloth(name: name, sex: sex)
