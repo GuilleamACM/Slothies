@@ -24,6 +24,12 @@ class GameViewController: UIViewController {
     
     @IBOutlet var SlothyNameLabels: [UILabel]!
     
+    override func viewWillAppear(_ animated: Bool) {
+        room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
+        player = room!.getPlayer(withName: player!.identifier)
+        slothometer = room!.slothGroup.slothometer
+        updateInterface()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
