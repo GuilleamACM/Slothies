@@ -35,6 +35,17 @@ class RoomGroup {
         slothGroup = SlothGroup()
     }
     
+    func getPlayer (withName: String) -> Player? {
+        for maybePlayer in players {
+            if let player = maybePlayer {
+                if player.identifier.elementsEqual(withName) {
+                    return player
+                }
+            }
+        }
+        return nil
+    }
+    
     func getSlothy (withName: String) -> Sloth? {
         return slothGroup.getSlothy(withName: withName)
     }
