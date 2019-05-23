@@ -9,6 +9,7 @@ target 'Slothies' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI'
   pod 'FirebaseUI/Google'
 
   target 'SlothiesTests' do
