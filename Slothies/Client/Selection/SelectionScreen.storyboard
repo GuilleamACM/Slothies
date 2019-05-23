@@ -18,41 +18,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-uK-ILE">
-                                <rect key="frame" x="0.0" y="57" width="375" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-Px-QyT">
-                                <rect key="frame" x="0.0" y="50" width="375" height="811"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-Fv-Way" userLabel="Slothy1 Button">
-                                <rect key="frame" x="39" y="166" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ou8-fe-922">
+                                <rect key="frame" x="0.0" y="44" width="375" height="254"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-uK-ILE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="254" id="f8f-uj-KL8"/>
+                                            <constraint firstAttribute="width" constant="375" id="jfu-xk-rr0"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6aY-2H-oEW">
+                                <rect key="frame" x="0.0" y="118" width="375" height="694"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-Px-QyT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="694"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-Fv-Way" userLabel="Slothy1 Button">
+                                <rect key="frame" x="43.666666666666657" y="196.66666666666666" width="100" height="99.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="LiL-oL-xGv"/>
+                                    <constraint firstAttribute="width" constant="100" id="Mrh-eY-yeb"/>
+                                </constraints>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
                                     <action selector="Slot1Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="09m-Jr-GnK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
-                                <rect key="frame" x="16" y="293" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
+                                <rect key="frame" x="25.333333333333329" y="320" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="40p-NZ-Zwt"/>
+                                    <constraint firstAttribute="width" constant="100" id="W2j-zv-TqH"/>
+                                </constraints>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
                                     <action selector="Slot3Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="2zD-oc-Ak2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-aB-dvN" userLabel="Slothy4 Button">
-                                <rect key="frame" x="197" y="190" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-aB-dvN" userLabel="Slothy4 Button">
+                                <rect key="frame" x="175" y="196.66666666666666" width="100" height="99.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="b7p-0H-Ooj"/>
+                                    <constraint firstAttribute="width" constant="100" id="gzb-XS-K7p"/>
+                                </constraints>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
                                     <action selector="Slot2Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="AK2-jG-w4D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Qb-jzs" userLabel="Slothy2 Button">
-                                <rect key="frame" x="235" y="298" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Qb-jzs" userLabel="Slothy2 Button">
+                                <rect key="frame" x="231.33333333333337" y="315.66666666666669" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ErA-Pz-zPb"/>
+                                    <constraint firstAttribute="width" constant="100" id="F3b-mb-Syq"/>
+                                </constraints>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
                                     <action selector="Slot4Pressed:" destination="sRX-Rv-vUY" eventType="touchUpInside" id="Zpf-X5-0Kj"/>
@@ -60,6 +84,24 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.42792421579360962" green="0.69627994298934937" blue="0.87060850858688354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RUQ-Qb-jzs" firstAttribute="centerY" secondItem="Yz3-Pt-HSv" secondAttribute="centerY" multiplier="0.89" id="2uK-O7-kY4"/>
+                            <constraint firstAttribute="bottom" secondItem="6aY-2H-oEW" secondAttribute="bottom" id="7pk-Lk-AhX"/>
+                            <constraint firstItem="Ou8-fe-922" firstAttribute="top" secondItem="Yz3-Pt-HSv" secondAttribute="top" id="IbR-uE-4My"/>
+                            <constraint firstItem="RUQ-Qb-jzs" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="1.5" id="Iez-cK-99l"/>
+                            <constraint firstItem="tMz-aB-dvN" firstAttribute="centerY" secondItem="Yz3-Pt-HSv" secondAttribute="centerY" multiplier="0.6" id="O13-4u-m0D"/>
+                            <constraint firstItem="7Gf-Fv-Way" firstAttribute="centerY" secondItem="Yz3-Pt-HSv" secondAttribute="centerY" multiplier="0.6" id="P4a-pb-RrG"/>
+                            <constraint firstItem="6aY-2H-oEW" firstAttribute="top" secondItem="Ou8-fe-922" secondAttribute="bottom" constant="-180" id="REZ-ub-Lqh"/>
+                            <constraint firstItem="6aY-2H-oEW" firstAttribute="centerX" secondItem="Ou8-fe-922" secondAttribute="centerX" id="Ug2-2o-tH4"/>
+                            <constraint firstItem="6aY-2H-oEW" firstAttribute="trailing" secondItem="Yz3-Pt-HSv" secondAttribute="trailing" id="W4l-HB-Ule"/>
+                            <constraint firstItem="Ou8-fe-922" firstAttribute="leading" secondItem="Yz3-Pt-HSv" secondAttribute="leading" id="XUe-Ew-2Ip"/>
+                            <constraint firstItem="6aY-2H-oEW" firstAttribute="leading" secondItem="Yz3-Pt-HSv" secondAttribute="leading" id="bN3-P7-gif"/>
+                            <constraint firstItem="sWF-3d-sRr" firstAttribute="centerY" secondItem="Yz3-Pt-HSv" secondAttribute="centerY" multiplier="0.9" id="eE5-ok-zEW"/>
+                            <constraint firstAttribute="trailing" secondItem="Ou8-fe-922" secondAttribute="trailing" id="gmA-tw-YCo"/>
+                            <constraint firstItem="tMz-aB-dvN" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="1.2" id="jDk-Em-vfs"/>
+                            <constraint firstItem="sWF-3d-sRr" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="0.4" constant="0.40000000000000002" id="muE-dR-4YI"/>
+                            <constraint firstItem="7Gf-Fv-Way" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="0.5" id="oyU-nn-5Vd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yz3-Pt-HSv"/>
                     </view>
                     <connections>
