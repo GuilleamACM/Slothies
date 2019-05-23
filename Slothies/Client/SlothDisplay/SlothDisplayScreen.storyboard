@@ -19,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothy's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-sJ-aDu">
-                                <rect key="frame" x="133" y="120" width="149" height="27"/>
+                                <rect key="frame" x="133" y="85" width="149" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ax-KH-K8P">
-                                <rect key="frame" x="72" y="170" width="270" height="155"/>
+                                <rect key="frame" x="72" y="128" width="270" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-Sr-MBw">
-                                <rect key="frame" x="72" y="170" width="270" height="155"/>
+                                <rect key="frame" x="72" y="128" width="270" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-KT-BMU">
@@ -106,17 +106,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-f8-2SZ" userLabel="Eat Button">
-                                <rect key="frame" x="233" y="373" width="53" height="53"/>
+                                <rect key="frame" x="105" y="297" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Apple Icon"/>
+                                <state key="normal" image="FeedButton"/>
                                 <connections>
                                     <action selector="feedButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="6N3-MJ-T9x"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-yx-eds" userLabel="Sleep Button">
-                                <rect key="frame" x="302" y="373" width="53" height="53"/>
+                                <rect key="frame" x="212" y="297" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Spleep Icon"/>
+                                <state key="normal" image="SleepButton"/>
                                 <connections>
                                     <action selector="sleepButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="apL-op-mbV"/>
                                 </connections>
@@ -157,7 +157,9 @@
     <resources>
         <image name="Apple Icon" width="256" height="256"/>
         <image name="Chat Bubble" width="87" height="30"/>
+        <image name="FeedButton" width="89" height="89"/>
         <image name="Female Slothy Idle" width="1980" height="2800"/>
+        <image name="SleepButton" width="89" height="89"/>
         <image name="Sloth Icon" width="500" height="500"/>
         <image name="Slothy Eating" width="1980" height="2800"/>
         <image name="Spleep Icon" width="409.60000610351562" height="409.60000610351562"/>
