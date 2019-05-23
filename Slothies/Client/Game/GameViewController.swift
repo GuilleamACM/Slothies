@@ -14,6 +14,22 @@ class GameViewController: UIViewController {
     var player: Player?
     var slothometer: Slothometer?
 
+    @IBOutlet weak var alertView: UIView!
+    
+    @IBOutlet weak var alertBlur: UIView!
+    
+    @IBOutlet weak var walkedStepsLabel: UILabel!
+    
+    @IBOutlet weak var rewardsLabel: UILabel!
+    
+    @IBOutlet weak var appleImage: UIImageView!
+    
+    @IBOutlet weak var appleCountLabel: UILabel!
+    
+    @IBOutlet weak var coinImage: UIImageView!
+    
+    @IBOutlet weak var coinCountLabel: UILabel!
+    
     @IBOutlet weak var SlothometerUIProgressView: UIProgressView!
     
     @IBOutlet weak var FoodLabel: UILabel!
@@ -39,8 +55,28 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showAlert(steps: 1000, food: 10, coins: 5)
         updateInterface()
         navigationController!.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func showAlert(steps: Int, food:Int, coins:Int) {
+        alertView.layer.cornerRadius = 10
+        alertView.layer.masksToBounds = true
+        alertView.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0)
+        alertBlur.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        alertBlur.addSubview(blurEffectView)
+        walkedStepsLabel.text = "You walked \(steps) steps"
+        appleCountLabel.text = "+ \(food)"
+        coinCountLabel.text = "+ \(coins)"
+    }
+    
+    func closeAlert() {
+        
     }
     
     func updateInterface() {
