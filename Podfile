@@ -8,6 +8,8 @@ target 'Slothies' do
   # Pods for Slothies
 
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Google'
 
   target 'SlothiesTests' do
     inherit! :search_paths
