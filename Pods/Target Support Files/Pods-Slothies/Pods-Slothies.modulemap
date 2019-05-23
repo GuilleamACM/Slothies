@@ -1,0 +1,6 @@
+framework module Pods_Slothies {
+  umbrella header "Pods-Slothies-umbrella.h"
+
+  export *
+  module * { export * }
+}
