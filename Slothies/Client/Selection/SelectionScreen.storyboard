@@ -18,8 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-uK-ILE">
+                                <rect key="frame" x="0.0" y="57" width="375" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-Px-QyT">
+                                <rect key="frame" x="0.0" y="50" width="375" height="811"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-Fv-Way" userLabel="Slothy1 Button">
-                                <rect key="frame" x="80" y="268" width="100" height="100"/>
+                                <rect key="frame" x="39" y="166" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
@@ -27,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
-                                <rect key="frame" x="53" y="392" width="100" height="100"/>
+                                <rect key="frame" x="16" y="293" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
@@ -35,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMz-aB-dvN" userLabel="Slothy4 Button">
-                                <rect key="frame" x="246" y="293" width="100" height="100"/>
+                                <rect key="frame" x="197" y="190" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
@@ -43,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Qb-jzs" userLabel="Slothy2 Button">
-                                <rect key="frame" x="218" y="407" width="100" height="100"/>
+                                <rect key="frame" x="235" y="298" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Plus" backgroundImage="Button background"/>
                                 <connections>
@@ -51,7 +59,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.42792421579360962" green="0.69627994298934937" blue="0.87060850858688354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Yz3-Pt-HSv"/>
                     </view>
                     <connections>
@@ -64,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTQ-nK-0Rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="25"/>
+            <point key="canvasLocation" x="408.80000000000001" y="24.384236453201972"/>
         </scene>
         <!--SlothCreationScreen-->
         <scene sceneID="q7C-JB-e0c">
@@ -78,5 +86,7 @@
     <resources>
         <image name="Button background" width="67" height="67"/>
         <image name="Plus" width="25" height="25"/>
+        <image name="cloud" width="375" height="254"/>
+        <image name="tree" width="375" height="731"/>
     </resources>
 </document>
