@@ -8,7 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+import Firebase
+import GoogleSignIn
+
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     @IBOutlet weak var EnterUsernameField: UITextField!
     
@@ -28,12 +31,8 @@ class LoginViewController: UIViewController {
         LoginButton.layer.cornerRadius = 10
         LoginButton.layer.masksToBounds = true
         
-        //hardcoded admin account
-        //let admin = Player(username: "admin" , pass: "admin123")
-        //accounts.append(admin)
-
-        // Do any additional setup after loading the view.
-        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        // TODO(developer) Configure the sign-in button look/feel
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -50,7 +49,9 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    func signIn (credential: AuthCredential) {
+        print("do stuff")
+    }
     
     // MARK: - Navigation
 
