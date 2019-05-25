@@ -7,16 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
-class Player {
+class Player: Equatable {
     //deve conter informacoes e metodos relacionados a ao jogador
     
     //estes comentarios foram escritos sem muito pensamento
     //se achar melhor, sinta-se disposto a ignora-los
     
     //identificador unico ao jogador. não é definitivo
-    let identifier: String
-    let password: String
+    let credential: AuthCredential
     
     var lastUpdate: Date
     
@@ -30,13 +30,15 @@ class Player {
     //ainda não olhamos healthkit: não sabemos se é necessário, ou de que dado se trata
     var previousHealthStatus: Int
     
-    
-    init(username: String, pass: String) {
-        self.identifier = username
-        self.password = pass
+    init(credential: AuthCredential) {
+        self.credential = credential
         self.previousHealthStatus = 0
         self.coins = 0
         self.lastUpdate = Date()
+    }
+    
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.credential.hash == rhs.credential.hash
     }
     
     func setSloth(sloth: Sloth) {

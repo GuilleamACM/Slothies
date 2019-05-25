@@ -36,21 +36,24 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     @IBAction func loginButton(_ sender: Any) {
+        /* CODE INVALIDATED BY SWITCH TO GOOGLE AUTH
         if let username = self.EnterUsernameField.text {
             if let password = self.EnterPasswordField.text {
                 print("\(username):\(password)")
-                if let currentPlayer = NetworkHandler.singleton.fetchPlayer(username: username, pass: password) {
+                if let currentPlayer = NetworkHandler.singleton.fetchPlayer(credential: username, pass: password) {
                     player = currentPlayer
                     performSegue(withIdentifier: "ToLobbyScreen", sender: nil)
                 }
                 
             }
         }
-        
+        */
     }
     
     func signIn (credential: AuthCredential) {
         print("do stuff")
+        player = NetworkHandler.singleton.fetchOrCreatePlayer(credential: credential)
+        performSegue(withIdentifier: "ToLobbyScreen", sender: self)
     }
     
     // MARK: - Navigation

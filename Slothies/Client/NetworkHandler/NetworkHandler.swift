@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var accounts: [Player] = []
 var rooms: [RoomGroup] = []
@@ -22,12 +23,12 @@ class NetworkHandler {
         return nil
     }
     
-    func fetchPlayer(username: String, pass: String) -> Player? {
-        if let index = accounts.firstIndex(where: {$0.identifier == username && $0.password == pass}) {
+    func fetchOrCreatePlayer(credential: AuthCredential) -> Player {
+        if let index = accounts.firstIndex(where: {$0.credential.hash == credential.hash}) {
             return accounts[index]
         }
-        return nil
-
+        accounts.append(Player(credential: credential))
+        return accounts.last!
     }
     
     func requestCreateSloth (room: RoomGroup, player: Player, name: String, sex: Sex, index: Int) -> RoomGroup? {
@@ -62,6 +63,7 @@ class NetworkHandler {
         print("calling NetworkHandler INIT")
         let tempRoom = RoomGroup(name: "room", pass: "pass")
         
+        /*
         let p1 = Player(username: "player1" , pass: "p1")
         accounts.append(p1)
         
@@ -74,6 +76,7 @@ class NetworkHandler {
         let _ = tempRoom.createSloth(player: p3, name: "Lolin", sex: .male
             , index: 2)
         accounts.append(p3)
+         */
         
         rooms.append(tempRoom)
     }

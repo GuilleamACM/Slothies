@@ -56,7 +56,7 @@ class SlothDisplayViewController: UIViewController {
     func permissionSetup () {
         if let player = player {
             if let slothy = slothy {
-                let playerNameConfirmed = player.identifier.elementsEqual(slothy.player!.identifier)
+                let playerNameConfirmed = player == slothy.player!
                 let slothyNameConfirmed = slothy.name.elementsEqual(player.slothy!.name)
                 if playerNameConfirmed && slothyNameConfirmed {
                     showSpeech()

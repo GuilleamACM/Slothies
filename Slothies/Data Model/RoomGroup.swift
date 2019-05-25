@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RoomGroup {
     //deve conter informacoes e metodos relacionados a sala, aos jogadores dela, e talvez as preguicas
@@ -42,10 +43,10 @@ class RoomGroup {
         slothGroup = room.slothGroup
     }
     
-    func getPlayer (withName: String) -> Player? {
+    func getPlayer (withCredentials: AuthCredential) -> Player? {
         for maybePlayer in players {
             if let player = maybePlayer {
-                if player.identifier.elementsEqual(withName) {
+                if player.credential.hashValue == withCredentials.hashValue {
                     return player
                 }
             }
@@ -69,7 +70,7 @@ class RoomGroup {
         var playerToUpdate: Player? = nil
         for play in players {
             if let play = play {
-                if play.identifier.elementsEqual(player.identifier) {
+                if play == player {
                     playerToUpdate = play
                 }
             }
