@@ -56,10 +56,19 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SlothometerUIProgressView.layer.cornerRadius = 10
+        SlothometerUIProgressView.layer.masksToBounds = true
         showAlert(steps: 1000, food: 10, coins: 5)
+        SlothometerUIProgressView.transform = SlothometerUIProgressView.transform.scaledBy(x: 1, y: 6)
         updateInterface()
         initiatePeriodicUpdating()
         navigationController!.setNavigationBarHidden(true, animated: true)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        closeAlert()
     }
     
     func initiatePeriodicUpdating() {
@@ -87,7 +96,7 @@ class GameViewController: UIViewController {
     }
     
     func closeAlert() {
-        
+        alertView.alpha = 0
     }
     
     func updateInterface() {
