@@ -28,6 +28,31 @@ class RoomGroup {
     //referencia ao grupo de preguiças
     var slothGroup: SlothGroup
     
+    //dictionary for roomgroup
+    var dictionary: [String: Any] {
+        return [
+            "name":name,
+            "pass":pass,
+            "players": [], //TODO credential IDTOKEN
+            "prevTime":prevTime.timeIntervalSince1970,
+            "slothGroup":slothGroup.getSlothiesName()
+        ]
+    }
+    
+    convenience init? (dictionary: [String:Any]){
+        guard let name = dictionary["name"] as? String,
+            let pass = dictionary["pass"] as? String,
+            //let players
+            let interval = dictionary["prevTime"] as? TimeInterval,
+            let slothGroup = dictionary["slothGroup"] as? String
+        else{ return nil }
+        
+        self.init(name: name, pass: pass)
+        self.prevTime = Date(timeIntervalSince1970: interval)
+        // self.players = players TODO
+        //self.slothGroup = slothGroup TODO
+    }
+    
     init (name:String, pass:String) {
         self.name = name
         self.pass = pass
