@@ -12,7 +12,9 @@ class SlothDisplayViewController: UIViewController {
 
     @IBOutlet weak var SlothyNameLabel: UILabel!
     
-    @IBOutlet weak var StatusContainerView: UIView!
+    @IBOutlet weak var statusView: UIView!
+    
+    @IBOutlet weak var statusBlur: UIView!
     
     @IBOutlet weak var HungerProgressBar: UIProgressView!
     
@@ -38,9 +40,7 @@ class SlothDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StatusContainerView.layer.cornerRadius = 10
-        StatusContainerView.layer.masksToBounds = true
-        
+        showSlothyStatus()
         if let sloth = self.slothy as Sloth? {
             renderSlothy(slothy: sloth)
         }
@@ -71,6 +71,27 @@ class SlothDisplayViewController: UIViewController {
         SlothyBubbleLabel.isHidden = false
     }
     
+    func showSlothyStatus() {
+        statusView.layer.cornerRadius = 10
+        statusView.layer.masksToBounds = true
+        HungerProgressBar.layer.cornerRadius = 10
+        HungerProgressBar.layer.masksToBounds = true
+        HungerProgressBar.transform = HungerProgressBar.transform.scaledBy(x: 1, y: 4)
+        SleepProgressBar.layer.cornerRadius = 10
+        SleepProgressBar.layer.masksToBounds = true
+        SleepProgressBar.transform = SleepProgressBar.transform.scaledBy(x: 1, y: 4)
+        SlothometerProgressBar.layer.cornerRadius = 10
+        SlothometerProgressBar.layer.masksToBounds = true
+        SlothometerProgressBar.transform = SlothometerProgressBar.transform.scaledBy(x: 1, y: 4)
+        statusView.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0)
+        statusBlur.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        statusBlur.addSubview(blurEffectView)
+    }
+    
     private var buttonsWorking = false
     
     func showAndEnableButtons () {
@@ -89,8 +110,31 @@ class SlothDisplayViewController: UIViewController {
     
     func updateBars (anime: Bool) {
         HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
+        if (HungerProgressBar.progress >= 0.7) {
+            HungerProgressBar.progressTintColor = .green
+        } else if HungerProgressBar.progress >= 0.3 {
+            HungerProgressBar.progressTintColor = .yellow
+        } else {
+            HungerProgressBar.progressTintColor = .red
+        }
+        
         SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.statusMaxValue), animated: anime)
+        if (SleepProgressBar.progress >= 0.7) {
+            SleepProgressBar.progressTintColor = .green
+        } else if SleepProgressBar.progress >= 0.3 {
+            SleepProgressBar.progressTintColor = .yellow
+        } else {
+            SleepProgressBar.progressTintColor = .red
+        }
+        
         SlothometerProgressBar.setProgress(Float(slothy!.sloth / Slothometer.maxValue), animated: anime)
+        if (SlothometerProgressBar.progress >= 0.7) {
+            SlothometerProgressBar.progressTintColor = .green
+        } else if SlothometerProgressBar.progress >= 0.3 {
+            SlothometerProgressBar.progressTintColor = .yellow
+        } else {
+            SlothometerProgressBar.progressTintColor = .red
+        }
     }
     
     func receiveData(room: RoomGroup, slothy: Sloth, player: Player) {
@@ -118,19 +162,52 @@ class SlothDisplayViewController: UIViewController {
         } else {
             AppleButton.isHidden = true
             SleepButton.isHidden = true
+            slothyIdleInterface()
         }
     }
     
     func slothyEatsInterface() {
-    
+        var slothSprite: UIImage
+        
+        if(slothy!.sex == .male) {
+            slothSprite = UIImage(named: "Male Slothy Eating")!
+        } else {
+            slothSprite = UIImage(named: "Female Slothy Eating")!
+        }
+        SlothySprite.image = slothSprite
+        SlothyButton.setImage(slothSprite, for: .normal)
+        SlothyBubble.isHidden = false
+        SlothyBubbleLabel.isHidden = false
+        SlothyBubbleLabel.text = "Nammm"
     }
     
     func slothySleepsInterface() {
+        var slothSprite: UIImage
         
+        if(slothy!.sex == .male) {
+            slothSprite = UIImage(named: "Male Slothy Sleeping")!
+        } else {
+            slothSprite = UIImage(named: "Female Slothy Sleeping")!
+        }
+        SlothySprite.image = slothSprite
+        SlothyButton.setImage(slothSprite, for: .normal)
+        SlothyBubble.isHidden = true
+        SlothyBubbleLabel.isHidden = true
     }
     
     func slothyIdleInterface() {
+        var slothSprite: UIImage
         
+        if(slothy!.sex == .male) {
+            slothSprite = UIImage(named: "Male Slothy Idle")!
+        } else {
+            slothSprite = UIImage(named: "Female Slothy Idle")!
+        }
+        SlothySprite.image = slothSprite
+        SlothyButton.setImage(slothSprite, for: .normal)
+        SlothyBubble.isHidden = false
+        SlothyBubbleLabel.isHidden = false
+        SlothyBubbleLabel.text = "Click Me"
     }
     
     @IBAction func feedButtonPressed(_ sender: Any) {

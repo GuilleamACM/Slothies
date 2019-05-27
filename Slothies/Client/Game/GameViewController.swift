@@ -59,7 +59,7 @@ class GameViewController: UIViewController {
         SlothometerUIProgressView.layer.cornerRadius = 10
         SlothometerUIProgressView.layer.masksToBounds = true
         showAlert(steps: 1000, food: 10, coins: 5)
-        SlothometerUIProgressView.transform = SlothometerUIProgressView.transform.scaledBy(x: 1, y: 6)
+        SlothometerUIProgressView.transform = SlothometerUIProgressView.transform.scaledBy(x: 1, y: 4)
         updateInterface()
         initiatePeriodicUpdating()
         navigationController!.setNavigationBarHidden(true, animated: true)
