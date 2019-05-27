@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         if let loginVC = GIDSignIn.sharedInstance()!.uiDelegate as? LoginViewController {
-            loginVC.signIn(credential: credential)
+            loginVC.signIn(user: user.userID!)
         } else {
             crash("ERR cast failure during sign-in call")
         }

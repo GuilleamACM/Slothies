@@ -43,10 +43,10 @@ class RoomGroup {
         slothGroup = room.slothGroup
     }
     
-    func getPlayer (withCredentials: AuthCredential) -> Player? {
+    func getPlayer (withUser: String) -> Player? {
         for maybePlayer in players {
             if let player = maybePlayer {
-                if player.credential.hashValue == withCredentials.hashValue {
+                if player.user.elementsEqual(withUser) {
                     return player
                 }
             }

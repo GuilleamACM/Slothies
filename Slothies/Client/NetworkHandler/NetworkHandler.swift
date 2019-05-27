@@ -23,11 +23,11 @@ class NetworkHandler {
         return nil
     }
     
-    func fetchOrCreatePlayer(credential: AuthCredential) -> Player {
-        if let index = accounts.firstIndex(where: {$0.credential.hash == credential.hash}) {
+    func fetchOrCreatePlayer(user: String) -> Player {
+        if let index = accounts.firstIndex(where: {user.elementsEqual($0.user)}) {
             return accounts[index]
         }
-        accounts.append(Player(credential: credential))
+        accounts.append(Player(user: user))
         return accounts.last!
     }
     

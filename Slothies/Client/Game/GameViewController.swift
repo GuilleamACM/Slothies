@@ -44,7 +44,7 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
-        player = room!.getPlayer(withCredentials: player!.credential)
+        player = room!.getPlayer(withUser: player!.user)
         slothometer = room!.slothGroup.slothometer
         updateInterface()
     }
