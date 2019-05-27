@@ -106,35 +106,4 @@ class Sloth : Hashable {
         hunger += Sloth.hungerFeedingValue
         state = .eating
     }
-    
-    func updateWithInfo (currTime: Date, info: (steps: Double, distance: Double)) {
-        if let slothometer = slothometer {
-            slothometer.updateSpecificValue(slothy: self, info: info)
-        }
-        
-        update(currTime)
-    }
-    
-    func update(_ currTime: Date) {
-        let elapsed = Double(currTime.timeIntervalSince(lastUpdate))
-        lastUpdate = Date()
-        
-        switch state {
-        case .sleeping:
-            sleep += elapsed * Sloth.sleepingMultiplier	
-            hunger -= elapsed
-            break
-        case .eating:
-            sleep -= elapsed
-            hunger -= elapsed
-            if Sloth.feedingCooldown < currTime.timeIntervalSince(lastFed!) {
-                state = .idle
-            }
-            break
-        default:
-            sleep -= elapsed
-            hunger -= elapsed
-            break
-        }
-    }
 }

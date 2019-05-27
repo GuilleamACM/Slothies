@@ -49,31 +49,4 @@ class Slothometer {
         individualValues[slothy] = Slothometer.initValue
         updateTotalValue()
     }
-    
-    private func addSpecificValue(slothy: Sloth, val: Double) {
-        var result = individualValues[slothy]! + val
-        result = min(result, Slothometer.maxValue)
-        updateTotalValue()
-    }
-    
-    //subtract seconds passed from values
-    func update (prevTime: Date, currTime: Date) {
-        let elapsed = Double(currTime.timeIntervalSince(prevTime))
-        individualValues.keys.forEach {
-            addSpecificValue(slothy: $0, val: -elapsed)
-        }
-        updateTotalValue()
-    }
-    
-    //check workout information, sum appropriate number into values
-    func updateSpecificValue (slothy: Sloth, info: (steps: Double,distance: Double)) {
-        //TODO: check workout information to see if everything is okay
-        let stepsPercent = info.steps/stepsHealthPerDay
-        let slothmeters = stepsPercent*secondsPerDay
-        
-        addSpecificValue(slothy: slothy, val: slothmeters)
-        //TODO: better define sloth reward for working out
-        
-        updateTotalValue()
-    }
 }

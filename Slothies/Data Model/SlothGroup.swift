@@ -69,15 +69,6 @@ class SlothGroup {
         slothometer.addSloth(slothy: sloth)
     }
     
-    func update (prevTime: Date, currTime: Date) {
-        for maybeSlothy in slothies {
-            if let slothy = maybeSlothy {
-                slothy.update(currTime)
-            }
-        }
-        slothometer.update(prevTime: prevTime, currTime: currTime)
-    }
-    
     func walked(distance: Double){
         self.distanceAccu += distance
         if(self.distanceAccu>=1000){
