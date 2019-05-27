@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var LoginButton: UIButton!
     
     var player:Player? = nil
+    var hasSigned = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +52,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     func signIn (credential: AuthCredential) {
-        print("do stuff")
-        player = NetworkHandler.singleton.fetchOrCreatePlayer(credential: credential)
-        performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+        if !hasSigned {
+            hasSigned = true
+            player = NetworkHandler.singleton.fetchOrCreatePlayer(credential: credential)
+            performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+        }
     }
     
     // MARK: - Navigation
