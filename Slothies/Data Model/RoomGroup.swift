@@ -66,31 +66,6 @@ class RoomGroup {
         slothGroup.forSlothy(fun: fun)
     }
     
-    func updateWithPlayerHealthInfo (player: Player, info: (steps: Double, distance: Double), lastDate: Date) {
-        var playerToUpdate: Player? = nil
-        for play in players {
-            if let play = play {
-                if play == player {
-                    playerToUpdate = play
-                }
-            }
-        }
-        
-        update()
-        if let play = playerToUpdate {
-            play.update(date: lastDate, info: info)
-            slothGroup.walked(distance: info.distance)
-        }
-        
-    }
-    
-    //update to call upon opening the app/joining the room
-    func update () {
-        let currentTime = Date()
-        slothGroup.update(prevTime: prevTime, currTime: currentTime)
-        prevTime = currentTime
-    }
-    
     //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias
     func createSloth (player: Player, name: String, sex: Sex, index: Int) -> Bool {
         if (slothGroup.hasSlothy(withName: name)) {

@@ -88,14 +88,6 @@ class Player: Equatable {
         }
     }
     
-    //fetch user's activity since previous access and update sloth with it
-    func update (date: Date, info: (steps: Double, distance: Double)) {
-        if let slothy = slothy {
-            slothy.updateWithInfo(currTime: date, info: info)
-        }
-        lastUpdate = date
-    }
-    
     func awardCoins(coins: Int){
         self.coins += coins
     }
