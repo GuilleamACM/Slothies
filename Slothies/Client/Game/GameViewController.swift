@@ -102,6 +102,13 @@ class GameViewController: UIViewController {
     func updateInterface() {
         FoodLabel.text = "\(room!.slothGroup.food)"
         SlothometerUIProgressView.setProgress(Float(slothometer!.totalValue / Slothometer.maxValue), animated: true)
+        if (SlothometerUIProgressView.progress >= 0.7) {
+            SlothometerUIProgressView.progressTintColor = .green
+        } else if SlothometerUIProgressView.progress >= 0.3 {
+            SlothometerUIProgressView.progressTintColor = .yellow
+        } else {
+            SlothometerUIProgressView.progressTintColor = .red
+        }
         loadRoom()
     }
     
