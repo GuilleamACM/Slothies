@@ -18,40 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-zI-G2a">
-                                <rect key="frame" x="0.0" y="44" width="414" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="4nJ-eH-2lX">
-                                <rect key="frame" x="-1" y="44" width="415" height="898"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-RT-vfp" userLabel="View Blur">
-                                <rect key="frame" x="-1" y="0.0" width="427" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothy's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-sJ-aDu">
-                                <rect key="frame" x="133" y="85" width="149" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uc8-2n-12b">
+                                <rect key="frame" x="0.0" y="44" width="414" height="254"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-zI-G2a">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="254" id="UrE-xf-2iL"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BQ0-Ua-k8l">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="4nJ-eH-2lX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVA-kk-Rup">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wc2-I3-Iwu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothy's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-sJ-aDu">
+                                <rect key="frame" x="132.66666666666669" y="77.333333333333329" width="148.66666666666669" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.9345284104347229" green="0.48545557260513306" blue="0.61176449060440063" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-Bb-Z4p" userLabel="Market Button">
-                                <rect key="frame" x="318" y="71" width="54" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-Bb-Z4p" userLabel="Market Button">
+                                <rect key="frame" x="345.66666666666669" y="63.666666666666657" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Iv3-Bb-Z4p" secondAttribute="height" multiplier="1:1" id="zPF-Yp-JNY"/>
+                                </constraints>
                                 <state key="normal" image="MarketButton"/>
                                 <connections>
                                     <action selector="slothyStoreButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="cm1-iS-GXc"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-Sr-MBw" userLabel="Status View">
-                                <rect key="frame" x="72" y="128" width="270" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-Sr-MBw" userLabel="Status View">
+                                <rect key="frame" x="70" y="133.66666666666666" width="274" height="159.99999999999997"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="4Wx-fa-UuW"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Idle" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-zb-mG0" userLabel="Slothy Sprite">
-                                <rect key="frame" x="37" y="385" width="272" height="409"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Female Slothy Idle" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-zb-mG0" userLabel="Slothy Sprite">
+                                <rect key="frame" x="40" y="300" width="334" height="542"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mA-gf-TpO" userLabel="Slothy Sprite Button">
                                 <rect key="frame" x="37" y="385" width="272" height="409"/>
@@ -72,80 +89,171 @@
                                 <color key="textColor" red="0.80414372680000001" green="0.30052059889999999" blue="0.44626075030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-f8-2SZ" userLabel="Eat Button">
-                                <rect key="frame" x="105" y="297" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="FeedButton"/>
-                                <connections>
-                                    <action selector="feedButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="6N3-MJ-T9x"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-yx-eds" userLabel="Sleep Button">
-                                <rect key="frame" x="212" y="297" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="SleepButton"/>
-                                <connections>
-                                    <action selector="sleepButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="apL-op-mbV"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKf-bF-YcN" userLabel="Status View">
-                                <rect key="frame" x="67" y="128" width="280" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-FU-0Yi">
+                                <rect key="frame" x="207" y="313.66666666666669" width="0.0" height="0.0"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-f8-2SZ" userLabel="Eat Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="dcZ-vs-cxZ"/>
+                                            <constraint firstAttribute="width" constant="80" id="jr7-ht-7T4"/>
+                                        </constraints>
+                                        <state key="normal" image="FeedButton"/>
+                                        <connections>
+                                            <action selector="feedButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="6N3-MJ-T9x"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-yx-eds" userLabel="Sleep Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3XZ-xp-1GN"/>
+                                            <constraint firstAttribute="height" constant="80" id="FNf-QH-alK"/>
+                                        </constraints>
+                                        <state key="normal" image="SleepButton"/>
+                                        <connections>
+                                            <action selector="sleepButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="apL-op-mbV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKf-bF-YcN" userLabel="Status View">
+                                <rect key="frame" x="70" y="133.66666666666666" width="274" height="159.99999999999997"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Q-hU-eEi" userLabel="Status Blur">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-KT-BMU">
-                                        <rect key="frame" x="112" y="0.0" width="57" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="me0-4k-i2f">
+                                        <rect key="frame" x="17" y="8" width="205" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple Icon" translatesAutoresizingMaskIntoConstraints="NO" id="deY-fC-lA6">
-                                        <rect key="frame" x="17" y="8" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K6f-Nn-4GD" userLabel="Hunger Progress View">
-                                        <rect key="frame" x="65" y="27" width="150" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6d-Sf-Z11">
-                                        <rect key="frame" x="119" y="48" width="43" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V9X-CI-Sjf" userLabel="Sleep Progress View">
-                                        <rect key="frame" x="65" y="77" width="150" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spleep Icon" translatesAutoresizingMaskIntoConstraints="NO" id="YmC-xR-2lc">
-                                        <rect key="frame" x="17" y="56" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-Do-0VI" userLabel="Slothometer Progress View">
-                                        <rect key="frame" x="65" y="125" width="150" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-lT-Ryu">
-                                        <rect key="frame" x="93" y="96" width="94" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sloth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-ep-73d">
-                                        <rect key="frame" x="15" y="104" width="45" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wpq-mN-C6O">
+                                                <rect key="frame" x="2.6666666666666714" y="0.0" width="200" height="45"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple Icon" translatesAutoresizingMaskIntoConstraints="NO" id="deY-fC-lA6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="8JB-AX-Mx3"/>
+                                                            <constraint firstAttribute="width" constant="40" id="b3o-sj-TSx"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fgu-jx-C37">
+                                                        <rect key="frame" x="50" y="0.0" width="150" height="31.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-KT-BMU">
+                                                                <rect key="frame" x="46.333333333333329" y="0.0" width="57" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K6f-Nn-4GD" userLabel="Hunger Progress View">
+                                                                <rect key="frame" x="0.0" y="28.333333333333343" width="150" height="3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="150" id="W93-Fl-HpB"/>
+                                                                    <constraint firstAttribute="height" constant="3" id="lYR-JJ-W8g"/>
+                                                                </constraints>
+                                                            </progressView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uhs-hz-2st">
+                                                <rect key="frame" x="2.6666666666666714" y="50" width="200" height="45"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spleep Icon" translatesAutoresizingMaskIntoConstraints="NO" id="YmC-xR-2lc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Jvb-kH-dcJ"/>
+                                                            <constraint firstAttribute="width" constant="40" id="gbv-3q-5DK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KHh-fl-mn0">
+                                                        <rect key="frame" x="50" y="0.0" width="150" height="31.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6d-Sf-Z11">
+                                                                <rect key="frame" x="53.333333333333329" y="0.0" width="43" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V9X-CI-Sjf" userLabel="Sleep Progress View">
+                                                                <rect key="frame" x="0.0" y="28.333333333333343" width="150" height="3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="3" id="0Vs-Ag-2w5"/>
+                                                                    <constraint firstAttribute="width" constant="150" id="rRW-2R-HWb"/>
+                                                                </constraints>
+                                                            </progressView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nxt-Xf-9QH">
+                                                <rect key="frame" x="0.0" y="100" width="205" height="45"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sloth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-ep-73d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="45" id="oa8-Z4-QVH"/>
+                                                            <constraint firstAttribute="height" constant="45" id="uYd-6j-3cT"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-tQ-KZy">
+                                                        <rect key="frame" x="55" y="0.0" width="150" height="31.333333333333332"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-lT-Ryu">
+                                                                <rect key="frame" x="28" y="0.0" width="94" height="20.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-Do-0VI" userLabel="Slothometer Progress View">
+                                                                <rect key="frame" x="0.0" y="28.333333333333343" width="150" height="3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="150" id="f2U-SH-UdY"/>
+                                                                    <constraint firstAttribute="height" constant="3" id="oY2-PL-8SB"/>
+                                                                </constraints>
+                                                            </progressView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="QtA-P0-qgS"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="trailing" secondItem="uc8-2n-12b" secondAttribute="trailing" id="1Sd-Qe-4R9"/>
+                            <constraint firstItem="uc8-2n-12b" firstAttribute="top" secondItem="RqS-EB-XAg" secondAttribute="top" id="3LU-nB-O17"/>
+                            <constraint firstItem="PA0-FU-0Yi" firstAttribute="centerX" secondItem="RqS-EB-XAg" secondAttribute="centerX" id="7hs-tP-ViH"/>
+                            <constraint firstItem="SVA-kk-Rup" firstAttribute="leading" secondItem="RqS-EB-XAg" secondAttribute="leading" id="7oW-rT-s2R"/>
+                            <constraint firstItem="sEk-sJ-aDu" firstAttribute="centerX" secondItem="RqS-EB-XAg" secondAttribute="centerX" id="8CC-mV-SDT"/>
+                            <constraint firstItem="PA0-FU-0Yi" firstAttribute="top" secondItem="sZ0-Sr-MBw" secondAttribute="bottom" constant="20" id="8Cm-Bm-dtQ"/>
+                            <constraint firstItem="sZ0-Sr-MBw" firstAttribute="top" secondItem="sEk-sJ-aDu" secondAttribute="bottom" constant="30" id="9GS-qu-q5V"/>
+                            <constraint firstItem="sZ0-Sr-MBw" firstAttribute="leading" secondItem="RqS-EB-XAg" secondAttribute="leading" constant="70" id="BQg-nq-NlE"/>
+                            <constraint firstItem="4hQ-zb-mG0" firstAttribute="top" secondItem="bck-er-pdk" secondAttribute="top" constant="300" id="Dh4-J8-0LU"/>
+                            <constraint firstItem="BQ0-Ua-k8l" firstAttribute="top" secondItem="uc8-2n-12b" secondAttribute="bottom" constant="-180" id="EwZ-AI-o91"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="trailing" secondItem="sZ0-Sr-MBw" secondAttribute="trailing" constant="70" id="Fmg-63-uqZ"/>
+                            <constraint firstItem="pKf-bF-YcN" firstAttribute="centerY" secondItem="sZ0-Sr-MBw" secondAttribute="centerY" id="RPP-jj-2yX"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="bottom" secondItem="4hQ-zb-mG0" secondAttribute="bottom" constant="20" id="Rbe-Pf-cR3"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="leading" secondItem="BQ0-Ua-k8l" secondAttribute="leading" id="Sgj-Oj-uxW"/>
+                            <constraint firstItem="Iv3-Bb-Z4p" firstAttribute="centerY" secondItem="RqS-EB-XAg" secondAttribute="centerY" multiplier="0.2" id="YGy-Ue-Xxw"/>
+                            <constraint firstItem="4hQ-zb-mG0" firstAttribute="leading" secondItem="RqS-EB-XAg" secondAttribute="leading" constant="40" id="YRJ-cU-Zjx"/>
+                            <constraint firstAttribute="top" secondItem="SVA-kk-Rup" secondAttribute="top" id="ZsM-PJ-hYF"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="trailing" secondItem="4hQ-zb-mG0" secondAttribute="trailing" constant="40" id="bLn-xr-AeH"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="trailing" secondItem="SVA-kk-Rup" secondAttribute="trailing" id="f32-6s-Lwj"/>
+                            <constraint firstAttribute="bottom" secondItem="BQ0-Ua-k8l" secondAttribute="bottom" id="gkh-mf-Lxd"/>
+                            <constraint firstItem="pKf-bF-YcN" firstAttribute="height" secondItem="sZ0-Sr-MBw" secondAttribute="height" id="hH5-wz-epX"/>
+                            <constraint firstItem="pKf-bF-YcN" firstAttribute="centerX" secondItem="sZ0-Sr-MBw" secondAttribute="centerX" id="jnX-pT-lnD"/>
+                            <constraint firstItem="sEk-sJ-aDu" firstAttribute="centerY" secondItem="RqS-EB-XAg" secondAttribute="centerY" multiplier="0.2" id="lQs-9T-A5p"/>
+                            <constraint firstItem="SVA-kk-Rup" firstAttribute="bottom" secondItem="bck-er-pdk" secondAttribute="bottom" id="ncW-s1-fEE"/>
+                            <constraint firstItem="Iv3-Bb-Z4p" firstAttribute="centerX" secondItem="RqS-EB-XAg" secondAttribute="centerX" multiplier="1.8" id="qAq-Jo-5Wt"/>
+                            <constraint firstItem="pKf-bF-YcN" firstAttribute="width" secondItem="sZ0-Sr-MBw" secondAttribute="width" id="s65-U7-aXJ"/>
+                            <constraint firstItem="RqS-EB-XAg" firstAttribute="trailing" secondItem="BQ0-Ua-k8l" secondAttribute="trailing" id="wKy-kM-405"/>
+                            <constraint firstItem="uc8-2n-12b" firstAttribute="leading" secondItem="RqS-EB-XAg" secondAttribute="leading" id="whH-Mx-v8l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RqS-EB-XAg"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -172,7 +280,6 @@
                         <outlet property="StatusView" destination="sZ0-Sr-MBw" id="85F-ZL-qah"/>
                         <outlet property="statusBlur" destination="30Q-hU-eEi" id="PVK-HO-9Dn"/>
                         <outlet property="statusView" destination="pKf-bF-YcN" id="hbq-1e-WEV"/>
-                        <outlet property="viewBlur" destination="B1b-RT-vfp" id="MO2-mz-Uvh"/>
                         <segue destination="MrX-lU-QAA" kind="show" identifier="ToSlothyStoreScreen" id="NbH-V1-R8Z"/>
                     </connections>
                 </viewController>

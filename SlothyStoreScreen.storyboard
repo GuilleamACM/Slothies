@@ -37,13 +37,13 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-z4-PzK">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-z4-PzK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Ld-ED-OH8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
-                                <blurEffect style="light"/>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
                                 <rect key="frame" x="40" y="-97" width="334" height="1100"/>
@@ -76,24 +76,24 @@
                             <constraint firstItem="vFZ-tw-wem" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" multiplier="0.2" id="1NL-UX-AZJ"/>
                             <constraint firstItem="cVJ-Aq-PEy" firstAttribute="width" secondItem="9vs-nB-CcP" secondAttribute="width" multiplier="0.8" id="26V-Ku-8vg"/>
                             <constraint firstItem="9vs-nB-CcP" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" multiplier="1.65" id="6w1-hk-Iz8"/>
-                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" id="9bn-qj-jTq"/>
+                            <constraint firstAttribute="top" secondItem="Ucz-z4-PzK" secondAttribute="top" id="9Hl-id-tkE"/>
+                            <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="Ucz-z4-PzK" secondAttribute="trailing" id="9QN-tY-YCU"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="2mB-8J-lL5" secondAttribute="trailing" id="AIg-hU-M7q"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="XOy-f7-meH" secondAttribute="trailing" constant="40" id="CKX-c9-owo"/>
                             <constraint firstItem="cVJ-Aq-PEy" firstAttribute="centerX" secondItem="9vs-nB-CcP" secondAttribute="centerX" id="J4W-ud-pfq"/>
                             <constraint firstItem="9vs-nB-CcP" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" multiplier="0.6" id="NYN-bW-m1I"/>
-                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="height" secondItem="xzf-3q-pXZ" secondAttribute="height" id="PQJ-ei-LGb"/>
-                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="width" secondItem="xzf-3q-pXZ" secondAttribute="width" id="QF7-9e-VYL"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="57r-TI-rcm" secondAttribute="trailing" id="R1D-Au-XGc"/>
                             <constraint firstItem="XOy-f7-meH" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" id="a7G-PW-MlO"/>
                             <constraint firstItem="XOy-f7-meH" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" id="aQV-Dn-fJo"/>
+                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="bottom" secondItem="xzf-3q-pXZ" secondAttribute="bottom" id="bry-Jx-d2D"/>
                             <constraint firstItem="2mB-8J-lL5" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" id="cuL-KO-B1V"/>
+                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" id="dSb-Oy-ep5"/>
                             <constraint firstItem="XOy-f7-meH" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" constant="40" id="dXb-pj-a6H"/>
                             <constraint firstAttribute="bottom" secondItem="57r-TI-rcm" secondAttribute="bottom" id="jAf-DB-z4c"/>
                             <constraint firstItem="57r-TI-rcm" firstAttribute="top" secondItem="2mB-8J-lL5" secondAttribute="bottom" constant="-180" id="kBr-XN-F3E"/>
                             <constraint firstItem="vFZ-tw-wem" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" id="lCH-4y-bND"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="leading" secondItem="57r-TI-rcm" secondAttribute="leading" id="mIs-GX-5yM"/>
                             <constraint firstItem="cVJ-Aq-PEy" firstAttribute="centerY" secondItem="9vs-nB-CcP" secondAttribute="centerY" id="rB8-Av-nCe"/>
-                            <constraint firstItem="Ucz-z4-PzK" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" id="y2g-Y2-x3j"/>
                             <constraint firstItem="2mB-8J-lL5" firstAttribute="top" secondItem="8iT-cA-BRk" secondAttribute="top" id="yXw-JB-p9Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8iT-cA-BRk"/>
