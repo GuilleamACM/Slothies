@@ -112,18 +112,9 @@
             </objects>
             <point key="canvasLocation" x="-443.47826086956525" y="-172.09821428571428"/>
         </scene>
-        <!--TutorialScreen-->
-        <scene sceneID="enN-CR-XNV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TutorialScreen" id="0Ca-7u-QJC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PWT-oN-RiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="153" y="-172"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Chat Bubble" width="87" height="30"/>
-        <image name="MarketButton" width="54" height="54"/>
         <image name="Slothy Working" width="778" height="1100"/>
         <image name="cloud" width="375" height="254"/>
         <image name="tree" width="375" height="731"/>

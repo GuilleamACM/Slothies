@@ -10,13 +10,8 @@ import UIKit
 
 class SlothyStoreViewController: UIViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    
-    @IBAction func storeButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "ToTutorial", sender: self)
     }
 }
