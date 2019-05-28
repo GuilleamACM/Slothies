@@ -24,7 +24,9 @@ class NetworkHandler {
                 if let doc = doc {
                     if let data = doc.data() {
                         let roomDoc = RoomGroup(dictionary: data)!
-                        dispatch.completionUpdateInterface(room: roomDoc, err: nil)
+                        DispatchQueue.main.async {
+                            dispatch.completionUpdateInterface(room: roomDoc, err: nil)
+                        }
                     }
                 }
             }
