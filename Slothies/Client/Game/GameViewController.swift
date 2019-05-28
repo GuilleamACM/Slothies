@@ -44,7 +44,7 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
-        room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
+        //room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
         player = room!.getPlayer(withUser: player!.user)
         slothometer = room!.slothGroup.slothometer
         updateInterface()
@@ -72,12 +72,12 @@ class GameViewController: UIViewController {
     }
     
     func initiatePeriodicUpdating() {
-        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
+        /*Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
             if let netRoom = NetworkHandler.singleton.fetchRoom(code: self.room!.name, pass: self.room!.pass) {
                 self.room!.copyFrom(room: netRoom)
                 self.updateInterface()
             }
-        })
+        })*/
     }
     
     func showAlert(steps: Int, food:Int, coins:Int) {

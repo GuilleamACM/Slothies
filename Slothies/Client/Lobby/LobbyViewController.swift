@@ -34,9 +34,13 @@ class LobbyViewController: UIViewController {
     @IBAction func ConfirmRoomButton(_ sender: Any) {
         if let roomCode = self.RoomCodeField.text {
             if let password = self.PasswordField.text {
-                if let currentRoom = NetworkHandler.singleton.fetchRoom(code: roomCode, pass: password) {
-                    self.room = currentRoom
-                    performSegue(withIdentifier: "ToSelectionScreen", sender: self)
+                NetworkHandler.singleton.fetchRoom(code: roomCode, pass: password) { (room, errStr) in
+                    if let room = room {
+                        self.room = room
+                        self.performSegue(withIdentifier: "ToSelectionScreen", sender: self)
+                    } else {
+                        print(errStr!)
+                    }
                 }
             }
         }
