@@ -177,6 +177,7 @@ class SlothDisplayViewController: UIViewController {
         } else {
             slothSprite = UIImage(named: "Female Slothy Eating")!
         }
+        
         SlothySprite.image = slothSprite
         SlothyButton.setImage(slothSprite, for: .normal)
         SlothyBubble.isHidden = false
@@ -192,10 +193,12 @@ class SlothDisplayViewController: UIViewController {
         } else {
             slothSprite = UIImage(named: "Female Slothy Sleeping")!
         }
-        SlothySprite.image = slothSprite
-        SlothyButton.setImage(slothSprite, for: .normal)
-        SlothyBubble.isHidden = true
-        SlothyBubbleLabel.isHidden = true
+        DispatchQueue.main.async {
+            self.SlothySprite.image = slothSprite
+            self.SlothyButton.setImage(slothSprite, for: .normal)
+            self.SlothyBubble.isHidden = true
+            self.SlothyBubbleLabel.isHidden = true
+        }
     }
     
     func slothyIdleInterface() {
@@ -227,13 +230,11 @@ class SlothDisplayViewController: UIViewController {
     }
     
     @IBAction func sleepButtonPressed(_ sender: Any) {
-        if let (netRoom, netSlothy) = NetworkHandler.singleton.requestSleepSloth(room: room!, slothy: slothy!) {
-            room!.copyFrom(room: netRoom)
-            slothy = netSlothy
-            updateBars(anime: true)
-            slothySleepsInterface()
-            
-            //TODO: idle
+        NetworkHandler.singleton.requestSleepSloth(room: room!, slothy: slothy!) { (result: (room:RoomGroup?, slothy: Sloth?)?, err:String?) in
+            self.room = result!.room!
+            self.slothy = result!.slothy!
+            self.updateBars(anime: true)
+            self.slothySleepsInterface()
         }
     }
     
