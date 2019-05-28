@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0805E43F229D51010067347E /* SlothyStoreScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0805E43E229D51010067347E /* SlothyStoreScreen.storyboard */; };
 		0805E441229D51410067347E /* SlothyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805E440229D51410067347E /* SlothyStoreViewController.swift */; };
+		0805E444229D5B620067347E /* TutorialScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0805E443229D5B620067347E /* TutorialScreen.storyboard */; };
+		0805E448229D74B80067347E /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805E447229D74B80067347E /* TutorialPageViewController.swift */; };
 		08E63893228D8AFC00B6C664 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E63892228D8AFC00B6C664 /* NetworkHandler.swift */; };
 		3C1D63B7C2DCDDDAAEFFB0BE /* Pods_SlothiesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21D0EB9A43481B3A9F7BDEF /* Pods_SlothiesUITests.framework */; };
 		685187394C393DEF47543604 /* Pods_Slothies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDE0D636A93DA1E0C7FE6BB /* Pods_Slothies.framework */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		0805E43E229D51010067347E /* SlothyStoreScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlothyStoreScreen.storyboard; sourceTree = "<group>"; };
 		0805E440229D51410067347E /* SlothyStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlothyStoreViewController.swift; sourceTree = "<group>"; };
+		0805E443229D5B620067347E /* TutorialScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialScreen.storyboard; sourceTree = "<group>"; };
+		0805E447229D74B80067347E /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		08E63892228D8AFC00B6C664 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		6E0A47BFF6A5C88D421D86CF /* Pods_SlothiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlothiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70776131864F4AA5CAC2A92B /* Pods-SlothiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlothiesTests.release.xcconfig"; path = "Target Support Files/Pods-SlothiesTests/Pods-SlothiesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 			);
 			name = SlothyStore;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		0805E442229D5B2F0067347E /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0805E443229D5B620067347E /* TutorialScreen.storyboard */,
+				0805E447229D74B80067347E /* TutorialPageViewController.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		121CB733ED7F88BD849E50A8 /* Pods */ = {
@@ -243,6 +256,7 @@
 				DC731E682293285700443D7D /* Game */,
 				DC731E692293285D00443D7D /* SlothDisplay */,
 				0805E43B229D4DF60067347E /* SlothyStore */,
+				0805E442229D5B2F0067347E /* Tutorial */,
 				DC731E6A2293291300443D7D /* NetworkHandler */,
 				DC731E6B2293292600443D7D /* HealthHandler */,
 			);
@@ -463,6 +477,7 @@
 				0805E43F229D51010067347E /* SlothyStoreScreen.storyboard in Resources */,
 				DC62C5022289E7C900ADCB9E /* GameScreen.storyboard in Resources */,
 				DC62C514228B0ABC00ADCB9E /* LoginScreen.storyboard in Resources */,
+				0805E444229D5B620067347E /* TutorialScreen.storyboard in Resources */,
 				DC62C5082289E82D00ADCB9E /* SlothDisplayScreen.storyboard in Resources */,
 				DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */,
 				DC62C4F62289E63700ADCB9E /* LobbyScreen.storyboard in Resources */,
@@ -655,6 +670,7 @@
 				DC62C5102289EB9900ADCB9E /* Sloth.swift in Sources */,
 				DC62C50C2289E9A500ADCB9E /* Player.swift in Sources */,
 				DC62C5122289EC9C00ADCB9E /* Slothometer.swift in Sources */,
+				0805E448229D74B80067347E /* TutorialPageViewController.swift in Sources */,
 				DC62C518228B0B5B00ADCB9E /* LoginViewController.swift in Sources */,
 				DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */,
 				DC321C1B229C755F00D64F75 /* DocumentConversion.swift in Sources */,

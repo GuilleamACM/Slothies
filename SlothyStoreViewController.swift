@@ -21,4 +21,8 @@ class SlothyStoreViewController: UIViewController {
         viewBlurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewBlur.addSubview(viewBlurEffectView)
     }
+    
+    @IBAction func storeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ToTutorial", sender: self)
+    }
 }

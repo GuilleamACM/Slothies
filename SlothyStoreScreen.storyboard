@@ -30,6 +30,14 @@
                                 <rect key="frame" x="-1" y="0.0" width="427" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQ3-cv-dLc">
+                                <rect key="frame" x="300" y="75" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="MarketButton"/>
+                                <connections>
+                                    <action selector="storeButtonPressed:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="lvE-pZ-UBc"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
                                 <rect key="frame" x="36" y="191" width="341" height="513"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,15 +82,25 @@
                     </view>
                     <connections>
                         <outlet property="viewBlur" destination="184-NM-E8Z" id="rQU-SQ-Bfd"/>
+                        <segue destination="0Ca-7u-QJC" kind="show" identifier="ToTutorial" id="rab-VN-WvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTy-aE-oGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-443.47826086956525" y="-172.09821428571428"/>
         </scene>
+        <!--TutorialScreen-->
+        <scene sceneID="enN-CR-XNV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TutorialScreen" id="0Ca-7u-QJC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWT-oN-RiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="-172"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Chat Bubble" width="87" height="30"/>
+        <image name="MarketButton" width="54" height="54"/>
         <image name="Slothy Working" width="778" height="1100"/>
         <image name="cloud" width="375" height="254"/>
         <image name="tree" width="375" height="731"/>
