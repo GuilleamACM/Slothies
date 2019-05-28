@@ -9,68 +9,78 @@
 import Foundation
 
 extension RoomGroup {
-    func updateWithPlayerHealthInfo (player: Player, info: (steps: Double, distance: Double), lastDate: Date) {
+    func updateWithPlayerHealthInfo (_ playerFromArgument: Player) -> String? {
         var playerToUpdate: Player? = nil
         for play in players {
             if let play = play {
-                if play == player {
+                if play == playerFromArgument {
                     playerToUpdate = play
                 }
             }
         }
         
-        update()
+        let currentTime = Date()
+        guard let play = playerToUpdate else {
+            return "could not find player"
+        }
+        guard let info = play.getHealthData(currentTime) else {
+            return "could not get player health"
+        }
+        
+        timePassageUpdate(currentTime)
         if let play = playerToUpdate {
-            play.update(date: lastDate, info: info)
+            play.updateWalked(currTime: currentTime, info: info)
             slothGroup.walked(distance: info.distance)
         }
+        return nil
     }
     
     //update to call upon opening the app/joining the room
-    func update () {
-        let currentTime = Date()
-        slothGroup.update(prevTime: prevTime, currTime: currentTime)
+    fileprivate func timePassageUpdate (_ currentTime: Date) {
+        slothGroup.timePassageUpdate(prevTime: prevTime, currTime: currentTime)
         prevTime = currentTime
     }
 }
 
 extension Player {
     //fetch user's activity since previous access and update sloth with it
-    fileprivate func update (date: Date, info: (steps: Double, distance: Double)) {
+    fileprivate func updateWalked (currTime: Date, info: (steps: Double, distance: Double)) {
         if let slothy = slothy {
-            slothy.updateWithInfo(currTime: date, info: info)
+            slothy.updateWalked(currTime: currTime, info: info)
         }
-        lastUpdate = date
+        lastUpdate = currTime
     }
 }
 
 extension SlothGroup {
-    fileprivate func update (prevTime: Date, currTime: Date) {
+    fileprivate func timePassageUpdate (prevTime: Date, currTime: Date) {
+        slothometer.timePassageUpdate(prevTime: prevTime, currTime: currTime)
         for maybeSlothy in slothies {
             if let slothy = maybeSlothy {
-                slothy.update(currTime)
+                slothy.updateHungerSleep(currTime)
             }
         }
-        slothometer.update(prevTime: prevTime, currTime: currTime)
     }
 }
 
 extension Sloth {
-    fileprivate func updateWithInfo (currTime: Date, info: (steps: Double, distance: Double)) {
+    fileprivate func updateWalked (currTime: Date, info: (steps: Double, distance: Double)) {
         if let slothometer = slothometer {
-            slothometer.updateSpecificValue(slothy: self, info: info)
+            slothometer.updateWalked(slothy: self, info: info)
         }
-        update(currTime)
     }
     
-    fileprivate func update(_ currTime: Date) {
+    fileprivate func updateHungerSleep(_ currTime: Date) {
         let elapsed = Double(currTime.timeIntervalSince(lastUpdate))
-        lastUpdate = Date()
+        lastUpdate = currTime
         
         switch state {
         case .sleeping:
             sleep += elapsed * Sloth.sleepingMultiplier
-            //TODO
+            if sleep >= Sloth.statusMaxValue {
+                sleep = Sloth.statusMaxValue
+                state = .idle
+            }
             hunger -= elapsed
             break
         case .eating:
@@ -96,7 +106,8 @@ extension Slothometer {
     }
     
     //subtract seconds passed from values
-    fileprivate func update (prevTime: Date, currTime: Date) {
+    fileprivate func timePassageUpdate (prevTime: Date, currTime: Date) {
+        //BUG: elapsed should consider each slothy's individual prevTime
         let elapsed = Double(currTime.timeIntervalSince(prevTime))
         individualValues.keys.forEach {
             addSpecificValue(slothy: $0, val: -elapsed)
@@ -105,7 +116,7 @@ extension Slothometer {
     }
     
     //check workout information, sum appropriate number into values
-    fileprivate func updateSpecificValue (slothy: Sloth, info: (steps: Double,distance: Double)) {
+    fileprivate func updateWalked (slothy: Sloth, info: (steps: Double,distance: Double)) {
         //TODO: check workout information to see if everything is okay
         let stepsPercent = info.steps/stepsHealthPerDay
         let slothmeters = stepsPercent*secondsPerDay

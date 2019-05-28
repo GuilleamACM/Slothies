@@ -45,17 +45,12 @@ class Player: Equatable {
         self.slothy = sloth
     }
     
-    func sendDataToServer () {
-        
-    }
-    
-    func getHealthData () -> (Double, Double)? {
+    func getHealthData (_ currentTime: Date) -> (steps: Double, distance: Double)? {
         var gotDistance = false
         var gotSteps = false
         var info: (steps: Double, distance: Double) = (steps: 0, distance: 0)
-        let now = Date()
         
-        HealthHandler.singleton.getWalkingRunningDistance(startDate: lastUpdate, endDate: now){ (value,error) in
+        HealthHandler.singleton.getWalkingRunningDistance(startDate: lastUpdate, endDate: currentTime){ (value,error) in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -68,7 +63,7 @@ class Player: Equatable {
             }
         }
         
-        HealthHandler.singleton.getStepsCount(startDate: lastUpdate, endDate: now){ (value,error) in
+        HealthHandler.singleton.getStepsCount(startDate: lastUpdate, endDate: currentTime){ (value,error) in
             if let error = error{
                 print(error.localizedDescription)
                 return
@@ -81,7 +76,7 @@ class Player: Equatable {
         }
         
         if gotDistance && gotSteps {
-            lastUpdate = now
+            lastUpdate = currentTime
             return info
         } else {
             return nil
