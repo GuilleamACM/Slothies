@@ -41,6 +41,9 @@
                                 <rect key="frame" x="318" y="71" width="54" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="MarketButton"/>
+                                <connections>
+                                    <action selector="slothyStoreButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="cm1-iS-GXc"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-Sr-MBw" userLabel="Status View">
                                 <rect key="frame" x="72" y="128" width="270" height="155"/>
@@ -170,11 +173,20 @@
                         <outlet property="statusBlur" destination="30Q-hU-eEi" id="PVK-HO-9Dn"/>
                         <outlet property="statusView" destination="pKf-bF-YcN" id="hbq-1e-WEV"/>
                         <outlet property="viewBlur" destination="B1b-RT-vfp" id="MO2-mz-Uvh"/>
+                        <segue destination="MrX-lU-QAA" kind="show" identifier="ToSlothyStoreScreen" id="NbH-V1-R8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJR-5y-ZYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="415.94202898550731" y="28.794642857142854"/>
+        </scene>
+        <!--SlothyStoreScreen-->
+        <scene sceneID="zaa-t3-zH1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SlothyStoreScreen" id="MrX-lU-QAA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Phs-NV-CbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="29"/>
         </scene>
     </scenes>
     <resources>

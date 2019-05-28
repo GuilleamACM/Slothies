@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPO-Ad-8Kq">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="gll-1K-mYe">
+            <objects>
+                <pageViewController storyboardIdentifier="Main" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QPO-Ad-8Kq" customClass="TutorialPageViewController" customModule="Slothies" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33I-Mo-kmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="20"/>
+        </scene>
+        <!--Tutorial Slothy Status-->
+        <scene sceneID="E6E-rA-F4O">
+            <objects>
+                <viewController storyboardIdentifier="TutorialSlothyStatus" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Mb-cR-enh" customClass="TutorialSlothyStatus" customModule="Slothies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6H-jJ-OWz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80414372680000001" green="0.30052059889999999" blue="0.44626075030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="jcg-RY-Nze"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ne-yo-QbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T32-5z-7JU">
+            <objects>
+                <viewController storyboardIdentifier="TutorialSlothyHunger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOx-M7-ObV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="glq-Xh-pMx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93452841040000001" green="0.4854555726" blue="0.61176449060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="fSm-Th-7AF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmD-Fl-MXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xEC-00-txe">
+            <objects>
+                <viewController storyboardIdentifier="TutorialSlothySleep" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zye-IS-VaQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybv-aU-ZJL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="MfV-Yo-q48"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6v-ZD-pDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5h4-Qa-Yj0">
+            <objects>
+                <viewController storyboardIdentifier="TutorialSlothometer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vzZ-Xq-TXV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wlW-Qw-8iZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Sd3-IT-3yJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LX-9f-NJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="676"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Slp-sX-038">
+            <objects>
+                <viewController storyboardIdentifier="TutorialGroup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yMF-ot-rXl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aqq-N7-Who">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="6vR-Hr-fdb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqs-nt-2nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1435" y="676"/>
+        </scene>
+    </scenes>
+</document>
