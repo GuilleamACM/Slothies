@@ -43,6 +43,7 @@ class GameViewController: UIViewController {
     @IBOutlet var SlothyNameLabels: [UILabel]!
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController!.setNavigationBarHidden(true, animated: false)
         room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
         player = room!.getPlayer(withUser: player!.user)
         slothometer = room!.slothGroup.slothometer
@@ -51,7 +52,6 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController!.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
