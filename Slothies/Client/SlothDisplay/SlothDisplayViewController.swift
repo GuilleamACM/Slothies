@@ -8,7 +8,25 @@
 
 import UIKit
 
-class SlothDisplayViewController: UIViewController {
+class SlothDisplayViewController: UIViewController, GameDataUpdateable {
+    func completionUpdateInterface(room: RoomGroup?, err: String?) {
+        if let room = room {
+            self.room = room
+            self.slothy = room.getSlothy(withName: slothy!.name)
+            self.player = room.getPlayer(withUser: player!.user)
+            self.updateBars(anime: true)
+            switch slothy!.state {
+            case .eating:
+                slothyEatsInterface()
+            case .sleeping:
+                slothySleepsInterface()
+            default:
+                slothyIdleInterface()
+            }
+        } else {
+            print(err!)
+        }
+    }
 
     
     @IBOutlet weak var SlothyNameLabel: UILabel!
@@ -41,6 +59,7 @@ class SlothDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkHandler.singleton.listenerDispatch = self
         showSlothyStatus()
         if let sloth = self.slothy as Sloth? {
             renderSlothy(slothy: sloth)
