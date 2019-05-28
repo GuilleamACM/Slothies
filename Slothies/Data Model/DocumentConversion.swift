@@ -124,72 +124,93 @@ extension RoomGroup {
             else{
                 return nil
         }
+        let playersDictionary = [player0,player1,player2,player3]
+        let slothiesDictionary = [sloth0,sloth1,sloth2,sloth3]
+        var players:[Player?] = []
+        self.init(name: roomName, pass: roomPass)
+        self.prevTime = Date(timeIntervalSince1970: roomPrevTime)
         
-        guard let player0User = player0["user"] as? String,
-            let player0LastUpdate = player0["lastUpdate"] as? TimeInterval,
-            let player0Coins = player0["coins"] as? Int,
-            
-            let player1User = player1["user"] as? String,
-            let player1LastUpdate = player1["lastUpdate"] as? TimeInterval,
-            let player1Coins = player1["coins"] as? Int,
-            
-            let player2User = player2["user"] as? String,
-            let player2LastUpdate = player2["lastUpdate"] as? TimeInterval,
-            let player2Coins = player2["coins"] as? Int,
-            
-            let player3User = player3["user"] as? String,
-            let player3LastUpdate = player3["lastUpdate"] as? TimeInterval,
-            let player3Coins = player3["coins"] as? Int
-            else{
+        for i in [0,1,2,3]{
+            if let user = playersDictionary[i]["user"] as? String{
+                if(user != ""){
+                    players[i] = Player(user:user)
+                    guard let lastUpdatePlayer =  playersDictionary[i]["lastUpdate"] as? TimeInterval,
+                        let coins = playersDictionary[i]["coins"] as? Int
+                        else{
+                            return nil
+                    }
+                    players[i]!.lastUpdate = Date(timeIntervalSince1970: lastUpdatePlayer)
+                    players[i]!.coins = coins
+                    guard let name = slothiesDictionary[i]["name"] as? String,
+                        let sex = slothiesDictionary[i]["sex"] as? String,
+                        let state = slothiesDictionary[i]["state"] as? String,
+                        let hunger = slothiesDictionary[i]["hunger"] as? Double,
+                        let sleep = slothiesDictionary[i]["sleep"] as? Double,
+                        let lastFed = slothiesDictionary[i]["lastFed"] as? TimeInterval,
+                        let lastSlept = slothiesDictionary[i]["lastSlept"] as? TimeInterval,
+                        let lastUpdateSloth = slothiesDictionary[i]["lastUpdate"] as? TimeInterval,
+                        let sloth = slothiesDictionary[i]["sloth"] as? Double
+                        else{
+                            return nil
+                    }
+                    self.createSloth(player: players[i]!, name: name, sex: Sex(rawValue: sex)!, index: i)
+                    self.slothGroup.slothies[i]!.state = State(rawValue:state)!
+                    self.slothGroup.slothies[i]!.hunger = hunger
+                    self.slothGroup.slothies[i]!.sleep = sleep
+                    if(lastFed != -1){
+                        self.slothGroup.slothies[i]!.lastFed = Date(timeIntervalSince1970: lastFed)
+                    }else{
+                        self.slothGroup.slothies[i]!.lastFed = nil
+                    }
+                    if(lastSlept != -1){
+                        self.slothGroup.slothies[i]!.lastSlept = Date(timeIntervalSince1970: lastSlept)
+                    }else{
+                        self.slothGroup.slothies[i]!.lastSlept = nil
+                    }
+                    self.slothGroup.slothies[i]!.lastUpdate = Date(timeIntervalSince1970: lastUpdateSloth)
+                    self.slothGroup.slothometer.individualValues[self.slothGroup.slothies[i]!] = sloth
+                    
+                }else{
+                    players[i] = nil
+                }
+            }else{
                 return nil
+            }
         }
         
-        guard let sloth0Name = sloth0["name"] as? String,
-            let sloth0Sex = sloth0["sex"] as? String,
-            let sloth0State = sloth0["state"] as? String,
-            let sloth0Hunger = sloth0["hunger"] as? Double,
-            let sloth0Sleep = sloth0["sleep"] as? Double,
-            let sloth0LastFed = sloth0["lastFed"] as? TimeInterval,
-            let sloth0LastSlept = sloth0["lastSlept"] as? TimeInterval,
-            let sloth0LastUpdate = sloth0["lastUpdate"] as? TimeInterval,
-            let sloth0Sloth = sloth0["sloth"] as? Double,
-            
-            let sloth1Name = sloth1["name"] as? String,
-            let sloth1Sex = sloth1["sex"] as? String,
-            let sloth1State = sloth1["state"] as? String,
-            let sloth1Hunger = sloth1["hunger"] as? Double,
-            let sloth1Sleep = sloth1["sleep"] as? Double,
-            let sloth1LastFed = sloth1["lastFed"] as? TimeInterval,
-            let sloth1LastSlept = sloth1["lastSlept"] as? TimeInterval,
-            let sloth1LastUpdate = sloth1["lastUpdate"] as? TimeInterval,
-            let sloth1Sloth = sloth1["sloth"] as? Double,
+        self.slothGroup.food = slothGroupFood
+        self.slothGroup.distanceAccu = slothGroupDistanceAccu
+        self.slothGroup.slothometer.updateTotalValue()
         
-            let sloth2Name = sloth2["name"] as? String,
-            let sloth2Sex = sloth2["sex"] as? String,
-            let sloth2State = sloth2["state"] as? String,
-            let sloth2Hunger = sloth2["hunger"] as? Double,
-            let sloth2Sleep = sloth2["sleep"] as? Double,
-            let sloth2LastFed = sloth2["lastFed"] as? TimeInterval,
-            let sloth2LastSlept = sloth2["lastSlept"] as? TimeInterval,
-            let sloth2LastUpdate = sloth2["lastUpdate"] as? TimeInterval,
-            let sloth2Sloth = sloth2["sloth"] as? Double,
-        
-            let sloth3Name = sloth3["name"] as? String,
-            let sloth3Sex = sloth3["sex"] as? String,
-            let sloth3State = sloth3["state"] as? String,
-            let sloth3Hunger = sloth3["hunger"] as? Double,
-            let sloth3Sleep = sloth3["sleep"] as? Double,
-            let sloth3LastFed = sloth3["lastFed"] as? TimeInterval,
-            let sloth3LastSlept = sloth3["lastSlept"] as? TimeInterval,
-            let sloth3LastUpdate = sloth3["lastUpdate"] as? TimeInterval,
-            let sloth3Sloth = sloth3["sloth"] as? Double
-            else{
-                return nil
-        }
-        
-        //agora comeca a putaria
-        
-        
-        self.init(name: <#T##String#>, pass: <#T##String#>)
     }
 }
+/*
+ roomName = String
+ roomPass = String
+ roomPlayers = [Players?]
+ roomPrevTime = Date
+ slothgroup = SlothGroup
+ 
+ playerUser = String
+ playerUpdate = Date
+ playerCoins = Int
+ 
+ slothgroup
+ slothies = [Sloth?]
+ food = [int]
+ distanceAccu = [double]
+ 
+ slothy
+ name = String
+ sex = Enum Sex
+ hunger = Double
+ sleep = Double
+ lastUpdate = Date
+ lastFed = Date?
+ lastSlept = Date?
+ state = Enum State
+
+ 
+ Slothometer
+ invidual values =  Dictionary<Sloth, Double>
+ total Value = Double */
