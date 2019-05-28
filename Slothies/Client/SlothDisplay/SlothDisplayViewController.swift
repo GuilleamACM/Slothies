@@ -214,13 +214,15 @@ class SlothDisplayViewController: UIViewController {
     }
     
     @IBAction func feedButtonPressed(_ sender: Any) {
-        if let (netRoom, netSlothy) = NetworkHandler.singleton.requestFeedSloth(room: room!, slothy: slothy!) {
-            room!.copyFrom(room: netRoom)
-            slothy = netSlothy
-            updateBars(anime: true)
-            slothyEatsInterface()
-            
-            //TODO: idle
+        NetworkHandler.singleton.requestFeedSloth(room: room!, slothy: slothy!) { (result: (room: RoomGroup?, slothy: Sloth?)?, err: String?) in
+            if let err = err {
+                print(err)
+            }else{
+                self.room = result!.room!
+                self.slothy = result!.slothy!
+                self.updateBars(anime: true)
+                self.slothyEatsInterface()
+            }
         }
     }
     

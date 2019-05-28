@@ -98,15 +98,43 @@ class NetworkHandler {
         }
     }
     
-    func requestFeedSloth (room: RoomGroup, slothy: Sloth) -> (RoomGroup, Sloth)? {
-        if let slothy = room.getSlothy(withName: slothy.name){
-            if slothy.checkCanFeed() {
-                slothy.feed()
-                return (room, slothy)
+    func requestFeedSloth (room: RoomGroup, slothy: Sloth, completion: @escaping (_ result: (room: RoomGroup, slothy: Sloth)?, _ error : String?) -> ()) {
+        let roomRef = db.collection("rooms").document(room.name)
+        
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            let roomDocument : DocumentSnapshot
+            do {
+                try roomDocument = transaction.getDocument(roomRef)
+            } catch let fetchError as NSError {
+                errorPointer?.pointee = fetchError
+                completion (nil, fetchError.localizedDescription)
+                return nil
+            }
+            
+            guard let roomData = roomDocument.data(),
+                let roomDoc = RoomGroup(dictionary: roomData) else {
+                    completion(nil, "failed to retreive room from document \(roomDocument)")
+                    return nil
+            }
+            
+            guard let slothy = roomDoc.getSlothy(withName: slothy.name),
+                slothy.checkCanFeed() else {
+                    completion(nil, "could not feed slothy")
+                    return nil
+            }
+            slothy.feed()
+            transaction.setData(roomDoc.dictionary, forDocument: roomRef)
+            completion((room: roomDoc, slothy: slothy),nil)
+            
+            return nil
+        }) { (obj, err) in
+            if let err = err {
+                print("transaction failed: \(err)")
             }
         }
-        return nil
     }
+        
+    
     
     func requestSleepSloth (room: RoomGroup, slothy: Sloth) -> (RoomGroup, Sloth)? {
         if let slothy = room.getSlothy(withName: slothy.name){
