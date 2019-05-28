@@ -15,6 +15,7 @@
 		BECAD4F12290773C00583BCB /* HealthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAD4F02290773C00583BCB /* HealthHandler.swift */; };
 		BECAD4F522908DF200583BCB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECAD4F422908DF200583BCB /* HealthKit.framework */; };
 		DC321C19229C141C00D64F75 /* UpdateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321C18229C141B00D64F75 /* UpdateLogic.swift */; };
+		DC321C1B229C755F00D64F75 /* DocumentConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321C1A229C755F00D64F75 /* DocumentConversion.swift */; };
 		DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C72289E59000ADCB9E /* AppDelegate.swift */; };
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		C21D0EB9A43481B3A9F7BDEF /* Pods_SlothiesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlothiesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABFBA7EE780CB85662A1130 /* Pods-SlothiesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlothiesUITests.release.xcconfig"; path = "Target Support Files/Pods-SlothiesUITests/Pods-SlothiesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC321C18229C141B00D64F75 /* UpdateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogic.swift; sourceTree = "<group>"; };
+		DC321C1A229C755F00D64F75 /* DocumentConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentConversion.swift; sourceTree = "<group>"; };
 		DC62C4C42289E59000ADCB9E /* Slothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4C72289E59000ADCB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				DC62C5112289EC9C00ADCB9E /* Slothometer.swift */,
 				DC62C50F2289EB9900ADCB9E /* Sloth.swift */,
 				DC321C18229C141B00D64F75 /* UpdateLogic.swift */,
+				DC321C1A229C755F00D64F75 /* DocumentConversion.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				DC62C5122289EC9C00ADCB9E /* Slothometer.swift in Sources */,
 				DC62C518228B0B5B00ADCB9E /* LoginViewController.swift in Sources */,
 				DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */,
+				DC321C1B229C755F00D64F75 /* DocumentConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

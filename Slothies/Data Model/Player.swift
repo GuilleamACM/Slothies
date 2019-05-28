@@ -16,7 +16,7 @@ class Player: Equatable {
     //se achar melhor, sinta-se disposto a ignora-los
     
     //identificador unico ao jogador. não é definitivo
-    let credential: AuthCredential
+    let user: String
     
     var lastUpdate: Date
     
@@ -30,15 +30,15 @@ class Player: Equatable {
     //ainda não olhamos healthkit: não sabemos se é necessário, ou de que dado se trata
     var previousHealthStatus: Int
     
-    init(credential: AuthCredential) {
-        self.credential = credential
+    init(user: String) {
+        self.user = user
         self.previousHealthStatus = 0
         self.coins = 0
         self.lastUpdate = Date()
     }
     
     static func == (lhs: Player, rhs: Player) -> Bool {
-        return lhs.credential.hash == rhs.credential.hash
+        return lhs.user.elementsEqual(rhs.user)
     }
     
     func setSloth(sloth: Sloth) {

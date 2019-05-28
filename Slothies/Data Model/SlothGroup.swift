@@ -42,6 +42,18 @@ class SlothGroup {
         return nil
     }
     
+    func getSlothiesName() -> [String] {
+        var slothiesName:[String] = []
+        for maybeSlothy in slothies{
+            if let slothy = maybeSlothy{
+                slothiesName.append(slothy.name)
+            }else{
+                slothiesName.append("")
+            }
+        }
+        return slothiesName
+    }
+    
     func getSlothy (index: Int) -> Sloth? {
         return slothies[index]
     }

@@ -70,6 +70,7 @@ extension Sloth {
         switch state {
         case .sleeping:
             sleep += elapsed * Sloth.sleepingMultiplier
+            //TODO
             hunger -= elapsed
             break
         case .eating:

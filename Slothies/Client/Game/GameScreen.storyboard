@@ -18,103 +18,183 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-JW-6SE">
-                                <rect key="frame" x="0.0" y="65" width="414" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-JG-I80">
-                                <rect key="frame" x="0.0" y="50" width="415" height="898"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple Icon" translatesAutoresizingMaskIntoConstraints="NO" id="tqD-Fr-Vjt">
-                                <rect key="frame" x="48" y="65" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-N4-daI" userLabel="Food Counter">
-                                <rect key="frame" x="96" y="75" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coin Icon" translatesAutoresizingMaskIntoConstraints="NO" id="kem-5w-Eoa">
-                                <rect key="frame" x="48" y="113" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIn-os-Cyp" userLabel="SlothyCoins Counter">
-                                <rect key="frame" x="96" y="124" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LA8-Cz-tfR" userLabel="Slothometer">
-                                <rect key="frame" x="132" y="84" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kA8-EI-TnX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="254"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-JW-6SE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="254" id="pOb-Fy-1gh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DBY-B1-3gp">
+                                <rect key="frame" x="20.000000000000004" y="59" width="59.333333333333343" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FzS-YO-Uni">
+                                        <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple Icon" translatesAutoresizingMaskIntoConstraints="NO" id="tqD-Fr-Vjt">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="ChT-1q-S8A"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Scs-zf-6fc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-N4-daI" userLabel="Food Counter">
+                                                <rect key="frame" x="48" y="0.0" width="11.333333333333336" height="40"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qag-AS-iL3">
+                                        <rect key="frame" x="0.0" y="50" width="59.333333333333336" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin Icon" translatesAutoresizingMaskIntoConstraints="NO" id="kem-5w-Eoa">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="MvZ-VA-hjV"/>
+                                                    <constraint firstAttribute="height" constant="40" id="OYe-LR-iep"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIn-os-Cyp" userLabel="SlothyCoins Counter">
+                                                <rect key="frame" x="48" y="0.0" width="11.333333333333336" height="40"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E8S-Gd-991">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="Ajx-h3-zH9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LA8-Cz-tfR" userLabel="Slothometer">
+                                <rect key="frame" x="132" y="78.666666666666671" width="150" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wVX-4h-TdY"/>
+                                    <constraint firstAttribute="width" constant="150" id="ymQ-2z-80p"/>
+                                </constraints>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTv-ST-KnM" userLabel="Slothy0">
-                                <rect key="frame" x="48" y="175" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button background"/>
-                                <connections>
-                                    <action selector="slothyPressed0:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="cwW-Up-AM1"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KO-Ha-DNK" userLabel="Slothy0 Name">
-                                <rect key="frame" x="48" y="283" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-Xn-0AQ" userLabel="Slothy1">
-                                <rect key="frame" x="192" y="183" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button background"/>
-                                <connections>
-                                    <action selector="slothyPressed1:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="1dl-40-QXk"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-FM-GX5" userLabel="Slothy1 Name">
-                                <rect key="frame" x="192" y="291" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etu-Xj-dnI" userLabel="Slothy2">
-                                <rect key="frame" x="67" y="325" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button background"/>
-                                <connections>
-                                    <action selector="slothyPressed2:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="zDo-w7-mAY"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNZ-GM-IOr" userLabel="Slothy2 Name">
-                                <rect key="frame" x="67" y="433" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-0t-dkv" userLabel="Slothy3">
-                                <rect key="frame" x="281" y="302" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button background"/>
-                                <connections>
-                                    <action selector="slothyPressed3:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="LZg-A2-I9F"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtm-OS-ZXl" userLabel="Slothy3 Name">
-                                <rect key="frame" x="281" y="410" width="100" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-uN-rXp" userLabel="AlertView">
-                                <rect key="frame" x="67" y="75" width="280" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Zg-ht-mNi">
+                                <rect key="frame" x="53.666666666666657" y="210.66666666666666" width="100" height="122.33333333333334"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTv-ST-KnM" userLabel="Slothy0">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Fl5-u5-qvg"/>
+                                            <constraint firstAttribute="height" constant="100" id="czs-9Q-Y8b"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Button background"/>
+                                        <connections>
+                                            <action selector="slothyPressed0:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="cwW-Up-AM1"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KO-Ha-DNK" userLabel="Slothy0 Name">
+                                        <rect key="frame" x="0.0" y="102.00000000000003" width="100" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9KO-Ha-DNK" firstAttribute="trailing" secondItem="XTv-ST-KnM" secondAttribute="trailing" id="4Dk-JR-Uk9"/>
+                                    <constraint firstItem="9KO-Ha-DNK" firstAttribute="leading" secondItem="XTv-ST-KnM" secondAttribute="leading" id="Grd-3Y-W3x"/>
+                                    <constraint firstItem="9KO-Ha-DNK" firstAttribute="centerX" secondItem="XTv-ST-KnM" secondAttribute="centerX" id="Uhq-rx-k6H"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zwo-OS-qWZ">
+                                <rect key="frame" x="198.33333333333334" y="210.66666666666666" width="100.00000000000003" height="122.33333333333334"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-Xn-0AQ" userLabel="Slothy1">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="gXz-Ov-tdh"/>
+                                            <constraint firstAttribute="height" constant="100" id="wfb-tD-Zs3"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Button background"/>
+                                        <connections>
+                                            <action selector="slothyPressed1:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="1dl-40-QXk"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-FM-GX5" userLabel="Slothy1 Name">
+                                        <rect key="frame" x="0.0" y="102.00000000000003" width="100" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xwb-FM-GX5" firstAttribute="leading" secondItem="Xn2-Xn-0AQ" secondAttribute="leading" id="7xD-bq-1c9"/>
+                                    <constraint firstItem="Xwb-FM-GX5" firstAttribute="centerX" secondItem="Xn2-Xn-0AQ" secondAttribute="centerX" id="kZZ-LS-Obk"/>
+                                    <constraint firstItem="Xwb-FM-GX5" firstAttribute="trailing" secondItem="Xn2-Xn-0AQ" secondAttribute="trailing" id="w3Z-0F-B90"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="coV-je-xAn">
+                                <rect key="frame" x="32.666666666666657" y="346.66666666666669" width="100" height="122.33333333333331"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etu-Xj-dnI" userLabel="Slothy2">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Ubv-Cm-lx2"/>
+                                            <constraint firstAttribute="width" constant="100" id="Xts-EX-CRZ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Button background"/>
+                                        <connections>
+                                            <action selector="slothyPressed2:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="zDo-w7-mAY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNZ-GM-IOr" userLabel="Slothy2 Name">
+                                        <rect key="frame" x="0.0" y="102" width="100" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wNZ-GM-IOr" firstAttribute="centerX" secondItem="etu-Xj-dnI" secondAttribute="centerX" id="9FN-df-KIZ"/>
+                                    <constraint firstItem="wNZ-GM-IOr" firstAttribute="leading" secondItem="etu-Xj-dnI" secondAttribute="leading" id="Hbp-KA-hd0"/>
+                                    <constraint firstItem="wNZ-GM-IOr" firstAttribute="trailing" secondItem="etu-Xj-dnI" secondAttribute="trailing" id="RTs-r3-rgQ"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Z83-su-afY">
+                                <rect key="frame" x="260.66666666666669" y="324" width="100" height="122.33333333333331"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-0t-dkv" userLabel="Slothy3">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="4Ew-uW-MKm"/>
+                                            <constraint firstAttribute="width" constant="100" id="nDq-L3-NWm"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Button background"/>
+                                        <connections>
+                                            <action selector="slothyPressed3:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="LZg-A2-I9F"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtm-OS-ZXl" userLabel="Slothy3 Name">
+                                        <rect key="frame" x="0.0" y="102" width="100" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qtm-OS-ZXl" firstAttribute="centerX" secondItem="SDk-0t-dkv" secondAttribute="centerX" id="8yh-Nb-JCk"/>
+                                    <constraint firstItem="Qtm-OS-ZXl" firstAttribute="trailing" secondItem="SDk-0t-dkv" secondAttribute="trailing" id="XxT-Gp-X7g"/>
+                                    <constraint firstItem="Qtm-OS-ZXl" firstAttribute="leading" secondItem="SDk-0t-dkv" secondAttribute="leading" id="wAw-pa-xCX"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-uN-rXp" userLabel="AlertView">
+                                <rect key="frame" x="67" y="91" width="280" height="135"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-X8-nMt" userLabel="AlertBlur">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="135"/>
@@ -158,9 +238,36 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="IsN-JI-DcM"/>
+                                    <constraint firstAttribute="height" constant="135" id="xRm-LZ-Qzz"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="zwo-OS-qWZ" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="1.2" id="29V-oi-Dc4"/>
+                            <constraint firstItem="E8S-Gd-991" firstAttribute="leading" secondItem="3k3-ko-elF" secondAttribute="leading" id="3P0-Py-xmT"/>
+                            <constraint firstItem="coV-je-xAn" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="0.4" id="5da-4h-rtc"/>
+                            <constraint firstItem="kA8-EI-TnX" firstAttribute="leading" secondItem="3k3-ko-elF" secondAttribute="leading" id="DL0-Ib-iAv"/>
+                            <constraint firstItem="Z83-su-afY" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="1.5" id="Giw-Ua-dnu"/>
+                            <constraint firstItem="3k3-ko-elF" firstAttribute="trailing" secondItem="E8S-Gd-991" secondAttribute="trailing" id="JXb-6j-VK3"/>
+                            <constraint firstItem="kA8-EI-TnX" firstAttribute="top" secondItem="3k3-ko-elF" secondAttribute="top" id="QND-DV-WC5"/>
+                            <constraint firstItem="ffk-uN-rXp" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.35" id="Txb-da-LiF"/>
+                            <constraint firstItem="3k3-ko-elF" firstAttribute="trailing" secondItem="kA8-EI-TnX" secondAttribute="trailing" id="acb-zB-vlf"/>
+                            <constraint firstItem="1Zg-ht-mNi" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.6" id="aib-aU-0qr"/>
+                            <constraint firstAttribute="bottom" secondItem="E8S-Gd-991" secondAttribute="bottom" id="cjV-u4-hBo"/>
+                            <constraint firstItem="ffk-uN-rXp" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" id="gZV-8S-OLn"/>
+                            <constraint firstItem="E8S-Gd-991" firstAttribute="top" secondItem="kA8-EI-TnX" secondAttribute="bottom" constant="-180" id="hif-LD-zG8"/>
+                            <constraint firstItem="LA8-Cz-tfR" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" id="kok-0r-6Lb"/>
+                            <constraint firstItem="Z83-su-afY" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.85" id="lEu-ZD-mxY"/>
+                            <constraint firstItem="DBY-B1-3gp" firstAttribute="top" secondItem="3k3-ko-elF" secondAttribute="top" constant="15" id="lwj-6N-SJu"/>
+                            <constraint firstItem="coV-je-xAn" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.9" id="tfA-L1-1Rp"/>
+                            <constraint firstItem="1Zg-ht-mNi" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="0.5" id="u5h-7X-rec"/>
+                            <constraint firstItem="LA8-Cz-tfR" firstAttribute="centerY" secondItem="tqD-Fr-Vjt" secondAttribute="centerY" id="uft-6P-yQw"/>
+                            <constraint firstItem="zwo-OS-qWZ" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.6" id="v6e-vz-BtQ"/>
+                            <constraint firstItem="DBY-B1-3gp" firstAttribute="leading" secondItem="3k3-ko-elF" secondAttribute="leading" constant="20" id="x2K-qX-V4q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3k3-ko-elF"/>
                     </view>
                     <navigationItem key="navigationItem" id="qO0-1t-KLn"/>
@@ -178,12 +285,12 @@
                         <outlet property="rewardsLabel" destination="6t1-E8-me2" id="b08-sj-CWP"/>
                         <outlet property="walkedStepsLabel" destination="y03-hr-LL0" id="qqV-Ff-fLc"/>
                         <outletCollection property="SlothyButtons" destination="XTv-ST-KnM" collectionClass="NSMutableArray" id="74i-00-mcL"/>
-                        <outletCollection property="SlothyButtons" destination="Xn2-Xn-0AQ" collectionClass="NSMutableArray" id="OIm-vh-qCJ"/>
-                        <outletCollection property="SlothyButtons" destination="etu-Xj-dnI" collectionClass="NSMutableArray" id="9VP-I6-q9K"/>
-                        <outletCollection property="SlothyButtons" destination="SDk-0t-dkv" collectionClass="NSMutableArray" id="VzQ-SW-deL"/>
                         <outletCollection property="SlothyNameLabels" destination="9KO-Ha-DNK" collectionClass="NSMutableArray" id="oGW-Y4-RqJ"/>
+                        <outletCollection property="SlothyButtons" destination="Xn2-Xn-0AQ" collectionClass="NSMutableArray" id="OIm-vh-qCJ"/>
                         <outletCollection property="SlothyNameLabels" destination="Xwb-FM-GX5" collectionClass="NSMutableArray" id="SJh-pU-fK8"/>
+                        <outletCollection property="SlothyButtons" destination="etu-Xj-dnI" collectionClass="NSMutableArray" id="9VP-I6-q9K"/>
                         <outletCollection property="SlothyNameLabels" destination="wNZ-GM-IOr" collectionClass="NSMutableArray" id="O0f-hv-OKb"/>
+                        <outletCollection property="SlothyButtons" destination="SDk-0t-dkv" collectionClass="NSMutableArray" id="VzQ-SW-deL"/>
                         <outletCollection property="SlothyNameLabels" destination="Qtm-OS-ZXl" collectionClass="NSMutableArray" id="sAI-3t-w8m"/>
                         <segue destination="iPC-nV-i2P" kind="show" identifier="ToSlothDisplayScreen" id="eQe-dC-6IF"/>
                     </connections>

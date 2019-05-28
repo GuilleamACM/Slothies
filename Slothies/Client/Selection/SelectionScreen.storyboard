@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-3d-sRr" userLabel="Slothy3 Button">
-                                <rect key="frame" x="25.333333333333329" y="320" width="100" height="100"/>
+                                <rect key="frame" x="25" y="320" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="40p-NZ-Zwt"/>
                                     <constraint firstAttribute="width" constant="100" id="W2j-zv-TqH"/>
@@ -99,7 +99,7 @@
                             <constraint firstItem="sWF-3d-sRr" firstAttribute="centerY" secondItem="Yz3-Pt-HSv" secondAttribute="centerY" multiplier="0.9" id="eE5-ok-zEW"/>
                             <constraint firstAttribute="trailing" secondItem="Ou8-fe-922" secondAttribute="trailing" id="gmA-tw-YCo"/>
                             <constraint firstItem="tMz-aB-dvN" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="1.2" id="jDk-Em-vfs"/>
-                            <constraint firstItem="sWF-3d-sRr" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="0.4" constant="0.40000000000000002" id="muE-dR-4YI"/>
+                            <constraint firstItem="sWF-3d-sRr" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="0.4" id="muE-dR-4YI"/>
                             <constraint firstItem="7Gf-Fv-Way" firstAttribute="centerX" secondItem="Yz3-Pt-HSv" secondAttribute="centerX" multiplier="0.5" id="oyU-nn-5Vd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yz3-Pt-HSv"/>

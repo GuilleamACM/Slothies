@@ -51,10 +51,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         */
     }
     
-    func signIn (credential: AuthCredential) {
+    func signIn (user: String) {
         if !hasSigned {
             hasSigned = true
-            player = NetworkHandler.singleton.fetchOrCreatePlayer(credential: credential)
+            player = NetworkHandler.singleton.fetchOrCreatePlayer(user: user)
             performSegue(withIdentifier: "ToLobbyScreen", sender: self)
         }
     }
