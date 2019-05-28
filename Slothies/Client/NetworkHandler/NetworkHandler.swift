@@ -16,6 +16,20 @@ class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
     let db = Firestore.firestore()
+    var listenerDispatch: GameDataUpdateable? = nil
+    
+    func initiateListening (room: RoomGroup) {
+        if let dispatch = listenerDispatch {
+            db.collection("rooms").document(room.name).addSnapshotListener { (doc, err) in
+                if let doc = doc {
+                    if let data = doc.data() {
+                        let roomDoc = RoomGroup(dictionary: data)!
+                        dispatch.completionUpdateInterface(room: roomDoc, err: nil)
+                    }
+                }
+            }
+        }
+    }
     
     private func writeRoom (room: RoomGroup) {
         db.collection("rooms").document(room.name).setData(room.dictionary)
@@ -25,30 +39,42 @@ class NetworkHandler {
         db.collection("players").document(user).setData(["roomName":roomName])
     }
     
-    private func getRoomName (forUser: String) -> String? {
+    func fetchRoom (forUser: String, completion: @escaping (RoomGroup?, String?) -> ()) {
         let userRef = db.collection("players").document(forUser)
-        var returnStr: String? = nil
         userRef.getDocument { (doc, err) in
             if let doc = doc, doc.exists {
-                let str = doc.data()!["roomName"] as! String
-                returnStr = str
+                let roomName = doc.data()!["roomName"] as! String
+                let roomRef = self.db.collection("rooms").document(roomName)
+                roomRef.getDocument(completion: { (doc, err) in
+                    if let doc = doc, doc.exists {
+                        if let room = RoomGroup(dictionary: doc.data()!) {
+                            completion(room, nil)
+                        } else {
+                            completion(nil, "failed initialization from dictionary")
+                        }
+                    } else {
+                        completion(nil, err!.localizedDescription)
+                    }
+                })
+            } else {
+                completion(nil, "new player")
             }
         }
-        return returnStr
     }
     
-    func fetchRoom(code: String, pass: String) -> RoomGroup? {
-        var returnRoom: RoomGroup? = nil
+    func fetchRoom(code: String, pass: String, completion: @escaping (_ room: RoomGroup?, _ error : String?) -> ()) {
         db.collection("rooms").document(code).getDocument { (doc, err) in
             if let doc = doc {
-                let tempRoom = RoomGroup(dictionary: doc.data()!)!
-                if tempRoom.pass == pass {
-                    returnRoom = tempRoom
+                let room = RoomGroup(dictionary: doc.data()!)
+                if let room = room, room.pass == pass {
+                    completion(room, nil)
+                } else {
+                    completion(room, "incorrect password or failed initialization from dictionary")
                 }
+            } else {
+                completion (nil, err!.localizedDescription)
             }
         }
-        
-        return returnRoom
     }
     
     func requestCreateSlothAndLinkPlayer (room: RoomGroup, player: Player, name: String, sex: Sex, index: Int,
@@ -68,11 +94,6 @@ class NetworkHandler {
                 let roomDoc = RoomGroup(dictionary: roomData) else {
                     completion(nil, "failed to retreive room from document \(roomDocument)")
                     return nil
-            }
-            
-            if let errMessage = roomDoc.updateWithPlayerHealthInfo(player) {
-                completion(nil, errMessage)
-                return nil
             }
             
             if !roomDoc.createSloth(player: player, name: name, sex: sex, index: index) {
@@ -203,7 +224,8 @@ class NetworkHandler {
         }
     }
     
-    let runRoomInit = true
+    let runRoomInit = false
+    let staticPlayers = false
     
     init() {
         print("calling NetworkHandler INIT")
@@ -211,20 +233,35 @@ class NetworkHandler {
         if runRoomInit {
             let room = RoomGroup(name: "room", pass: "pass")
             writeRoom(room: room)
+            let room2 = RoomGroup(name: "room2", pass: "pass")
+            writeRoom(room: room2)
+            let room3 = RoomGroup(name: "room3", pass: "pass")
+            writeRoom(room: room3)
+            let room4 = RoomGroup(name: "room4", pass: "pass")
+            writeRoom(room: room4)
+            let room5 = RoomGroup(name: "room5", pass: "pass")
+            writeRoom(room: room5)
+            
+            if staticPlayers {
+                let p2 = Player(user: "lim")
+                requestCreateSlothAndLinkPlayer(room: room, player: p2, name: "lolin", sex: .female, index: 1, completion: {_,_ in })
+                
+                let p3 = Player(user: "riq")
+                requestCreateSlothAndLinkPlayer(room: room, player: p3, name: "riqdog", sex: .female, index: 2, completion: {_,_ in })
+            }
+            
+            let roomTeste = RoomGroup(name: "teste", pass: "teste")
+            writeRoom(room: roomTeste)
+            
+            let roomMeme = RoomGroup(name: "YUH", pass: "DAB")
+            writeRoom(room: roomMeme)
+            
+            Thread.sleep(forTimeInterval: 30)
         }
         
         /*
         let p1 = Player(username: "player1" , pass: "p1")
         accounts.append(p1)
-        
-        let p2 = Player(username: "player2" , pass: "p2")
-        let _ = tempRoom.createSloth(player: p2, name: "Atashi", sex: .female
-            , index: 1)
-        accounts.append(p2)
-        
-        let p3 = Player(username: "player3" , pass: "p3")
-        let _ = tempRoom.createSloth(player: p3, name: "Lolin", sex: .male
-            , index: 2)
         accounts.append(p3)
          */
     }

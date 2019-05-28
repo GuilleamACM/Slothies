@@ -126,7 +126,7 @@ extension RoomGroup {
         }
         let playersDictionary = [player0,player1,player2,player3]
         let slothiesDictionary = [sloth0,sloth1,sloth2,sloth3]
-        var players:[Player?] = []
+        var players:[Player?] = [Player?](repeating: nil, count: 4)
         self.init(name: roomName, pass: roomPass)
         self.prevTime = Date(timeIntervalSince1970: roomPrevTime)
         

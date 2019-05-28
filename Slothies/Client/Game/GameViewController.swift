@@ -8,7 +8,16 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameDataUpdateable {
+    
+    func completionUpdateInterface(room: RoomGroup?, err: String?) {
+        if let room = room {
+            self.room = room
+            loadRoom()
+        } else {
+            print(err!)
+        }
+    }
     
     private static let updateInterval: Double = secondsPerMinute * 10
     
@@ -44,7 +53,8 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
-        room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
+        //room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
+        NetworkHandler.singleton.listenerDispatch = self
         player = room!.getPlayer(withUser: player!.user)
         slothometer = room!.slothGroup.slothometer
         updateInterface()
@@ -56,6 +66,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkHandler.singleton.listenerDispatch = self
+        NetworkHandler.singleton.initiateListening(room: room!)
         SlothometerUIProgressView.layer.cornerRadius = 10
         SlothometerUIProgressView.layer.masksToBounds = true
         showAlert(steps: 1000, food: 10, coins: 5)
@@ -72,12 +84,12 @@ class GameViewController: UIViewController {
     }
     
     func initiatePeriodicUpdating() {
-        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
+        /*Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
             if let netRoom = NetworkHandler.singleton.fetchRoom(code: self.room!.name, pass: self.room!.pass) {
                 self.room!.copyFrom(room: netRoom)
                 self.updateInterface()
             }
-        })
+        })*/
     }
     
     func showAlert(steps: Int, food:Int, coins:Int) {

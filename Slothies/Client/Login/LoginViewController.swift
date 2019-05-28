@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var LoginButton: UIButton!
     
+    var room:RoomGroup? = nil
+    var user: String? = nil
     var player:Player? = nil
     var hasSigned = false
     
@@ -54,8 +56,18 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     func signIn (user: String) {
         if !hasSigned {
             hasSigned = true
-            player = Player(user: user)
-            performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+            NetworkHandler.singleton.fetchRoom(forUser: user) { (room, err) in
+                if let room = room {
+                    self.user = user
+                    self.room = room
+                    self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                } else {
+                    if err! == "new player" {
+                        self.player = Player(user: user)
+                        self.performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+                    }
+                }
+            }
         }
     }
     
@@ -65,8 +77,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if let dest = segue.destination as? LobbyViewController {
-            dest.receiveData(player: player!)
+        if segue.identifier! == "ToLobbyScreen" {
+            if let dest = segue.destination as? LobbyViewController {
+                dest.receiveData(player: player!)
+            }
+        } else {
+            if let dest = segue.destination as? GameViewController {
+                dest.receiveData(room: room!, player: room!.getPlayer(withUser: user!)!)
+            }
         }
     }
     

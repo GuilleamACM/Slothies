@@ -20,6 +20,7 @@
 		BECAD4F522908DF200583BCB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECAD4F422908DF200583BCB /* HealthKit.framework */; };
 		DC321C19229C141C00D64F75 /* UpdateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321C18229C141B00D64F75 /* UpdateLogic.swift */; };
 		DC321C1B229C755F00D64F75 /* DocumentConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321C1A229C755F00D64F75 /* DocumentConversion.swift */; };
+		DC321C1D229DD3E800D64F75 /* GameDataUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321C1C229DD3E800D64F75 /* GameDataUpdatable.swift */; };
 		DC62C4C82289E59000ADCB9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C72289E59000ADCB9E /* AppDelegate.swift */; };
 		DC62C4CA2289E59000ADCB9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C4C92289E59000ADCB9E /* MainViewController.swift */; };
 		DC62C4CD2289E59000ADCB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62C4CB2289E59000ADCB9E /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		DABFBA7EE780CB85662A1130 /* Pods-SlothiesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlothiesUITests.release.xcconfig"; path = "Target Support Files/Pods-SlothiesUITests/Pods-SlothiesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DC321C18229C141B00D64F75 /* UpdateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLogic.swift; sourceTree = "<group>"; };
 		DC321C1A229C755F00D64F75 /* DocumentConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentConversion.swift; sourceTree = "<group>"; };
+		DC321C1C229DD3E800D64F75 /* GameDataUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataUpdatable.swift; sourceTree = "<group>"; };
 		DC62C4C42289E59000ADCB9E /* Slothies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slothies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62C4C72289E59000ADCB9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC62C4C92289E59000ADCB9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				0805E442229D5B2F0067347E /* Tutorial */,
 				DC731E6A2293291300443D7D /* NetworkHandler */,
 				DC731E6B2293292600443D7D /* HealthHandler */,
+				DC321C1C229DD3E800D64F75 /* GameDataUpdatable.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				DC62C5002289E79300ADCB9E /* SlothCreationViewController.swift in Sources */,
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
 				0805E441229D51410067347E /* SlothyStoreViewController.swift in Sources */,
+				DC321C1D229DD3E800D64F75 /* GameDataUpdatable.swift in Sources */,
 				DC62C4FC2289E70E00ADCB9E /* SelectionViewController.swift in Sources */,
 				DC62C5062289E82100ADCB9E /* SlothDisplayViewController.swift in Sources */,
 				DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */,
