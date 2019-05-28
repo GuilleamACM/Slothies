@@ -11,6 +11,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    
     private func authorizeHealthKit() {
         
         HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
@@ -41,6 +42,10 @@ class MainViewController: UIViewController {
 
     @IBAction func toLoginScreen(_ sender: Any) {
         self.performSegue(withIdentifier: "ToLoginScreen", sender: self)
+    }
+    
+    @IBAction func tutorialButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToTutorial", sender: self)
     }
     
 }

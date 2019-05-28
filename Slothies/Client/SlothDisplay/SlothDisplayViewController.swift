@@ -10,7 +10,6 @@ import UIKit
 
 class SlothDisplayViewController: UIViewController {
 
-    @IBOutlet weak var viewBlur: UIView!
     
     @IBOutlet weak var SlothyNameLabel: UILabel!
     
@@ -74,12 +73,7 @@ class SlothDisplayViewController: UIViewController {
     }
     
     func showSlothyStatus() {
-        viewBlur.backgroundColor = .clear
-        let viewBlurEffect = UIBlurEffect(style: .dark)
-        let viewBlurEffectView = UIVisualEffectView(effect: viewBlurEffect)
-        viewBlurEffectView.frame = self.view.bounds
-        viewBlurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewBlur.addSubview(viewBlurEffectView)
+
         
         statusView.layer.cornerRadius = 10
         statusView.layer.masksToBounds = true
@@ -241,6 +235,9 @@ class SlothDisplayViewController: UIViewController {
         }
     }
     
+    @IBAction func slothyStoreButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ToSlothyStoreScreen", sender: self)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
