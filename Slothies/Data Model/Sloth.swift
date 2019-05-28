@@ -8,24 +8,24 @@
 
 import UIKit
 
-enum Sex {
-    case male
-    case female
+enum Sex : String {
+    case male = "Male"
+    case female = "Female"
 }
 
-enum State {
-    case idle
-    case sleeping
-    case eating
-    case exercising
-    case sad
-    case dead
+enum State: String {
+    case idle = "idle"
+    case sleeping = "sleeping"
+    case eating = "eating"
+    case exercising = "exercising"
+    case sad = "sad"
+    case dead = "dead"
 }
 
-enum AutopsyResult {
-    case hunger
-    case noSleep
-    case sloth
+enum AutopsyResult:String {
+    case hunger = "hunger"
+    case noSleep = "noSleep"
+    case sloth = "sloth"
 }
 
 class Sloth : Hashable {

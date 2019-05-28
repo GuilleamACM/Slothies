@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIJ-3H-0hh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIJ-3H-0hh">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-GV-p0o">
-                                <rect key="frame" x="119.66666666666669" y="637.66666666666663" width="175" height="50"/>
+                                <rect key="frame" x="119.66666666666669" y="592.33333333333337" width="175" height="50"/>
                                 <color key="backgroundColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SEM-mg-UJU"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zjy-h4-XdA">
-                                <rect key="frame" x="57" y="422.66666666666669" width="300" height="61"/>
+                                <rect key="frame" x="57" y="377.33333333333331" width="300" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party up with your friends by entering their group's code and password" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl4-PG-21e">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="61"/>
@@ -60,7 +60,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="G0J-zH-QZE">
-                                <rect key="frame" x="50" y="523.66666666666663" width="314" height="74"/>
+                                <rect key="frame" x="50" y="478.33333333333326" width="314" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fxM-hF-Z5c">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
@@ -69,10 +69,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Icon" translatesAutoresizingMaskIntoConstraints="NO" id="ET0-kK-Zho">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="29"/>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Room Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FO7-Sf-7qg">
-                                                        <rect key="frame" x="26" y="0.0" width="274" height="29"/>
+                                                        <rect key="frame" x="32" y="0.0" width="268" height="29"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -98,16 +98,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ca6-Y0-D6N">
-                                        <rect key="frame" x="0.0" y="43" width="314" height="31"/>
+                                        <rect key="frame" x="0.0" y="43.000000000000057" width="314" height="31"/>
                                         <subviews>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-X3-iGc">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="29"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock Icon" translatesAutoresizingMaskIntoConstraints="NO" id="d42-wU-LJL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="29"/>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57T-wc-eRH">
-                                                        <rect key="frame" x="26" y="0.0" width="274" height="29"/>
+                                                        <rect key="frame" x="32" y="0.0" width="268" height="29"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -143,7 +143,7 @@
                         <constraints>
                             <constraint firstItem="wOn-GV-p0o" firstAttribute="centerX" secondItem="jej-CU-iZ0" secondAttribute="centerX" id="1gX-hi-3C0"/>
                             <constraint firstItem="wOn-GV-p0o" firstAttribute="top" secondItem="G0J-zH-QZE" secondAttribute="bottom" constant="40" id="BdR-Hi-LAf"/>
-                            <constraint firstItem="zjy-h4-XdA" firstAttribute="centerY" secondItem="jej-CU-iZ0" secondAttribute="centerY" id="Ma2-eS-cCf"/>
+                            <constraint firstItem="zjy-h4-XdA" firstAttribute="centerY" secondItem="jej-CU-iZ0" secondAttribute="centerY" multiplier="0.9" id="Ma2-eS-cCf"/>
                             <constraint firstItem="G0J-zH-QZE" firstAttribute="top" secondItem="zjy-h4-XdA" secondAttribute="bottom" constant="40" id="NF2-Fh-QNR"/>
                             <constraint firstItem="bDK-EV-iro" firstAttribute="centerY" secondItem="jej-CU-iZ0" secondAttribute="centerY" multiplier="0.45" id="SSW-4e-F1t"/>
                             <constraint firstItem="jej-CU-iZ0" firstAttribute="trailing" secondItem="G0J-zH-QZE" secondAttribute="trailing" constant="50" id="bK9-Yn-kSp"/>
@@ -185,7 +185,7 @@
     </scenes>
     <resources>
         <image name="Lock Icon" width="16" height="19"/>
-        <image name="Logo" width="1646" height="1375"/>
+        <image name="Logo" width="1234.5" height="1031.25"/>
         <image name="User Icon" width="22" height="25"/>
     </resources>
 </document>
