@@ -18,13 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-zI-G2a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="4nJ-eH-2lX">
+                                <rect key="frame" x="-1" y="44" width="415" height="898"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-RT-vfp" userLabel="View Blur">
+                                <rect key="frame" x="-1" y="0.0" width="427" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothy's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-sJ-aDu">
                                 <rect key="frame" x="133" y="85" width="149" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.9345284104347229" green="0.48545557260513306" blue="0.61176449060440063" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv3-Bb-Z4p" userLabel="Market Button">
+                                <rect key="frame" x="318" y="71" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="MarketButton"/>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-Sr-MBw" userLabel="Status View">
                                 <rect key="frame" x="72" y="128" width="270" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,20 +85,19 @@
                                     <action selector="sleepButtonPressed:" destination="9M4-UZ-OwS" eventType="touchUpInside" id="apL-op-mbV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKf-bF-YcN" userLabel="AlertView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKf-bF-YcN" userLabel="Status View">
                                 <rect key="frame" x="67" y="128" width="280" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Q-hU-eEi" userLabel="AlertBlur">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Q-hU-eEi" userLabel="Status Blur">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-KT-BMU">
                                         <rect key="frame" x="112" y="0.0" width="57" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple Icon" translatesAutoresizingMaskIntoConstraints="NO" id="deY-fC-lA6">
@@ -96,7 +112,7 @@
                                         <rect key="frame" x="119" y="48" width="43" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V9X-CI-Sjf" userLabel="Sleep Progress View">
@@ -111,22 +127,22 @@
                                         <rect key="frame" x="65" y="125" width="150" height="2"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </progressView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sloth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-ep-73d">
-                                        <rect key="frame" x="15" y="104" width="45" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-lT-Ryu">
                                         <rect key="frame" x="93" y="96" width="94" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sloth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-ep-73d">
+                                        <rect key="frame" x="15" y="104" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="QtA-P0-qgS"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="RqS-EB-XAg"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -153,6 +169,7 @@
                         <outlet property="StatusView" destination="sZ0-Sr-MBw" id="85F-ZL-qah"/>
                         <outlet property="statusBlur" destination="30Q-hU-eEi" id="PVK-HO-9Dn"/>
                         <outlet property="statusView" destination="pKf-bF-YcN" id="hbq-1e-WEV"/>
+                        <outlet property="viewBlur" destination="B1b-RT-vfp" id="MO2-mz-Uvh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJR-5y-ZYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,9 +182,12 @@
         <image name="Chat Bubble" width="87" height="30"/>
         <image name="FeedButton" width="89" height="89"/>
         <image name="Female Slothy Idle" width="1980" height="2800"/>
+        <image name="MarketButton" width="54" height="54"/>
         <image name="SleepButton" width="89" height="89"/>
         <image name="Sloth Icon" width="500" height="500"/>
         <image name="Slothy Eating" width="1980" height="2800"/>
         <image name="Spleep Icon" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="cloud" width="375" height="254"/>
+        <image name="tree" width="375" height="731"/>
     </resources>
 </document>
