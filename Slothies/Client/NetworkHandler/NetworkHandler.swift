@@ -152,15 +152,45 @@ class NetworkHandler {
         
     
     
-    func requestSleepSloth (room: RoomGroup, slothy: Sloth) -> (RoomGroup, Sloth)? {
-        if let slothy = room.getSlothy(withName: slothy.name){
-            if slothy.checkCanSleep() {
-                slothy.putToSleep()
-                return (room, slothy)
+    func requestSleepSloth (room: RoomGroup, slothy: Sloth, completion: @escaping (_ result: (room: RoomGroup, slothy: Sloth)?, _ error : String?) -> ()) {
+        let roomRef = db.collection("rooms").document(room.name)
+        
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            let roomDocument : DocumentSnapshot
+            do {
+                try roomDocument = transaction.getDocument(roomRef)
+            } catch let fetchError as NSError {
+                errorPointer?.pointee = fetchError
+                completion (nil, fetchError.localizedDescription)
+                return nil
+            }
+            
+            guard let roomData = roomDocument.data(),
+                let roomDoc = RoomGroup(dictionary: roomData) else {
+                    completion(nil, "failed to retreive room from document \(roomDocument)")
+                    return nil
+            }
+            
+            guard let slothy = room.getSlothy(withName: slothy.name),
+                slothy.checkCanSleep() else{
+                completion(nil, "slothy could not sleep")
+                return nil
+            }
+            
+            slothy.putToSleep()
+            transaction.setData(roomDoc.dictionary, forDocument: roomRef)
+            completion((room: roomDoc, slothy: slothy),nil)
+            
+            return nil
+            
+        }) { (obj, err) in
+            if let err = err {
+                print("transaction failed: \(err)")
             }
         }
-        return nil
     }
+    
+    
     
     func requestUpdate (room: RoomGroup, player: Player,
                         completion: @escaping (_ result: (room: RoomGroup, player: Player)?, _ error : String?) -> ()) {
