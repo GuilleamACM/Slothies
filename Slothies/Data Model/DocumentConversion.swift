@@ -9,11 +9,32 @@
 import Foundation
 
 extension RoomGroup {
-//    var dictionary {
-//        return
-//    }
+    
+    //dictionary for roomgroup
+    var dictionary: [String: Any] {
+        return [
+            "name":name,
+            "pass":pass,
+            "players": [], //TODO credential IDTOKEN
+            "prevTime":prevTime.timeIntervalSince1970,
+            "slothGroup":slothGroup.getSlothiesName()
+        ]
+    }
+    
+    convenience init? (dictionary: [String:Any]){
+        guard let name = dictionary["name"] as? String,
+            let pass = dictionary["pass"] as? String,
+            //let players
+            let interval = dictionary["prevTime"] as? TimeInterval,
+            let slothGroup = dictionary["slothGroup"] as? String
+            else{ return nil }
+        
+        self.init(name: name, pass: pass)
+        self.prevTime = Date(timeIntervalSince1970: interval)
+        // self.players = players TODO
+        //self.slothGroup = slothGroup TODO
 }
-
+}
 /*
  roomgroup.setData([
  room name : String
