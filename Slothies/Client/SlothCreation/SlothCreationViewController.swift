@@ -36,12 +36,14 @@ class SlothCreationViewController: UIViewController {
     @IBAction func CreateSlothyButton(_ sender: UIButton) {
         if let slothyName = SlothyNameField.text as String? {
             if let slothySex = self.sex as Sex? {
-                let maybeRoom = NetworkHandler.singleton.requestCreateSloth(room: room!, player: player!, name: slothyName, sex: slothySex, index: index!)
-                if let roomy = maybeRoom {
-                    room = roomy
-                    performSegue(withIdentifier: "ToGameScreen", sender: self)
-                } else {
-                    //do something to warn the user
+                NetworkHandler.singleton.requestCreateSlothAndLinkPlayer(room: room!, player: player!, name: slothyName, sex: slothySex, index: index!) { (result: (room: RoomGroup, player: Player)?, err) in
+                    if let err = err {
+                        print(err)
+                    } else {
+                        self.room = result!.room
+                        self.player = result!.player
+                        self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                    }
                 }
             }
         }

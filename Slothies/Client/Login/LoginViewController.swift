@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     func signIn (user: String) {
         if !hasSigned {
             hasSigned = true
-            player = NetworkHandler.singleton.fetchOrCreatePlayer(user: user)
+            player = Player(user: user)
             performSegue(withIdentifier: "ToLobbyScreen", sender: self)
         }
     }

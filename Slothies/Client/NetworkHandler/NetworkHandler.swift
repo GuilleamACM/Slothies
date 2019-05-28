@@ -15,27 +15,79 @@ var rooms: [RoomGroup] = []
 class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
+    let db = Firestore.firestore()
+    
+    private func writeRoom (room: RoomGroup) {
+        db.collection("rooms").document(room.name).setData(room.dictionary)
+    }
+    
+    private func createPlayerToRoomLink (roomName: String, user:String) {
+        db.collection("players").document(user).setData(["roomName":roomName])
+    }
+    
+    private func getRoomName (forUser: String) -> String? {
+        let userRef = db.collection("players").document(forUser)
+        var returnStr: String? = nil
+        userRef.getDocument { (doc, err) in
+            if let doc = doc, doc.exists {
+                let str = doc.data()!["roomName"] as! String
+                returnStr = str
+            }
+        }
+        return returnStr
+    }
     
     func fetchRoom(code: String, pass: String) -> RoomGroup? {
-        if let index = rooms.firstIndex(where: {$0.name == code && $0.pass == pass}) {
-            return rooms[index]
+        var returnRoom: RoomGroup? = nil
+        db.collection("rooms").document(code).getDocument { (doc, err) in
+            if let doc = doc {
+                let tempRoom = RoomGroup(dictionary: doc.data()!)!
+                if tempRoom.pass == pass {
+                    returnRoom = tempRoom
+                }
+            }
         }
-        return nil
+        
+        return returnRoom
     }
     
-    func fetchOrCreatePlayer(user: String) -> Player {
-        if let index = accounts.firstIndex(where: {user.elementsEqual($0.user)}) {
-            return accounts[index]
-        }
-        accounts.append(Player(user: user))
-        return accounts.last!
-    }
-    
-    func requestCreateSloth (room: RoomGroup, player: Player, name: String, sex: Sex, index: Int) -> RoomGroup? {
-        if room.createSloth(player: player, name: name, sex: sex, index: index) {
-            return room
-        } else {
+    func requestCreateSlothAndLinkPlayer (room: RoomGroup, player: Player, name: String, sex: Sex, index: Int,
+                                          completion: @escaping (_ result: (room: RoomGroup, player: Player)?, _ error : String?) -> ()) {
+        let roomRef = db.collection("rooms").document(room.name)
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            let roomDocument : DocumentSnapshot
+            do {
+                try roomDocument = transaction.getDocument(roomRef)
+            } catch let fetchError as NSError {
+                errorPointer?.pointee = fetchError
+                completion (nil, fetchError.localizedDescription)
+                return nil
+            }
+            
+            guard let roomData = roomDocument.data(),
+                let roomDoc = RoomGroup(dictionary: roomData) else {
+                    completion(nil, "failed to retreive room from document \(roomDocument)")
+                    return nil
+            }
+            
+            if let errMessage = roomDoc.updateWithPlayerHealthInfo(player) {
+                completion(nil, errMessage)
+                return nil
+            }
+            
+            if !roomDoc.createSloth(player: player, name: name, sex: sex, index: index) {
+                completion(nil, "slothy name already exists")
+                return nil
+            }
+            
+            transaction.setData(roomDoc.dictionary, forDocument: roomRef)
+            self.createPlayerToRoomLink(roomName: roomDoc.name, user: player.user)
+            completion((room: roomDoc, player: roomDoc.getPlayer(withUser: player.user)!), nil)
             return nil
+        }) { (obj, err) in
+            if let err = err {
+                print("transaction failed: \(err)")
+            }
         }
     }
     
@@ -59,9 +111,49 @@ class NetworkHandler {
         return nil
     }
     
+    func requestUpdate (room: RoomGroup, player: Player,
+                        completion: @escaping (_ result: (room: RoomGroup, player: Player)?, _ error : String?) -> ()) {
+        let roomRef = db.collection("rooms").document(room.name)
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            let roomDocument : DocumentSnapshot
+            do {
+                try roomDocument = transaction.getDocument(roomRef)
+            } catch let fetchError as NSError {
+                errorPointer?.pointee = fetchError
+                completion (nil, fetchError.localizedDescription)
+                return nil
+            }
+            
+            guard let roomData = roomDocument.data(),
+                let roomDoc = RoomGroup(dictionary: roomData) else {
+                    completion(nil, "failed to retreive room from document \(roomDocument)")
+                    return nil
+            }
+            
+            if let errMessage = roomDoc.updateWithPlayerHealthInfo(player) {
+                completion(nil, errMessage)
+                return nil
+            }
+            
+            transaction.setData(roomDoc.dictionary, forDocument: roomRef)
+            completion((room: roomDoc, player: roomDoc.getPlayer(withUser: player.user)!), nil)
+            return nil
+        }) { (obj, err) in
+            if let err = err {
+                print("transaction failed: \(err)")
+            }
+        }
+    }
+    
+    let runRoomInit = true
+    
     init() {
         print("calling NetworkHandler INIT")
-        let tempRoom = RoomGroup(name: "room", pass: "pass")
+        
+        if runRoomInit {
+            let room = RoomGroup(name: "room", pass: "pass")
+            writeRoom(room: room)
+        }
         
         /*
         let p1 = Player(username: "player1" , pass: "p1")
@@ -77,7 +169,5 @@ class NetworkHandler {
             , index: 2)
         accounts.append(p3)
          */
-        
-        rooms.append(tempRoom)
     }
 }
