@@ -69,7 +69,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         NetworkHandler.listenerDispatch = self
         DispatchQueue.main.async {
             self.SlothyBubble.isHidden = true
-            self.SlothyBubble.isHidden = true
+            self.SlothyBubbleLabel.isHidden = true
             switch self.slothy!.state {
             case .eating:
                 self.slothyEatsInterface()
