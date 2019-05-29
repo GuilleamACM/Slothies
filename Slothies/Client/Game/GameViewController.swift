@@ -169,14 +169,14 @@ class GameViewController: UIViewController, GameDataUpdateable {
                 switch (slothy.state) {
                 case .eating:
                     if (slothy.sex == .male) {
-                        image = UIImage(named: "Male Slothy Face Idle")!
+                        image = UIImage(named: "Male Slothy Face Eating")!
                     } else {
                         image = UIImage(named: "Female Slothy Face Eating")!
                     }
                     break
                 case .sleeping:
                     if (slothy.sex == .male) {
-                        image = UIImage(named: "Male Slothy Face Idle")!
+                        image = UIImage(named: "Male Slothy Face Sleeping")!
                     } else {
                         image = UIImage(named: "Female Slothy Face Sleeping")!
                     }
@@ -197,7 +197,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
                         }
                     } else {
                         if (slothy.sex == .male) {
-                            image = UIImage(named: "Male Slothy Face Idle")!
+                            image = UIImage(named: "Male Slothy Face Dying")!
                         } else {
                             image = UIImage(named: "Female Slothy Face Dying")!
                         }
