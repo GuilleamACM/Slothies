@@ -19,8 +19,6 @@ class GameViewController: UIViewController, GameDataUpdateable {
         }
     }
     
-    private static let updateInterval: Double = secondsPerMinute * 10
-    
     var room: RoomGroup?
     var player: Player?
     var slothometer: Slothometer?
@@ -68,13 +66,13 @@ class GameViewController: UIViewController, GameDataUpdateable {
         super.viewDidLoad()
         NetworkHandler.singleton.listenerDispatch = self
         NetworkHandler.singleton.initiateListening(room: room!)
+        initiatePeriodicUpdating()
         DispatchQueue.main.async {
             self.SlothometerUIProgressView.layer.cornerRadius = 10
             self.SlothometerUIProgressView.layer.masksToBounds = true
             self.showAlert(steps: 1000, food: 10, coins: 5)
             self.SlothometerUIProgressView.transform = self.SlothometerUIProgressView.transform.scaledBy(x: 1, y: 4)
             self.updateInterface()
-            self.initiatePeriodicUpdating()
             self.navigationController!.setNavigationBarHidden(true, animated: true)
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
             self.view.addGestureRecognizer(tap)
@@ -85,13 +83,20 @@ class GameViewController: UIViewController, GameDataUpdateable {
         closeAlert()
     }
     
+    private static let updateInterval: Double = secondsPerMinute * 10
+    
     func initiatePeriodicUpdating() {
-        /*Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true, block: { (timer) in
-            if let netRoom = NetworkHandler.singleton.fetchRoom(code: self.room!.name, pass: self.room!.pass) {
-                self.room!.copyFrom(room: netRoom)
-                self.updateInterface()
-            }
-        })*/
+        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true) { (timer) in
+            NetworkHandler.singleton.requestUpdate(room: self.room!, player: self.player!, completion: { (result: (room: RoomGroup, player: Player)?, err) in
+                if let result = result {
+                    self.room = result.room
+                    self.player = result.player
+                    self.loadRoom()
+                } else {
+                    print(err!)
+                }
+            })
+        }
     }
     
     func showAlertInner(steps: Int, food:Int, coins:Int) {
