@@ -65,6 +65,8 @@ class Player: Equatable {
             self.runToStepLock.signal()
         }
         runToStepLock.wait(until: Date().addingTimeInterval(0.5))
+
+
         HealthHandler.singleton.getStepsCount(startDate: lastUpdate, endDate: currentTime){ (value,error) in
             if let error = error{
                 print(error.localizedDescription)

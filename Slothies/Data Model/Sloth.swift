@@ -59,7 +59,6 @@ class Sloth : Hashable {
     //fome, sono
     var hunger, sleep: Double
     //ultima alimentacao e soneca
-    var lastUpdate: Date
     var lastFed, lastSlept: Date?
     
     var sloth: Double {
@@ -81,7 +80,6 @@ class Sloth : Hashable {
         hunger = Sloth.statusInitValue
         sleep = Sloth.statusInitValue
         state = .idle
-        lastUpdate = Date()
     }
     
     func checkCanSleep () -> Bool {
@@ -106,6 +104,7 @@ class Sloth : Hashable {
     func feed () {
         lastFed = Date()
         hunger += Sloth.hungerFeedingValue
+        hunger = min(Sloth.statusMaxValue, hunger)
         state = .eating
     }
 }

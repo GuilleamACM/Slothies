@@ -12,7 +12,7 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
     
     func completionUpdateInterface(room: RoomGroup?, err: String?) {
         if let room = room {
-            self.room = room
+            self.room!.copyFrom(room: room)
         }
     }
     

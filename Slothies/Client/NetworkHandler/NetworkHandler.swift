@@ -267,8 +267,8 @@ class NetworkHandler {
                     return nil
             }
             
-            room.prevTime = room.prevTime.addingTimeInterval(-timeInterval)
-            room.timePassageUpdate(Date())
+            roomDoc.prevTime = roomDoc.prevTime.addingTimeInterval(-timeInterval)
+            roomDoc.timePassageUpdate(Date())
             transaction.setData(roomDoc.dictionary, forDocument: roomRef)
             completion(roomDoc, nil)
             return nil
