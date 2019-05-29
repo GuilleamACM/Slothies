@@ -28,15 +28,35 @@ extension RoomGroup {
         }
         
         timePassageUpdate(currentTime)
-        if let play = playerToUpdate {
-            play.updateWalked(currTime: currentTime, info: info)
-            slothGroup.walked(distance: info.distance)
+        play.updateWalked(currTime: currentTime, info: info)
+        slothGroup.walked(distance: info.distance)
+        return nil
+    }
+    
+    func updateWithPretendData (_ playerFromArgument: Player, steps: Double, distance: Double) -> String? {
+        var playerToUpdate: Player? = nil
+        for play in players {
+            if let play = play {
+                if play == playerFromArgument {
+                    playerToUpdate = play
+                }
+            }
         }
+        
+        let currentTime = Date()
+        guard let play = playerToUpdate else {
+            return "could not find player"
+        }
+        let info = (steps: steps, distance: distance)
+        
+        timePassageUpdate(currentTime)
+        play.updateWalked(currTime: currentTime, info: info)
+        slothGroup.walked(distance: info.distance)
         return nil
     }
     
     //update to call upon opening the app/joining the room
-    fileprivate func timePassageUpdate (_ currentTime: Date) {
+    func timePassageUpdate (_ currentTime: Date) {
         slothGroup.timePassageUpdate(prevTime: prevTime, currTime: currentTime)
         prevTime = currentTime
     }
