@@ -92,6 +92,7 @@ class Sloth : Hashable {
     }
     
     func putToSleep () {
+        lastSlept = Date()
         state = .sleeping
     }
     
@@ -103,6 +104,7 @@ class Sloth : Hashable {
     }
     
     func feed () {
+        lastFed = Date()
         hunger += Sloth.hungerFeedingValue
         state = .eating
     }

@@ -8,7 +8,14 @@
 
 import UIKit
 
-class SlothyStoreViewController: UIViewController {
+class SlothyStoreViewController: UIViewController, GameDataUpdateable {
+    
+    func completionUpdateInterface(room: RoomGroup?, err: String?) {
+        if let room = room {
+            self.room = room
+        }
+    }
+    
     
     @IBOutlet weak var debugButton: UIButton!
     @IBOutlet weak var debug0: UIButton!
@@ -37,14 +44,25 @@ class SlothyStoreViewController: UIViewController {
         }
     }
     
-    @IBAction func Debug0Teste(_ sender: UIButton) {
+    @IBAction func DebugWipeRoom(_ sender: UIButton) {
         print("Debugging wipe room")
         NetworkHandler.singleton.wipeRoom(room: room!) { (room:RoomGroup?,err: String?) in }
         
         
     }
+    @IBAction func DebugJumpDate(_ sender: UIButton) {
+        print("Debugging jump date")
+        NetworkHandler.singleton.jumpToPastDate(room: room!, timeInterval: 14400) { (room:RoomGroup?, err: String?) in
+            if let err = err{
+                print(err)
+            }else if let _ = room{
+                print("sucess jump date")
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkHandler.singleton.listenerDispatch = self
         debug0.layer.cornerRadius = 5
         debug1.layer.cornerRadius = 5
         debug2.layer.cornerRadius = 5

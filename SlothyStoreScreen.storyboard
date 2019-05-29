@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZ1-y8-bf1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZ1-y8-bf1">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,10 +44,9 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-HU-EkM">
-                                            <rect key="frame" x="207" y="229.66666666666674" width="0.0" height="612.33333333333326"/>
+                                            <rect key="frame" x="207" y="822" width="0.0" height="20"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-8L-mt4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="296.33333333333331"/>
                                                     <subviews>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-nf-f5w">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="46"/>
@@ -58,16 +57,19 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Debug 0"/>
+                                                            <state key="normal" title="Wipe Room"/>
                                                             <connections>
-                                                                <action selector="Debug0Teste:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="iwB-vB-qFN"/>
+                                                                <action selector="DebugWipeRoom:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="iwB-vB-qFN"/>
                                                             </connections>
                                                         </button>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMM-ez-LUS">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="46"/>
                                                             <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Debug 1"/>
+                                                            <state key="normal" title="Jump Date"/>
+                                                            <connections>
+                                                                <action selector="DebugJumpDate:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="LJE-jc-gpj"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -76,7 +78,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoE-Rp-L02">
-                                                    <rect key="frame" x="0.0" y="316.33333333333337" width="0.0" height="296"/>
+                                                    <rect key="frame" x="0.0" y="20" width="0.0" height="0.0"/>
                                                     <subviews>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-8a-ExM">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="46"/>
@@ -108,7 +110,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
-                                <rect key="frame" x="40" y="193.66666666666666" width="334" height="16"/>
+                                <rect key="frame" x="40" y="193.66666666666669" width="334" height="608.33333333333326"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothy Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFZ-tw-wem">
                                 <rect key="frame" x="143.66666666666666" y="77.333333333333329" width="126.99999999999997" height="26.333333333333329"/>
@@ -130,7 +132,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-cA-gzX">
-                                <rect key="frame" x="128.66666666666666" y="185" width="74" height="98"/>
+                                <rect key="frame" x="128.66666666666666" y="528.66666666666663" width="74" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="DAX-Vk-6rJ"/>
                                     <constraint firstAttribute="width" constant="74" id="cOD-os-fxW"/>

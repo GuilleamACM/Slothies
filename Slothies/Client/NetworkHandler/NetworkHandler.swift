@@ -248,6 +248,38 @@ class NetworkHandler {
         crash("reset app")
     }
     
+    func jumpToPastDate(room: RoomGroup, timeInterval:TimeInterval, completion: @escaping (_ room: RoomGroup?, _ error : String?) -> ()) {
+        
+        let roomRef = db.collection("rooms").document(room.name)
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            let roomDocument : DocumentSnapshot
+            do {
+                try roomDocument = transaction.getDocument(roomRef)
+            } catch let fetchError as NSError {
+                errorPointer?.pointee = fetchError
+                completion (nil, fetchError.localizedDescription)
+                return nil
+            }
+            
+            guard let roomData = roomDocument.data(),
+                let roomDoc = RoomGroup(dictionary: roomData) else {
+                    completion(nil, "failed to retreive room from document \(roomDocument)")
+                    return nil
+            }
+            
+            room.prevTime = room.prevTime.addingTimeInterval(-timeInterval)
+            room.timePassageUpdate(Date())
+            transaction.setData(roomDoc.dictionary, forDocument: roomRef)
+            completion(roomDoc, nil)
+            return nil
+        }) { (obj, err) in
+            if let err = err {
+                print("transaction failed: \(err)")
+            }
+        }
+    }
+    
+    
     
     let runRoomInit = false
     let staticPlayers = false
