@@ -171,7 +171,7 @@ class NetworkHandler {
                     return nil
             }
             
-            guard let slothy = room.getSlothy(withName: slothy.name),
+            guard let slothy = roomDoc.getSlothy(withName: slothy.name),
                 slothy.checkCanSleep() else{
                 completion(nil, "slothy could not sleep")
                 return nil

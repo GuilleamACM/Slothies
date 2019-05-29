@@ -17,7 +17,7 @@ class Slothometer {
     //key values for sloth
     static let maxValue: Double = secondsPerDay * daysPerWeek
     static let minValue: Double = 0
-    static let initValue: Double = secondsPerDay * (daysPerWeek - 1)
+    static let initValue: Double = secondsPerDay * (daysPerWeek - 3)
     
     //current total slothometer
     var totalValue: Double

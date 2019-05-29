@@ -28,7 +28,7 @@ extension RoomGroup {
         }
         
         timePassageUpdate(currentTime)
-        play.updateWalked(currTime: currentTime, info: info)
+        play.updateWalked(currTime: currentTime, info: (steps: info.steps * multiplier, distance: info.distance * multiplier))
         slothGroup.walked(distance: info.distance)
         return nil
     }

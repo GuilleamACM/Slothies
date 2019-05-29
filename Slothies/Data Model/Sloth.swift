@@ -50,7 +50,7 @@ class Sloth : Hashable {
     static let hungerFeedingValue: Double = secondsPerDay / 2
     static let feedingCooldown: Double = secondsPerMinute * 5
     static let sleepingCooldown: Double = secondsPerMinute * 120
-    static let sleepingMultiplier: Double = 2000
+    static let sleepingMultiplier: Double = 4
     
     //nome, sexo
     let name: String

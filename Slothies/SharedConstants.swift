@@ -14,4 +14,5 @@ let daysPerWeek: Double = 7
 let maxPlayers = 4
 let stepsHealthPerDay:Double = 10000
 let distanceHealthPerDay:Double = 8000  //8km
+let multiplier = 500.0
 func crash(_ s: String) { assert(false, s) }
