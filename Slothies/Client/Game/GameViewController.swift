@@ -68,15 +68,17 @@ class GameViewController: UIViewController, GameDataUpdateable {
         super.viewDidLoad()
         NetworkHandler.singleton.listenerDispatch = self
         NetworkHandler.singleton.initiateListening(room: room!)
-        SlothometerUIProgressView.layer.cornerRadius = 10
-        SlothometerUIProgressView.layer.masksToBounds = true
-        showAlert(steps: 1000, food: 10, coins: 5)
-        SlothometerUIProgressView.transform = SlothometerUIProgressView.transform.scaledBy(x: 1, y: 4)
-        updateInterface()
-        initiatePeriodicUpdating()
-        navigationController!.setNavigationBarHidden(true, animated: true)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        view.addGestureRecognizer(tap)
+        DispatchQueue.main.async {
+            self.SlothometerUIProgressView.layer.cornerRadius = 10
+            self.SlothometerUIProgressView.layer.masksToBounds = true
+            self.showAlert(steps: 1000, food: 10, coins: 5)
+            self.SlothometerUIProgressView.transform = self.SlothometerUIProgressView.transform.scaledBy(x: 1, y: 4)
+            self.updateInterface()
+            self.initiatePeriodicUpdating()
+            self.navigationController!.setNavigationBarHidden(true, animated: true)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
+            self.view.addGestureRecognizer(tap)
+        }
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
