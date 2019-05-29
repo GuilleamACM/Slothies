@@ -60,6 +60,18 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
             }
         }
     }
+    
+    @IBAction func DebugFakeExercise(_ sender: UIButton) {
+        print("Debugging fake exercise")
+        NetworkHandler.singleton.fakeExercise(room: room!, player: player!, fakeSteps: 1000, fakeDistance: 500) { (room:RoomGroup?, err:String?) in
+            if let err = err{
+                print(err)
+            }else if let _ = room{
+                print("sucess fake exercise")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkHandler.singleton.listenerDispatch = self
