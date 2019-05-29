@@ -30,9 +30,7 @@ class HealthHandler{
                 completion(nil,error)
             } else if let quantity = statistics?.sumQuantity() {
                 let value = quantity.doubleValue(for: HKUnit.meter())
-                DispatchQueue.main.async {
-                    completion(value, error)
-                }
+                completion(value, error)
             }
             
         }
@@ -59,9 +57,7 @@ class HealthHandler{
                 } else if let quantity = statistics?.sumQuantity() {
                     value = quantity.doubleValue(for: HKUnit.count())
                 }
-                DispatchQueue.main.async {
-                    completion(value, error)
-                }
+                completion(value, error)
             }
             healthStore.execute(query)
         }
