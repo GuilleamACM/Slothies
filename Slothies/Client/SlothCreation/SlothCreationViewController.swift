@@ -42,7 +42,10 @@ class SlothCreationViewController: UIViewController {
                     } else {
                         self.room = result!.room
                         self.player = result!.player
-                        self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                        DispatchQueue.main.async{
+                            
+                            self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                        }
                     }
                 }
             }

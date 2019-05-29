@@ -182,8 +182,10 @@ class GameViewController: UIViewController, GameDataUpdateable {
     
     func slothyPressed(index: Int) {
         if let slothy = room!.getSlothy(index: index) {
-            slothDisplaySlothy = slothy
-            performSegue(withIdentifier: "ToSlothDisplayScreen", sender: self)
+            DispatchQueue.main.async {
+                self.slothDisplaySlothy = slothy
+                self.performSegue(withIdentifier: "ToSlothDisplayScreen", sender: self)
+            }
         }
     }
 

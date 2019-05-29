@@ -240,12 +240,14 @@ class NetworkHandler {
                 }
             }
         }
+        
         //reset room
         let roomNew = RoomGroup(name:room.name,pass:room.pass)
-        writeRoom(room: roomNew)
-        //crash
+        self.writeRoom(room: roomNew)
+        Thread.sleep(forTimeInterval: 10)
         crash("reset app")
     }
+    
     
     let runRoomInit = false
     let staticPlayers = false
