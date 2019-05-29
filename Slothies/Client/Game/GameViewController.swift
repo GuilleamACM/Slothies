@@ -222,6 +222,9 @@ class GameViewController: UIViewController, GameDataUpdateable {
         }
     }
     
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToTutorialScreen", sender: self)
+    }
     
     func receiveData(room: RoomGroup, player: Player) {
         self.room = room

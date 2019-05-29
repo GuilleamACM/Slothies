@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G1l-pC-96F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G1l-pC-96F">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,36 +24,31 @@
                                     <constraint firstAttribute="width" secondItem="oJB-Hd-Qc1" secondAttribute="height" multiplier="5:4" id="FVE-1y-PjW"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-RW-mm7">
+                                <rect key="frame" x="0.0" y="420" width="414" height="694"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-JC-J9S">
-                                <rect key="frame" x="175.66666666666666" y="658.66666666666663" width="63" height="42"/>
+                                <rect key="frame" x="178" y="658.66666666666663" width="58" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.47980844974517822" blue="0.61090028285980225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="toLoginScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UxY-5l-Ha4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-7d-NsG">
-                                <rect key="frame" x="175.66666666666666" y="720.66666666666663" width="63" height="33"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Tutorial">
-                                    <color key="titleColor" red="0.80414372680000001" green="0.30052059889999999" blue="0.44626075030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tutorialButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8av-BA-ax0"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-th-0Em">
+                                <rect key="frame" x="0.0" y="-39" width="414" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oJB-Hd-Qc1" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1vt-x5-oqd"/>
-                            <constraint firstItem="z1b-7d-NsG" firstAttribute="trailing" secondItem="hPI-JC-J9S" secondAttribute="trailing" id="4Wa-fV-fIk"/>
                             <constraint firstAttribute="trailing" secondItem="oJB-Hd-Qc1" secondAttribute="trailing" constant="15" id="9r1-kL-wfu"/>
                             <constraint firstItem="hPI-JC-J9S" firstAttribute="centerX" secondItem="oJB-Hd-Qc1" secondAttribute="centerX" id="AJh-Fq-pVh"/>
-                            <constraint firstItem="z1b-7d-NsG" firstAttribute="top" secondItem="hPI-JC-J9S" secondAttribute="bottom" constant="20" id="bUr-Q5-YPX"/>
                             <constraint firstItem="hPI-JC-J9S" firstAttribute="top" secondItem="oJB-Hd-Qc1" secondAttribute="bottom" constant="30" id="baR-V9-JYc"/>
-                            <constraint firstItem="z1b-7d-NsG" firstAttribute="leading" secondItem="hPI-JC-J9S" secondAttribute="leading" id="gVh-jc-Z7S"/>
                             <constraint firstItem="oJB-Hd-Qc1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="qsc-bS-Xyn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,20 +65,11 @@
                     <navigationItem key="navigationItem" id="GQa-Qc-alo"/>
                     <connections>
                         <segue destination="twL-G6-wxr" kind="show" identifier="ToLoginScreen" id="07W-Xw-3I8"/>
-                        <segue destination="ubd-DB-9R8" kind="show" identifier="ToTutorial" id="Yfd-hs-8s2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="540.57971014492762" y="150.66964285714286"/>
-        </scene>
-        <!--TutorialScreen-->
-        <scene sceneID="8xI-Lf-fBk">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TutorialScreen" id="ubd-DB-9R8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2t1-tE-5Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1114" y="151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rSd-wo-GY9">
@@ -111,6 +97,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="1234.5" height="1031.25"/>
+        <image name="Copa" width="375" height="231"/>
+        <image name="Logo" width="1646" height="1375"/>
+        <image name="cloud" width="375" height="254"/>
     </resources>
 </document>

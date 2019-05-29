@@ -32,6 +32,8 @@ class SelectionViewController: UIViewController {
                 }
                 SlotsButton[index].setBackgroundImage(nil, for: .normal)
                 SlotsButton[index].setImage(image, for: .normal)
+                SlotsButton[index].setBackgroundImage(nil, for: .disabled)
+                SlotsButton[index].setImage(image, for: .disabled)
                 SlotsButton[index].isEnabled = false
                 SlotsButton[index].alpha = 1
             }

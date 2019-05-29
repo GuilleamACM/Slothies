@@ -61,17 +61,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-Ck-1lf">
-                                <rect key="frame" x="168" y="237.33333333333334" width="78" height="22.000000000000028"/>
+                                <rect key="frame" x="137" y="237.33333333333337" width="140" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-Fa-UwZ" userLabel="Male Slothy">
-                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="MGender Icon"/>
                                         <connections>
                                             <action selector="MaleSlothyButton:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="sI4-cz-Bf3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyM-d8-6Yt" userLabel="Female Slothy">
-                                        <rect key="frame" x="62" y="0.0" width="16" height="22"/>
+                                        <rect key="frame" x="90" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="FGender Icon">
                                             <color key="titleColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ3-JM-6Eb" userLabel="Create">
-                                <rect key="frame" x="119.66666666666669" y="569.33333333333337" width="175" height="50"/>
+                                <rect key="frame" x="119.66666666666669" y="597.33333333333337" width="175" height="50"/>
                                 <color key="backgroundColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QcW-Ox-AiO"/>
@@ -100,7 +100,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-la-UUy">
-                                <rect key="frame" x="107" y="289.33333333333331" width="200" height="249.99999999999994"/>
+                                <rect key="frame" x="107" y="317.33333333333331" width="200" height="249.99999999999994"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy Eating" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-EM-D4J" userLabel="Slothy Sprite">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
@@ -111,8 +111,20 @@
                                     <constraint firstAttribute="height" constant="250" id="lc9-nT-Sek"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="oXk-lr-Sc0">
+                                <rect key="frame" x="0.0" y="421" width="414" height="694"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-gA-DX1">
+                                <rect key="frame" x="325" y="86" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Help"/>
+                                <connections>
+                                    <action selector="helpButtonPressed:" destination="hlg-Nj-Nwj" eventType="touchUpInside" id="Wgc-6h-NPq"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.6510779857635498" green="0.88771253824234009" blue="0.65878087282180786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.55482524633407593" green="0.85948818922042847" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ni1-Hf-7iS" firstAttribute="top" secondItem="kuE-09-3H8" secondAttribute="bottom" constant="30" id="3Jf-gb-aNn"/>
                             <constraint firstItem="nZ3-JM-6Eb" firstAttribute="centerX" secondItem="dEG-la-UUy" secondAttribute="centerX" id="IaE-rw-hKg"/>
@@ -141,11 +153,20 @@
                         <outlet property="SlothyNameField" destination="KG2-LH-2fc" id="W5p-tS-bI0"/>
                         <outlet property="SlothySprite" destination="JDo-EM-D4J" id="VqQ-Db-cML"/>
                         <segue destination="P3W-OH-7DY" kind="show" identifier="ToGameScreen" id="8e6-ee-5W1"/>
+                        <segue destination="kga-4R-WfD" kind="show" identifier="ToTutorialScreen" id="hUJ-vY-zQm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUa-ug-1jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340.57971014492756" y="36.830357142857139"/>
+        </scene>
+        <!--TutorialScreen-->
+        <scene sceneID="0zq-sv-zW4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TutorialScreen" id="kga-4R-WfD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lh2-oE-ytc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="-187"/>
         </scene>
         <!--GameScreen-->
         <scene sceneID="Rko-Xt-xhz">
@@ -157,7 +178,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Copa" width="375" height="231"/>
         <image name="FGender Icon" width="50" height="50"/>
+        <image name="Help" width="54" height="54"/>
         <image name="MGender Icon" width="50" height="50"/>
         <image name="Slothy Eating" width="1980" height="2800"/>
     </resources>
