@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bfw-kq-XoV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bfw-kq-XoV">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="15" y="102.33333333333331" width="384" height="203"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gy2-uY-LIg">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="203"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384.00000000000045" height="203.00000000000023"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="203" id="l4A-OB-Y7N"/>
                                             <constraint firstAttribute="width" constant="384" id="qZK-eD-niq"/>
@@ -31,13 +31,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bAi-qX-ecU">
-                                <rect key="frame" x="119.66666666666669" y="559.66666666666663" width="175" height="110"/>
+                                <rect key="frame" x="119.66666666666669" y="559.66666666666663" width="175" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60t-YO-gcJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="48"/>
                                         <color key="backgroundColor" red="0.75048214199999996" green="0.33656629919999997" blue="0.44705760480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="F2E-lg-h1o"/>
+                                            <constraint firstAttribute="height" constant="48" id="F2E-lg-h1o"/>
                                             <constraint firstAttribute="width" constant="175" id="sKl-x0-eo7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guh-em-M39" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="60" width="175" height="50"/>
+                                        <rect key="frame" x="0.0" y="58" width="175" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -110,7 +110,7 @@
                                 <rect key="frame" x="40" y="458.66666666666669" width="22" height="40"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vXG-aQ-j60">
-                                <rect key="frame" x="108.66666666666667" y="679.66666666666663" width="196.66666666666663" height="34"/>
+                                <rect key="frame" x="108.66666666666667" y="675.66666666666663" width="196.66666666666663" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9n-qL-VEa">
                                         <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="34"/>
@@ -214,7 +214,7 @@
     </scenes>
     <resources>
         <image name="Lock Icon" width="16" height="19"/>
-        <image name="Logo" width="1234.5" height="1031.25"/>
+        <image name="Logo" width="1646" height="1375"/>
         <image name="User Icon" width="22" height="25"/>
     </resources>
 </document>
