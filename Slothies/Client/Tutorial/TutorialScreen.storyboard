@@ -807,67 +807,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="c46-55-VZg">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eV3-Qi-YA5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-67-k9L">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="c46-55-VZg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="254" id="0vf-fY-MKb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-67-k9L">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="DbQ-kO-MeN">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DbQ-kO-MeN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="05R-y0-GdQ" userLabel="Slothometer">
-                                <rect key="frame" x="132" y="100" width="150" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="05R-y0-GdQ" userLabel="Slothometer">
+                                <rect key="frame" x="132" y="89" width="150" height="3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Uwo-cT-geg"/>
+                                    <constraint firstAttribute="height" constant="3" id="bbw-XK-sYN"/>
+                                </constraints>
                                 <color key="progressTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-pD-kFd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AJb-Ds-hdJ">
                                 <rect key="frame" x="0.0" y="118" width="414" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="tree" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-pD-kFd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy1 Face" translatesAutoresizingMaskIntoConstraints="NO" id="X1s-al-hnA">
+                                <rect key="frame" x="52" y="222.33333333333337" width="103" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="bne-Wm-KGZ"/>
+                                    <constraint firstAttribute="width" constant="103" id="scW-S9-1ft"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slothy1 Face" translatesAutoresizingMaskIntoConstraints="NO" id="X1s-al-hnA">
-                                <rect key="frame" x="41" y="207" width="103" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy3 Face" translatesAutoresizingMaskIntoConstraints="NO" id="Zav-9U-9Sd">
+                                <rect key="frame" x="209" y="232.66666666666663" width="79" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="UKy-Ch-uXm"/>
+                                    <constraint firstAttribute="width" constant="79" id="gwO-g5-tZa"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slothy3 Face" translatesAutoresizingMaskIntoConstraints="NO" id="Zav-9U-9Sd">
-                                <rect key="frame" x="205" y="207" width="79" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Male Slothy Face Idle" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-Ip-NhE">
+                                <rect key="frame" x="252.66666666666663" y="337.33333333333331" width="116" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="J63-Aa-AiV"/>
+                                    <constraint firstAttribute="width" constant="116" id="q9L-Jr-vgd"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Male Slothy Face Idle" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-Ip-NhE">
-                                <rect key="frame" x="205" y="320" width="116" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy2 Face" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-4Y-6yw">
+                                <rect key="frame" x="38.666666666666657" y="367.33333333333331" width="88" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Bdd-eI-TtZ"/>
+                                    <constraint firstAttribute="width" constant="88" id="NlR-E5-UIN"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Slothy2 Face" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-4Y-6yw">
-                                <rect key="frame" x="31" y="357" width="88" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is your group's" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTE-SR-KD6">
-                                <rect key="frame" x="123" y="118" width="169" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slothometer. If one fail, " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-iB-ANc">
-                                <rect key="frame" x="105" y="139" width="206" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="everyone dies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNt-cR-zD7">
-                                <rect key="frame" x="148" y="160" width="120" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is your group's Slothometer. If one fail, everyone dies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTE-SR-KD6">
+                                <rect key="frame" x="82" y="102" width="250" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="dcJ-4X-wJR"/>
+                                    <constraint firstAttribute="width" constant="250" id="jbT-M0-OrP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="05R-y0-GdQ" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" id="5A4-aU-dEN"/>
+                            <constraint firstAttribute="top" secondItem="Efg-67-k9L" secondAttribute="top" id="6gW-xE-nJQ"/>
+                            <constraint firstItem="aTE-SR-KD6" firstAttribute="top" secondItem="05R-y0-GdQ" secondAttribute="bottom" constant="10" id="6lw-wr-L29"/>
+                            <constraint firstItem="6vR-Hr-fdb" firstAttribute="trailing" secondItem="AJb-Ds-hdJ" secondAttribute="trailing" id="FId-hY-Ben"/>
+                            <constraint firstItem="gpr-Ip-NhE" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" multiplier="1.5" id="G4h-Lb-QZY"/>
+                            <constraint firstItem="05R-y0-GdQ" firstAttribute="centerY" secondItem="6vR-Hr-fdb" secondAttribute="centerY" multiplier="0.2" id="IUG-Dr-S7f"/>
+                            <constraint firstItem="Efg-67-k9L" firstAttribute="bottom" secondItem="Aqq-N7-Who" secondAttribute="bottom" id="Mfa-DT-moY"/>
+                            <constraint firstItem="Zav-9U-9Sd" firstAttribute="centerY" secondItem="6vR-Hr-fdb" secondAttribute="centerY" multiplier="0.6" id="Q8A-Ef-DHT"/>
+                            <constraint firstAttribute="bottom" secondItem="AJb-Ds-hdJ" secondAttribute="bottom" id="RPv-o6-gXA"/>
+                            <constraint firstItem="6vR-Hr-fdb" firstAttribute="trailing" secondItem="eV3-Qi-YA5" secondAttribute="trailing" id="S0d-yS-FNJ"/>
+                            <constraint firstItem="pbb-4Y-6yw" firstAttribute="centerY" secondItem="6vR-Hr-fdb" secondAttribute="centerY" multiplier="0.9" id="YHl-gR-QGy"/>
+                            <constraint firstItem="AJb-Ds-hdJ" firstAttribute="leading" secondItem="6vR-Hr-fdb" secondAttribute="leading" id="ZjE-Gu-SlU"/>
+                            <constraint firstItem="Zav-9U-9Sd" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" multiplier="1.2" id="bF4-qe-bSY"/>
+                            <constraint firstItem="pbb-4Y-6yw" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" multiplier="0.4" id="beo-be-XHE"/>
+                            <constraint firstItem="eV3-Qi-YA5" firstAttribute="leading" secondItem="6vR-Hr-fdb" secondAttribute="leading" id="hWK-99-1wa"/>
+                            <constraint firstItem="aTE-SR-KD6" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" id="jXi-nM-riq"/>
+                            <constraint firstItem="AJb-Ds-hdJ" firstAttribute="top" secondItem="eV3-Qi-YA5" secondAttribute="bottom" constant="-180" id="ksm-jK-oqn"/>
+                            <constraint firstItem="eV3-Qi-YA5" firstAttribute="top" secondItem="6vR-Hr-fdb" secondAttribute="top" id="lx2-Gv-y55"/>
+                            <constraint firstItem="gpr-Ip-NhE" firstAttribute="centerY" secondItem="6vR-Hr-fdb" secondAttribute="centerY" multiplier="0.89" id="m6A-vt-gHu"/>
+                            <constraint firstItem="X1s-al-hnA" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" multiplier="0.5" id="oEj-Kw-ZSw"/>
+                            <constraint firstItem="X1s-al-hnA" firstAttribute="centerY" secondItem="6vR-Hr-fdb" secondAttribute="centerY" multiplier="0.6" id="sD9-kL-ocv"/>
+                            <constraint firstItem="6vR-Hr-fdb" firstAttribute="trailing" secondItem="Efg-67-k9L" secondAttribute="trailing" id="y9a-Po-bPb"/>
+                            <constraint firstItem="Efg-67-k9L" firstAttribute="leading" secondItem="6vR-Hr-fdb" secondAttribute="leading" id="yst-ir-E3g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6vR-Hr-fdb"/>
                     </view>
                 </viewController>
