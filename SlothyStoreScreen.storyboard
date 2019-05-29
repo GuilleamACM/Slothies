@@ -44,9 +44,10 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-HU-EkM">
-                                            <rect key="frame" x="207" y="822" width="0.0" height="20"/>
+                                            <rect key="frame" x="207" y="229.66666666666674" width="0.0" height="612.33333333333326"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-8L-mt4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="296.33333333333331"/>
                                                     <subviews>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-nf-f5w">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="46"/>
@@ -75,7 +76,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WoE-Rp-L02">
-                                                    <rect key="frame" x="0.0" y="20" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="316.33333333333337" width="0.0" height="296"/>
                                                     <subviews>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-8a-ExM">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="46"/>
@@ -107,7 +108,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
-                                <rect key="frame" x="40" y="193.66666666666669" width="334.00000000000023" height="608.33333333333326"/>
+                                <rect key="frame" x="40" y="193.66666666666666" width="334" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothy Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFZ-tw-wem">
                                 <rect key="frame" x="143.66666666666666" y="77.333333333333329" width="126.99999999999997" height="26.333333333333329"/>
@@ -129,7 +130,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-cA-gzX">
-                                <rect key="frame" x="128.66666666666666" y="528.66666666666663" width="74" height="98"/>
+                                <rect key="frame" x="128.66666666666666" y="185" width="74" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="DAX-Vk-6rJ"/>
                                     <constraint firstAttribute="width" constant="74" id="cOD-os-fxW"/>
