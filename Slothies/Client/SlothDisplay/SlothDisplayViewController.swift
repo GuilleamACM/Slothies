@@ -68,6 +68,8 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         slothy = room!.getSlothy(withName: slothy!.name)
         NetworkHandler.listenerDispatch = self
         DispatchQueue.main.async {
+            self.SlothyBubble.isHidden = true
+            self.SlothyBubble.isHidden = true
             switch self.slothy!.state {
             case .eating:
                 self.slothyEatsInterface()
@@ -98,6 +100,8 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
             self.SlothyButton.isHidden = true
             self.AppleButton.isEnabled = false
             self.SleepButton.isEnabled = false
+            self.SlothyBubble.isHidden = true
+            self.SlothyBubble.isHidden = true
             self.navigationController!.setNavigationBarHidden(false, animated: true)
             self.slothyInformationSetup()
             self.permissionSetup()
@@ -267,6 +271,8 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     }
     
     func SlothyButtonInner(_ sender: Any) {
+        SlothyBubble.isHidden = true
+        SlothyBubbleLabel.isHidden = true
         if AppleButton.isHidden && buttonsWorking {
             AppleButton.isHidden = false
             SleepButton.isHidden = false
@@ -348,6 +354,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
                 slothSprite = UIImage(named: "Female Slothy Idle")!
             }
         } else {
+            if buttonsWorking {
+                SlothyBubble.isHidden = false
+                SlothyBubbleLabel.isHidden = false
+                if slothy!.hunger < Sloth.hungerMaxValue * 0.3 {
+                    SlothyBubbleLabel.text = "I'm hungry!"
+                } else if slothy!.sleep < Sloth.sleepMaxValue * 0.3 {
+                    SlothyBubbleLabel.text = "I'm sleepy!"
+                } else {
+                    SlothyBubbleLabel.text = "I'm slothful!"
+                }
+            }
             if(slothy!.sex == .male) {
                 slothSprite = UIImage(named: "Male Slothy Dying")!
             } else {
@@ -356,9 +373,6 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         }
         SlothySprite.image = slothSprite
         SlothyButton.setImage(slothSprite, for: .normal)
-        SlothyBubble.isHidden = false
-        SlothyBubbleLabel.isHidden = false
-        SlothyBubbleLabel.text = "Click Me"
     }
     
     func slothyIdleInterface() {
