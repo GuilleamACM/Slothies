@@ -60,17 +60,19 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkHandler.singleton.listenerDispatch = self
-        showSlothyStatus()
-        if let sloth = self.slothy as Sloth? {
-            renderSlothy(slothy: sloth)
-        }
         
-        SlothyButton.isHidden = true
-        AppleButton.isEnabled = false
-        SleepButton.isEnabled = false
-        navigationController!.setNavigationBarHidden(false, animated: true)
-        slothyInformationSetup()
-        permissionSetup()
+        DispatchQueue.main.async {
+            self.showSlothyStatus()
+            if let sloth = self.slothy as Sloth? {
+                self.renderSlothy(slothy: sloth)
+            }
+            self.SlothyButton.isHidden = true
+            self.AppleButton.isEnabled = false
+            self.SleepButton.isEnabled = false
+            self.navigationController!.setNavigationBarHidden(false, animated: true)
+            self.slothyInformationSetup()
+            self.permissionSetup()
+        }
     }
     
     func permissionSetup () {
@@ -86,12 +88,22 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         }
     }
     
-    func showSpeech() {
+    func showSpeechInner() {
         SlothyBubble.isHidden = false
         SlothyBubbleLabel.isHidden = false
     }
     
-    func showSlothyStatus() {
+    func showSpeech() {
+        if Thread.isMainThread {
+            showSpeechInner()
+        } else {
+            DispatchQueue.main.async {
+                self.showSpeechInner()
+            }
+        }
+    }
+    
+    func showSlothyStatusInner() {
         statusView.layer.cornerRadius = 10
         statusView.layer.masksToBounds = true
         HungerProgressBar.layer.cornerRadius = 10
@@ -112,23 +124,53 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         statusBlur.addSubview(blurEffectView)
     }
     
+    func showSlothyStatus() {
+        if Thread.isMainThread {
+            showSlothyStatusInner()
+        } else {
+            DispatchQueue.main.async {
+                self.showSlothyStatusInner()
+            }
+        }
+    }
+    
     private var buttonsWorking = false
     
-    func showAndEnableButtons () {
+    func showAndEnableButtonsInner () {
         buttonsWorking = true
         SlothyButton.isHidden = false
         AppleButton.isEnabled = true
         SleepButton.isEnabled = true
     }
     
-    func slothyInformationSetup () {
+    func showAndEnableButtons() {
+        if Thread.isMainThread {
+            showAndEnableButtonsInner()
+        } else {
+            DispatchQueue.main.async {
+                self.showAndEnableButtonsInner()
+            }
+        }
+    }
+    
+    func slothyInformationSetupInner () {
         if let slothy = slothy {
             SlothyNameLabel.text = slothy.name
             updateBars(anime: false)
         }
     }
     
-    func updateBars (anime: Bool) {
+    func slothyInformationSetup() {
+        if Thread.isMainThread {
+            slothyInformationSetupInner()
+        } else {
+            DispatchQueue.main.async {
+                self.slothyInformationSetupInner()
+            }
+        }
+    }
+    
+    func updateBarsInner (anime: Bool) {
         HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
         if (HungerProgressBar.progress >= 0.7) {
             HungerProgressBar.progressTintColor = .green
@@ -157,13 +199,23 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         }
     }
     
+    func updateBars(anime: Bool) {
+        if Thread.isMainThread {
+            updateBarsInner(anime: anime)
+        } else {
+            DispatchQueue.main.async {
+                self.updateBarsInner(anime: anime)
+            }
+        }
+    }
+    
     func receiveData(room: RoomGroup, slothy: Sloth, player: Player) {
         self.room = room
         self.slothy = slothy
         self.player = player
     }
     
-    func renderSlothy(slothy: Sloth){
+    func renderSlothyInner(slothy: Sloth){
         var slothSprite: UIImage
         
         if(slothy.sex == .male) {
@@ -175,7 +227,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         SlothyButton.setImage(slothSprite, for: .normal)
     }
     
-    @IBAction func SlothyButton(_ sender: Any) {
+    func renderSlothy(slothy: Sloth) {
+        if Thread.isMainThread {
+            renderSlothyInner(slothy: slothy)
+        } else {
+            DispatchQueue.main.async {
+                self.renderSlothyInner(slothy: slothy)
+            }
+        }
+    }
+    
+    func SlothyButtonInner(_ sender: Any) {
         if AppleButton.isHidden && buttonsWorking {
             AppleButton.isHidden = false
             SleepButton.isHidden = false
@@ -186,7 +248,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         }
     }
     
-    func slothyEatsInterface() {
+    @IBAction func SlothyButton(_ sender: Any) {
+        if Thread.isMainThread {
+            SlothyButtonInner(sender)
+        } else {
+            DispatchQueue.main.async {
+                self.SlothyButtonInner(sender)
+            }
+        }
+    }
+    
+    func slothyEatsInterfaceInner() {
         var slothSprite: UIImage
         
         if(slothy!.sex == .male) {
@@ -202,7 +274,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         SlothyBubbleLabel.text = "Nhammm"
     }
     
-    func slothySleepsInterface() {
+    func slothyEatsInterface() {
+        if Thread.isMainThread {
+            slothyEatsInterfaceInner()
+        } else {
+            DispatchQueue.main.async {
+                self.slothyEatsInterfaceInner()
+            }
+        }
+    }
+    
+    func slothySleepsInterfaceInner() {
         var slothSprite: UIImage
         
         if(slothy!.sex == .male) {
@@ -218,7 +300,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         }
     }
     
-    func slothyIdleInterface() {
+    func slothySleepsInterface() {
+        if Thread.isMainThread {
+            slothySleepsInterfaceInner()
+        } else {
+            DispatchQueue.main.async {
+                self.slothySleepsInterfaceInner()
+            }
+        }
+    }
+    
+    func slothyIdleInterfaceInner() {
         var slothSprite: UIImage
         
         if(slothy!.sex == .male) {
@@ -231,6 +323,16 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         SlothyBubble.isHidden = false
         SlothyBubbleLabel.isHidden = false
         SlothyBubbleLabel.text = "Click Me"
+    }
+    
+    func slothyIdleInterface() {
+        if Thread.isMainThread {
+            slothyIdleInterfaceInner()
+        } else {
+            DispatchQueue.main.async {
+                self.slothyIdleInterfaceInner()
+            }
+        }
     }
     
     @IBAction func feedButtonPressed(_ sender: Any) {

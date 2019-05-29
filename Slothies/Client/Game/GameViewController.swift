@@ -92,7 +92,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
         })*/
     }
     
-    func showAlert(steps: Int, food:Int, coins:Int) {
+    func showAlertInner(steps: Int, food:Int, coins:Int) {
         alertView.layer.cornerRadius = 10
         alertView.layer.masksToBounds = true
         alertView.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0)
@@ -107,11 +107,27 @@ class GameViewController: UIViewController, GameDataUpdateable {
         coinCountLabel.text = "+ \(coins)"
     }
     
-    func closeAlert() {
-        alertView.alpha = 0
+    func showAlert(steps: Int, food: Int, coins: Int) {
+        if Thread.isMainThread {
+            showAlertInner(steps: steps, food: food, coins: coins)
+        } else {
+            DispatchQueue.main.async {
+                self.showAlertInner(steps: steps, food: food, coins: coins)
+            }
+        }
     }
     
-    func updateInterface() {
+    func closeAlert() {
+        if Thread.isMainThread {
+            alertView.alpha = 0
+        } else {
+            DispatchQueue.main.async {
+                self.alertView.alpha = 0
+            }
+        }
+    }
+    
+    func updateInterfaceInner() {
         FoodLabel.text = "\(room!.slothGroup.food)"
         SlothometerUIProgressView.setProgress(Float(slothometer!.totalValue / Slothometer.maxValue), animated: true)
         if (SlothometerUIProgressView.progress >= 0.7) {
@@ -124,7 +140,17 @@ class GameViewController: UIViewController, GameDataUpdateable {
         loadRoom()
     }
     
-    func loadRoom() {
+    func updateInterface() {
+        if Thread.isMainThread {
+            updateInterfaceInner()
+        } else {
+            DispatchQueue.main.async {
+                self.updateInterfaceInner()
+            }
+        }
+    }
+    
+    func loadRoomInner() {
         for (index, player) in room!.players.enumerated() {
             SlothyButtons[index].setBackgroundImage(nil, for: .normal)
             if let _ = player {
@@ -138,6 +164,16 @@ class GameViewController: UIViewController, GameDataUpdateable {
                 SlothyNameLabels[index].text = room!.getSlothy(index: index)!.name
             } else {
                 SlothyNameLabels[index].text = ""
+            }
+        }
+    }
+    
+    func loadRoom() {
+        if Thread.isMainThread {
+            loadRoomInner()
+        } else {
+            DispatchQueue.main.async {
+                self.loadRoomInner()
             }
         }
     }
