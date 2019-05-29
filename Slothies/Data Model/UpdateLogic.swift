@@ -12,7 +12,7 @@ extension RoomGroup {
     private static let walkMultiplier = 500.0
     
     private func coinsFromSteps(_ steps: Double) -> Int {
-        return Int(steps / 500.0)
+        return Int(steps / 20.0)
     }
     
     func updateWithPlayerHealthInfo (_ playerFromArgument: Player) -> String? {
