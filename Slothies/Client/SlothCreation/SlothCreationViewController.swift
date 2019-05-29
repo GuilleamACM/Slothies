@@ -65,7 +65,10 @@ class SlothCreationViewController: UIViewController {
         self.index = index
     }
     
-
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ToTutorialScreen", sender: self)
+    }
+    
     
     // MARK: - Navigation
 

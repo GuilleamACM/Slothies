@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBl-Jb-07Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBl-Jb-07Q">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,6 +29,14 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-rd-nHk" userLabel="Help">
+                                <rect key="frame" x="325" y="50" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Help"/>
+                                <connections>
+                                    <action selector="helpButtonPressed:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="Ezt-EG-I5d"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DBY-B1-3gp">
                                 <rect key="frame" x="20.000000000000004" y="59" width="59.333333333333343" height="90"/>
                                 <subviews>
@@ -244,7 +252,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zwo-OS-qWZ" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="1.2" id="29V-oi-Dc4"/>
                             <constraint firstItem="E8S-Gd-991" firstAttribute="leading" secondItem="3k3-ko-elF" secondAttribute="leading" id="3P0-Py-xmT"/>
@@ -293,11 +301,20 @@
                         <outletCollection property="SlothyButtons" destination="SDk-0t-dkv" collectionClass="NSMutableArray" id="VzQ-SW-deL"/>
                         <outletCollection property="SlothyNameLabels" destination="Qtm-OS-ZXl" collectionClass="NSMutableArray" id="sAI-3t-w8m"/>
                         <segue destination="iPC-nV-i2P" kind="show" identifier="ToSlothDisplayScreen" id="eQe-dC-6IF"/>
+                        <segue destination="aLe-hc-485" kind="show" identifier="ToTutorialScreen" id="fbe-Hu-dOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byf-mT-1rk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78.260869565217391" y="106.47321428571428"/>
+        </scene>
+        <!--TutorialScreen-->
+        <scene sceneID="QCT-XR-Eyk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TutorialScreen" id="aLe-hc-485" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fs-WY-z5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="-143"/>
         </scene>
         <!--SlothDisplayScreen-->
         <scene sceneID="fYp-wT-PX9">
@@ -312,6 +329,7 @@
         <image name="Apple Icon" width="256" height="256"/>
         <image name="Button background" width="67" height="67"/>
         <image name="Coin Icon" width="40" height="43"/>
+        <image name="Help" width="54" height="54"/>
         <image name="cloud" width="375" height="254"/>
         <image name="tree" width="375" height="731"/>
     </resources>
