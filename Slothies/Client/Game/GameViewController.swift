@@ -14,6 +14,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
         if let room = room {
             self.room!.copyFrom(room: room)
             loadRoom()
+            updateInterface()
         } else {
             print(err!)
         }
@@ -217,6 +218,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        closeAlert()
         if let slothyDisplay = segue.destination as? SlothDisplayViewController {
             slothyDisplay.receiveData(room: room!, slothy: slothDisplaySlothy!, player: player!)
         }
