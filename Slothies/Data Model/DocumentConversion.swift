@@ -36,7 +36,6 @@ extension RoomGroup {
         var slothiesSleep:[Double] = []
         var slothiesLastFed:[TimeInterval] = []
         var slothiesLastSlept:[TimeInterval] = []
-        var slothiesLastUpdate:[TimeInterval] = []
         var slothiesSloth:[Double] = []
         
         for sloth in self.slothGroup.slothies{
@@ -56,7 +55,6 @@ extension RoomGroup {
                 }else{
                     slothiesLastSlept.append(-1)
                 }
-                slothiesLastUpdate.append(sloth.lastUpdate.timeIntervalSince1970)
                 slothiesSloth.append(sloth.sloth)
             }else{
                 slothiesName.append("")
@@ -66,7 +64,6 @@ extension RoomGroup {
                 slothiesSleep.append(-1)
                 slothiesLastFed.append(-1)
                 slothiesLastSlept.append(-1)
-                slothiesLastUpdate.append(-1)
                 slothiesSloth.append(-1)
             }
         }
@@ -79,7 +76,6 @@ extension RoomGroup {
              "sleep":slothiesSleep[val],
              "lastFed":slothiesLastFed[val],
              "lastSlept":slothiesLastSlept[val],
-             "lastUpdate":slothiesLastUpdate[val],
              "sloth":slothiesSloth[val]]
         }
         
@@ -148,12 +144,11 @@ extension RoomGroup {
                         let sleep = slothiesDictionary[i]["sleep"] as? Double,
                         let lastFed = slothiesDictionary[i]["lastFed"] as? TimeInterval,
                         let lastSlept = slothiesDictionary[i]["lastSlept"] as? TimeInterval,
-                        let lastUpdateSloth = slothiesDictionary[i]["lastUpdate"] as? TimeInterval,
                         let sloth = slothiesDictionary[i]["sloth"] as? Double
                         else{
                             return nil
                     }
-                    self.createSloth(player: players[i]!, name: name, sex: Sex(rawValue: sex)!, index: i)
+                    _ = self.createSloth(player: players[i]!, name: name, sex: Sex(rawValue: sex)!, index: i)
                     self.slothGroup.slothies[i]!.state = State(rawValue:state)!
                     self.slothGroup.slothies[i]!.hunger = hunger
                     self.slothGroup.slothies[i]!.sleep = sleep
@@ -167,7 +162,6 @@ extension RoomGroup {
                     }else{
                         self.slothGroup.slothies[i]!.lastSlept = nil
                     }
-                    self.slothGroup.slothies[i]!.lastUpdate = Date(timeIntervalSince1970: lastUpdateSloth)
                     self.slothGroup.slothometer.individualValues[self.slothGroup.slothies[i]!] = sloth
                     
                 }else{

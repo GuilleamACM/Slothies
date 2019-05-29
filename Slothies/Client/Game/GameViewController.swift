@@ -12,7 +12,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
     
     func completionUpdateInterface(room: RoomGroup?, err: String?) {
         if let room = room {
-            self.room = room
+            self.room!.copyFrom(room: room)
             loadRoom()
         } else {
             print(err!)
@@ -93,7 +93,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
                     return
                 }
                 if let result = result {
-                    self.room = result.room
+                    self.room!.copyFrom(room: result.room)
                     self.player = result.player
                     self.loadRoom()
                 }

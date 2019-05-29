@@ -11,9 +11,9 @@ import UIKit
 class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     func completionUpdateInterface(room: RoomGroup?, err: String?) {
         if let room = room {
-            self.room = room
-            self.slothy = room.getSlothy(withName: slothy!.name)
-            self.player = room.getPlayer(withUser: player!.user)
+            self.room!.copyFrom(room: room)
+            self.slothy = self.room!.getSlothy(withName: slothy!.name)
+            self.player = self.room!.getPlayer(withUser: player!.user)
             self.updateBars(anime: true)
             switch slothy!.state {
             case .eating:
@@ -56,6 +56,24 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     var room: RoomGroup?
     var player: Player?//current player - use to check for feeding/sleeping permissions
     var slothy: Sloth?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            switch self.slothy!.state {
+            case .eating:
+                self.slothyEatsInterface()
+                break
+            case .sleeping:
+                self.slothySleepsInterface()
+                break
+            default:
+                self.slothyIdleInterface()
+                break
+            }
+            self.updateBars(anime: true)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -340,7 +358,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
             if let err = err {
                 print(err)
             }else{
-                self.room = result!.room!
+                self.room!.copyFrom(room: result!.room!)
                 self.slothy = result!.slothy!
                 self.updateBars(anime: true)
                 self.slothyEatsInterface()
@@ -350,7 +368,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     
     @IBAction func sleepButtonPressed(_ sender: Any) {
         NetworkHandler.singleton.requestSleepSloth(room: room!, slothy: slothy!) { (result: (room:RoomGroup?, slothy: Sloth?)?, err:String?) in
-            self.room = result!.room!
+            self.room!.copyFrom(room: result!.room!)
             self.slothy = result!.slothy!
             self.updateBars(anime: true)
             self.slothySleepsInterface()

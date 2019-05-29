@@ -68,7 +68,6 @@ extension Player {
         if let slothy = slothy {
             slothy.updateWalked(currTime: currTime, info: info)
         }
-        lastUpdate = currTime
     }
 }
 
@@ -77,7 +76,7 @@ extension SlothGroup {
         slothometer.timePassageUpdate(prevTime: prevTime, currTime: currTime)
         for maybeSlothy in slothies {
             if let slothy = maybeSlothy {
-                slothy.updateHungerSleep(currTime)
+                slothy.updateHungerSleep(prevTime: prevTime, currTime: currTime)
             }
         }
     }
@@ -90,9 +89,8 @@ extension Sloth {
         }
     }
     
-    fileprivate func updateHungerSleep(_ currTime: Date) {
-        let elapsed = Double(currTime.timeIntervalSince(lastUpdate))
-        lastUpdate = currTime
+    fileprivate func updateHungerSleep(prevTime: Date, currTime: Date) {
+        let elapsed = Double(currTime.timeIntervalSince(prevTime))
         
         switch state {
         case .sleeping:
@@ -122,6 +120,7 @@ extension Slothometer {
     fileprivate func addSpecificValue(slothy: Sloth, val: Double) {
         var result = individualValues[slothy]! + val
         result = min(result, Slothometer.maxValue)
+        individualValues[slothy] = result
         updateTotalValue()
     }
     
@@ -132,7 +131,6 @@ extension Slothometer {
         individualValues.keys.forEach {
             addSpecificValue(slothy: $0, val: -elapsed)
         }
-        updateTotalValue()
     }
     
     //check workout information, sum appropriate number into values
