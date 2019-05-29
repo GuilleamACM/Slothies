@@ -25,15 +25,18 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
     var debugClicked = false
     var room:RoomGroup?
     var player:Player?
+    var debugClikedCount = 0
     
     @IBAction func DebugButtonsReveal(_ sender: UIButton) {
         
-        if(!debugClicked){
+        
+        if(debugClikedCount >= 7){
             debug0.isHidden = false
             debug1.isHidden = false
             debug2.isHidden = false
             debug3.isHidden = false
             debugClicked = true
+            debugClikedCount = 0
         }
         else{
             debug0.isHidden = true
@@ -41,6 +44,7 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
             debug2.isHidden = true
             debug3.isHidden = true
             debugClicked = false
+            debugClikedCount += 1
         }
     }
     
