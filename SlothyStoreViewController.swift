@@ -59,7 +59,8 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
         NetworkHandler.singleton.jumpToPastDate(room: room!, timeInterval: 14400) { (room:RoomGroup?, err: String?) in
             if let err = err{
                 print(err)
-            }else if let _ = room{
+            }else if let room = room{
+                self.room!.copyFrom(room: room)
                 print("sucess jump date")
             }
         }
@@ -70,7 +71,8 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
         NetworkHandler.singleton.fakeExercise(room: room!, player: player!, fakeSteps: 1000, fakeDistance: 500) { (room:RoomGroup?, err:String?) in
             if let err = err{
                 print(err)
-            }else if let _ = room{
+            }else if let room = room{
+                self.room!.copyFrom(room: room)
                 print("sucess fake exercise")
             }
         }
@@ -78,7 +80,7 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkHandler.singleton.listenerDispatch = self
+        NetworkHandler.listenerDispatch = self
         debug0.layer.cornerRadius = 5
         debug1.layer.cornerRadius = 5
         debug2.layer.cornerRadius = 5

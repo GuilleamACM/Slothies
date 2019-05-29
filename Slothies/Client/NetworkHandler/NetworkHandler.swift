@@ -16,11 +16,11 @@ class NetworkHandler {
     //classe que deve conter qualquer método para o qual espera-se acessar a rede
     static let singleton: NetworkHandler = NetworkHandler()
     let db = Firestore.firestore()
-    var listenerDispatch: GameDataUpdateable? = nil
+    static var listenerDispatch: GameDataUpdateable? = nil
     
     func initiateListening (room: RoomGroup) {
-        if let dispatch = listenerDispatch {
-            db.collection("rooms").document(room.name).addSnapshotListener { (doc, err) in
+        db.collection("rooms").document(room.name).addSnapshotListener { (doc, err) in
+            if let dispatch = NetworkHandler.listenerDispatch {
                 if let doc = doc {
                     if let data = doc.data() {
                         let roomDoc = RoomGroup(dictionary: data)!

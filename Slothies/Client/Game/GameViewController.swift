@@ -52,7 +52,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
     override func viewWillAppear(_ animated: Bool) {
         navigationController!.setNavigationBarHidden(true, animated: false)
         //room = NetworkHandler.singleton.fetchRoom(code: room!.name, pass: room!.pass)
-        NetworkHandler.singleton.listenerDispatch = self
+        NetworkHandler.listenerDispatch = self
         player = room!.getPlayer(withUser: player!.user)
         slothometer = room!.slothGroup.slothometer
         updateInterface()
@@ -64,7 +64,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkHandler.singleton.listenerDispatch = self
+        NetworkHandler.listenerDispatch = self
         NetworkHandler.singleton.initiateListening(room: room!)
         initiatePeriodicUpdating()
         DispatchQueue.main.async {
