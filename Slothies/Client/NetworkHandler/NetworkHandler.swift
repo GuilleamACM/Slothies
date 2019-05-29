@@ -226,6 +226,8 @@ class NetworkHandler {
         }
     }
     
+    
+    
     let runRoomInit = false
     let staticPlayers = false
     

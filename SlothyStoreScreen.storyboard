@@ -42,15 +42,56 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Ld-ED-OH8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
+                                            <rect key="frame" x="47" y="-93" width="334" height="1100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="XOy-f7-meH" secondAttribute="height" multiplier="167:550" id="ORS-MO-HDT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-nf-f5w">
+                                            <rect key="frame" x="61" y="701" width="109" height="46"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Debug 0"/>
+                                            <connections>
+                                                <action selector="Debug0Teste:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="iwB-vB-qFN"/>
+                                            </connections>
+                                        </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMM-ez-LUS">
+                                            <rect key="frame" x="234" y="701" width="105" height="46"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Debug 1"/>
+                                        </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-8a-ExM">
+                                            <rect key="frame" x="61" y="774" width="109" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Debug 2"/>
+                                        </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXl-75-XKB">
+                                            <rect key="frame" x="234" y="774" width="105" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Debug 3"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-cA-gzX">
+                                            <rect key="frame" x="135" y="497" width="74" height="98"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="DebugButtonsReveal:" destination="YZ1-y8-bf1" eventType="touchUpInside" id="NEf-Fo-1Gr"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slothy Working" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-f7-meH" userLabel="Slothy Sprite">
-                                <rect key="frame" x="40" y="-97" width="334" height="1100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XOy-f7-meH" secondAttribute="height" multiplier="167:550" id="ORS-MO-HDT"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothy Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFZ-tw-wem">
                                 <rect key="frame" x="143.66666666666666" y="77.333333333333329" width="126.99999999999997" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -79,16 +120,12 @@
                             <constraint firstAttribute="top" secondItem="Ucz-z4-PzK" secondAttribute="top" id="9Hl-id-tkE"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="Ucz-z4-PzK" secondAttribute="trailing" id="9QN-tY-YCU"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="2mB-8J-lL5" secondAttribute="trailing" id="AIg-hU-M7q"/>
-                            <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="XOy-f7-meH" secondAttribute="trailing" constant="40" id="CKX-c9-owo"/>
                             <constraint firstItem="cVJ-Aq-PEy" firstAttribute="centerX" secondItem="9vs-nB-CcP" secondAttribute="centerX" id="J4W-ud-pfq"/>
                             <constraint firstItem="9vs-nB-CcP" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" multiplier="0.6" id="NYN-bW-m1I"/>
                             <constraint firstItem="8iT-cA-BRk" firstAttribute="trailing" secondItem="57r-TI-rcm" secondAttribute="trailing" id="R1D-Au-XGc"/>
-                            <constraint firstItem="XOy-f7-meH" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" id="a7G-PW-MlO"/>
-                            <constraint firstItem="XOy-f7-meH" firstAttribute="centerY" secondItem="8iT-cA-BRk" secondAttribute="centerY" id="aQV-Dn-fJo"/>
                             <constraint firstItem="Ucz-z4-PzK" firstAttribute="bottom" secondItem="xzf-3q-pXZ" secondAttribute="bottom" id="bry-Jx-d2D"/>
                             <constraint firstItem="2mB-8J-lL5" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" id="cuL-KO-B1V"/>
                             <constraint firstItem="Ucz-z4-PzK" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" id="dSb-Oy-ep5"/>
-                            <constraint firstItem="XOy-f7-meH" firstAttribute="leading" secondItem="8iT-cA-BRk" secondAttribute="leading" constant="40" id="dXb-pj-a6H"/>
                             <constraint firstAttribute="bottom" secondItem="57r-TI-rcm" secondAttribute="bottom" id="jAf-DB-z4c"/>
                             <constraint firstItem="57r-TI-rcm" firstAttribute="top" secondItem="2mB-8J-lL5" secondAttribute="bottom" constant="-180" id="kBr-XN-F3E"/>
                             <constraint firstItem="vFZ-tw-wem" firstAttribute="centerX" secondItem="8iT-cA-BRk" secondAttribute="centerX" id="lCH-4y-bND"/>
@@ -107,6 +144,13 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="debug0" destination="XYa-nf-f5w" id="6TO-8i-j79"/>
+                        <outlet property="debug1" destination="YMM-ez-LUS" id="MED-NL-aaa"/>
+                        <outlet property="debug2" destination="5Jb-8a-ExM" id="fiT-Zb-Nch"/>
+                        <outlet property="debug3" destination="bXl-75-XKB" id="V3b-TM-ZIM"/>
+                        <outlet property="debugButton" destination="lZY-cA-gzX" id="gyv-ZS-ae1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTy-aE-oGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,4 +163,5 @@
         <image name="cloud" width="375" height="254"/>
         <image name="tree" width="375" height="731"/>
     </resources>
+    <color key="tintColor" red="1" green="0.45541441440582275" blue="0.61310279369354248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
