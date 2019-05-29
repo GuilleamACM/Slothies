@@ -46,6 +46,7 @@
 		DC62C518228B0B5B00ADCB9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */; };
 		DC731E6F2296D6FF00443D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC731E6E2296D6FF00443D7D /* GoogleService-Info.plist */; };
 		E843365E1BB76F330E5E80DA /* Pods_SlothiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0A47BFF6A5C88D421D86CF /* Pods_SlothiesTests.framework */; };
+		F9092E21229E0D5E005F47F1 /* TutorialSlothyStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9092E20229E0D5E005F47F1 /* TutorialSlothyStatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		DC62C513228B0ABC00ADCB9E /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		DC62C517228B0B5B00ADCB9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC731E6E2296D6FF00443D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F9092E20229E0D5E005F47F1 /* TutorialSlothyStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSlothyStatusViewController.swift; sourceTree = "<group>"; };
 		FEDE0D636A93DA1E0C7FE6BB /* Pods_Slothies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slothies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				0805E443229D5B620067347E /* TutorialScreen.storyboard */,
+				F9092E20229E0D5E005F47F1 /* TutorialSlothyStatusViewController.swift */,
 				0805E447229D74B80067347E /* TutorialPageViewController.swift */,
 			);
 			path = Tutorial;
@@ -663,6 +666,7 @@
 				DC62C4F82289E65900ADCB9E /* LobbyViewController.swift in Sources */,
 				0805E441229D51410067347E /* SlothyStoreViewController.swift in Sources */,
 				DC321C1D229DD3E800D64F75 /* GameDataUpdatable.swift in Sources */,
+				F9092E21229E0D5E005F47F1 /* TutorialSlothyStatusViewController.swift in Sources */,
 				DC62C4FC2289E70E00ADCB9E /* SelectionViewController.swift in Sources */,
 				DC62C5062289E82100ADCB9E /* SlothDisplayViewController.swift in Sources */,
 				DC62C50A2289E92400ADCB9E /* RoomGroup.swift in Sources */,

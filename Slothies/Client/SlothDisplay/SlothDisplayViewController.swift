@@ -92,8 +92,6 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     }
     
     func showSlothyStatus() {
-
-        
         statusView.layer.cornerRadius = 10
         statusView.layer.masksToBounds = true
         HungerProgressBar.layer.cornerRadius = 10
