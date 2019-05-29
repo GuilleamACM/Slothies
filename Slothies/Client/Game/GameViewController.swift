@@ -139,6 +139,7 @@ class GameViewController: UIViewController, GameDataUpdateable {
     
     func updateInterfaceInner() {
         FoodLabel.text = "\(room!.slothGroup.food)"
+        SlothyCoinsLabel.text = "\(player!.coins)"
         SlothometerUIProgressView.setProgress(Float(slothometer!.totalValue / Slothometer.maxValue), animated: true)
         if (SlothometerUIProgressView.progress >= 0.7) {
             SlothometerUIProgressView.progressTintColor = .green
