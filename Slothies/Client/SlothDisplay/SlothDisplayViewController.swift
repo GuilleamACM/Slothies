@@ -370,10 +370,14 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     
     @IBAction func sleepButtonPressed(_ sender: Any) {
         NetworkHandler.singleton.requestSleepSloth(room: room!, slothy: slothy!) { (result: (room:RoomGroup?, slothy: Sloth?)?, err:String?) in
-            self.room!.copyFrom(room: result!.room!)
-            self.slothy = result!.slothy!
-            self.updateBars(anime: true)
-            self.slothySleepsInterface()
+            if let err = err {
+                print(err)
+            }else{
+                self.room!.copyFrom(room: result!.room!)
+                self.slothy = result!.slothy!
+                self.updateBars(anime: true)
+                self.slothySleepsInterface()
+            }
         }
     }
     
