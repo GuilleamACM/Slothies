@@ -59,6 +59,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NetworkHandler.singleton.listenerDispatch = self
         DispatchQueue.main.async {
             switch self.slothy!.state {
             case .eating:
