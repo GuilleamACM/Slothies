@@ -36,12 +36,7 @@ class Slothometer {
         individualValues.keys.forEach {
             accu = min(accu, individualValues[$0]!)
         }
-        if accu <= Slothometer.minValue {
-            totalValue = Slothometer.minValue
-            //gameOver()
-        } else {
-            totalValue = accu
-        }
+        totalValue = accu
     }
     
     //place slothy into dictionary with initial value

@@ -88,4 +88,16 @@ class SlothGroup {
             self.food += 1
         }
     }
+    
+    func checkDeath () -> Bool {
+        if slothometer.totalValue <= 0 {
+            for sloth in slothies {
+                if let sloth = sloth {
+                    sloth.die()
+                }
+            }
+            return true
+        }
+        return false
+    }
 }

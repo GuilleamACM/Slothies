@@ -44,12 +44,13 @@ class Sloth : Hashable {
     }
     
     //key values for sleep and hunger
-    static let statusMaxValue: Double = secondsPerDay * 2
-    static let statusMinValue: Double = 0
-    static let statusInitValue: Double = Sloth.statusMaxValue * 8 / 10
-    static let hungerFeedingValue: Double = secondsPerDay / 2
-    static let feedingCooldown: Double = secondsPerMinute * 5
-    static let sleepingCooldown: Double = secondsPerMinute * 120
+    static let sleepMaxValue: Double = secondsPerDay * 2
+    static let hungerMaxValue: Double = secondsPerDay
+    static let sleepInitValue: Double = Sloth.sleepMaxValue * 7 / 10
+    static let hungerInitValue: Double = Sloth.hungerMaxValue * 7/10
+    static let hungerFeedingValue: Double = Sloth.hungerMaxValue / 2.5
+    static let feedingCooldown: Double = 8
+    static let sleepingCooldown: Double = 8
     static let sleepingMultiplier: Double = 4
     
     //nome, sexo
@@ -77,12 +78,15 @@ class Sloth : Hashable {
     init(name: String, sex: Sex) {
         self.name = name
         self.sex = sex
-        hunger = Sloth.statusInitValue
-        sleep = Sloth.statusInitValue
+        hunger = Sloth.hungerInitValue
+        sleep = Sloth.sleepInitValue
         state = .idle
     }
     
     func checkCanSleep () -> Bool {
+        if state == .dead {
+            return false
+        }
         if let slept = lastSlept {
             return Sloth.sleepingCooldown < Date().timeIntervalSince(slept)
         }
@@ -95,6 +99,9 @@ class Sloth : Hashable {
     }
     
     func checkCanFeed () -> Bool {
+        if state == .dead {
+            return false
+        }
         if let fed = lastFed {
             return Sloth.feedingCooldown < Date().timeIntervalSince(fed)
         }
@@ -104,7 +111,11 @@ class Sloth : Hashable {
     func feed () {
         lastFed = Date()
         hunger += Sloth.hungerFeedingValue
-        hunger = min(Sloth.statusMaxValue, hunger)
+        hunger = min(Sloth.hungerMaxValue, hunger)
         state = .eating
+    }
+    
+    func die () {
+        state = .dead
     }
 }

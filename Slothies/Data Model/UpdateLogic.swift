@@ -9,7 +9,16 @@
 import Foundation
 
 extension RoomGroup {
+    private static let walkMultiplier = 500.0
+    
+    private func coinsFromSteps(_ steps: Double) -> Int {
+        return Int(steps / 500.0)
+    }
+    
     func updateWithPlayerHealthInfo (_ playerFromArgument: Player) -> String? {
+        if dead {
+            return "ded"
+        }
         var playerToUpdate: Player? = nil
         for play in players {
             if let play = play {
@@ -28,7 +37,9 @@ extension RoomGroup {
         }
         
         timePassageUpdate(currentTime)
-        play.updateWalked(currTime: currentTime, info: (steps: info.steps * multiplier, distance: info.distance * multiplier))
+        play.updateWalked(currTime: currentTime, info: (steps: info.steps * RoomGroup.walkMultiplier, distance: info.distance * RoomGroup.walkMultiplier))
+        play.awardCoins(coins: coinsFromSteps(info.steps * RoomGroup.walkMultiplier))
+        dead = slothGroup.checkDeath()
         slothGroup.walked(distance: info.distance)
         return nil
     }
@@ -49,14 +60,20 @@ extension RoomGroup {
         }
         let info = (steps: steps, distance: distance)
         
-        timePassageUpdate(currentTime)
-        play.updateWalked(currTime: currentTime, info: info)
+        play.updateWalked(currTime: currentTime, info: (steps: info.steps * RoomGroup.walkMultiplier, distance: info.distance * RoomGroup.walkMultiplier))
+        play.awardCoins(coins: coinsFromSteps(info.steps * RoomGroup.walkMultiplier))
+        dead = slothGroup.checkDeath()
         slothGroup.walked(distance: info.distance)
         return nil
     }
     
+    func updateTimeOnly (_ currentTime: Date) {
+        timePassageUpdate(currentTime)
+        dead = slothGroup.checkDeath()
+    }
+    
     //update to call upon opening the app/joining the room
-    func timePassageUpdate (_ currentTime: Date) {
+    fileprivate func timePassageUpdate (_ currentTime: Date) {
         slothGroup.timePassageUpdate(prevTime: prevTime, currTime: currentTime)
         prevTime = currentTime
     }
@@ -95,8 +112,8 @@ extension Sloth {
         switch state {
         case .sleeping:
             sleep += elapsed * Sloth.sleepingMultiplier
-            if sleep >= Sloth.statusMaxValue {
-                sleep = Sloth.statusMaxValue
+            if sleep >= Sloth.sleepMaxValue {
+                sleep = Sloth.sleepMaxValue
                 state = .idle
             }
             hunger -= elapsed
@@ -107,6 +124,8 @@ extension Sloth {
             if Sloth.feedingCooldown < currTime.timeIntervalSince(lastFed!) {
                 state = .idle
             }
+            break
+        case .dead:
             break
         default:
             sleep -= elapsed
@@ -129,7 +148,19 @@ extension Slothometer {
         //BUG: elapsed should consider each slothy's individual prevTime
         let elapsed = Double(currTime.timeIntervalSince(prevTime))
         individualValues.keys.forEach {
-            addSpecificValue(slothy: $0, val: -elapsed)
+            var multiplier = 1.0
+            if $0.sleep < Sloth.sleepMaxValue * 0.3 {
+                multiplier *= 2
+            } else if $0.sleep == 0 {
+                multiplier *= 3
+            }
+            if $0.hunger < Sloth.hungerMaxValue * 0.3 {
+                multiplier *= 2
+            } else if $0.hunger == 0 {
+                multiplier *= 3
+            }
+            
+            addSpecificValue(slothy: $0, val: -(elapsed * multiplier))
         }
     }
     

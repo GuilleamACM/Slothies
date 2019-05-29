@@ -18,6 +18,7 @@ class RoomGroup {
     //nome e senha da sala
     var name: String
     var pass: String
+    var dead = false
     
     //lista de jogadores
     var players: [Player?]
@@ -68,7 +69,7 @@ class RoomGroup {
     
     //dado um jogador, um nome, um sexo, e a posicao da preguicinha (index), cria o objeto correspondente e coloca as devidas referencias
     func createSloth (player: Player, name: String, sex: Sex, index: Int) -> Bool {
-        if (slothGroup.hasSlothy(withName: name)) {
+        if (slothGroup.hasSlothy(withName: name) || dead) {
             return false
         }
         let slothy = Sloth(name: name, sex: sex)

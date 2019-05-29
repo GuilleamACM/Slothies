@@ -138,6 +138,7 @@ class NetworkHandler {
                     completion(nil, "could not feed slothy")
                     return nil
             }
+            roomDoc.slothGroup.food -= 1
             slothy.feed()
             transaction.setData(roomDoc.dictionary, forDocument: roomRef)
             completion((room: roomDoc, slothy: slothy),nil)
@@ -268,7 +269,7 @@ class NetworkHandler {
             }
             
             roomDoc.prevTime = roomDoc.prevTime.addingTimeInterval(-timeInterval)
-            roomDoc.timePassageUpdate(Date())
+            roomDoc.updateTimeOnly(Date())
             transaction.setData(roomDoc.dictionary, forDocument: roomRef)
             completion(roomDoc, nil)
             return nil

@@ -18,10 +18,16 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
             switch slothy!.state {
             case .eating:
                 slothyEatsInterface()
+                break
             case .sleeping:
                 slothySleepsInterface()
+                break
+            case .dead:
+                slothyDiesInterface()
+                break
             default:
                 slothyIdleInterface()
+                break
             }
         } else {
             print(err!)
@@ -68,6 +74,9 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
                 break
             case .sleeping:
                 self.slothySleepsInterface()
+                break
+            case .dead:
+                self.slothyDiesInterface()
                 break
             default:
                 self.slothyIdleInterface()
@@ -191,7 +200,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     }
     
     func updateBarsInner (anime: Bool) {
-        HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.statusMaxValue), animated: anime)
+        HungerProgressBar.setProgress(Float(slothy!.hunger / Sloth.hungerMaxValue), animated: anime)
         if (HungerProgressBar.progress >= 0.7) {
             HungerProgressBar.progressTintColor = .green
         } else if HungerProgressBar.progress >= 0.3 {
@@ -200,7 +209,7 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
             HungerProgressBar.progressTintColor = .red
         }
         
-        SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.statusMaxValue), animated: anime)
+        SleepProgressBar.setProgress(Float(slothy!.sleep / Sloth.sleepMaxValue), animated: anime)
         if (SleepProgressBar.progress >= 0.7) {
             SleepProgressBar.progressTintColor = .green
         } else if SleepProgressBar.progress >= 0.3 {
@@ -264,7 +273,6 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         } else {
             AppleButton.isHidden = true
             SleepButton.isHidden = true
-            slothyIdleInterface()
         }
     }
     
@@ -351,6 +359,32 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         } else {
             DispatchQueue.main.async {
                 self.slothyIdleInterfaceInner()
+            }
+        }
+    }
+    
+    func slothyDiesInterfaceInner() {
+        var slothSprite: UIImage
+        
+        if(slothy!.sex == .male) {
+            slothSprite = UIImage(named: "Male Slothy Dead")!
+        } else {
+            slothSprite = UIImage(named: "Female Slothy Dead")!
+        }
+        DispatchQueue.main.async {
+            self.SlothySprite.image = slothSprite
+            self.SlothyButton.setImage(slothSprite, for: .normal)
+            self.SlothyBubble.isHidden = true
+            self.SlothyBubbleLabel.isHidden = true
+        }
+    }
+    
+    func slothyDiesInterface() {
+        if Thread.isMainThread {
+            slothyDiesInterfaceInner()
+        } else {
+            DispatchQueue.main.async {
+                self.slothyDiesInterfaceInner()
             }
         }
     }
