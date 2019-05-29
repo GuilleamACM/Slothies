@@ -165,10 +165,44 @@ class GameViewController: UIViewController, GameDataUpdateable {
             SlothyButtons[index].setBackgroundImage(nil, for: .normal)
             if let _ = player {
                 let image: UIImage
-                if (room!.getSlothy(index: index)!.sex == .male) {
-                    image = UIImage(named: "Male Slothy Face Idle")!
-                } else {
-                    image = UIImage(named: "Female Slothy Face Idle")!
+                let slothy = room!.getSlothy(index: index)!
+                switch (slothy.state) {
+                case .eating:
+                    if (slothy.sex == .male) {
+                        image = UIImage(named: "Male Slothy Face Idle")!
+                    } else {
+                        image = UIImage(named: "Female Slothy Face Eating")!
+                    }
+                    break
+                case .sleeping:
+                    if (slothy.sex == .male) {
+                        image = UIImage(named: "Male Slothy Face Idle")!
+                    } else {
+                        image = UIImage(named: "Female Slothy Face Sleeping")!
+                    }
+                    break
+                case .dead:
+                    if (slothy.sex == .male) {
+                        image = UIImage(named: "Male Slothy Face Dead")!
+                    } else {
+                        image = UIImage(named: "Female Slothy Face Dead")!
+                    }
+                    break
+                default:
+                    if slothy.happy {
+                        if (slothy.sex == .male) {
+                            image = UIImage(named: "Male Slothy Face Idle")!
+                        } else {
+                            image = UIImage(named: "Female Slothy Face Idle")!
+                        }
+                    } else {
+                        if (slothy.sex == .male) {
+                            image = UIImage(named: "Male Slothy Face Idle")!
+                        } else {
+                            image = UIImage(named: "Female Slothy Face Dying")!
+                        }
+                    }
+                    break
                 }
                 SlothyButtons[index].setImage(image, for: .normal)
                 SlothyNameLabels[index].text = room!.getSlothy(index: index)!.name

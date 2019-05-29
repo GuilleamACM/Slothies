@@ -66,6 +66,12 @@ class Sloth : Hashable {
         return slothometer!.individualValues[self]!
     }
     
+    var happy: Bool {
+        return hunger > Sloth.hungerMaxValue * 0.3 &&
+            sleep > Sloth.sleepMaxValue * 0.3 &&
+            sloth > Slothometer.maxValue * 0.3
+    }
+    
     //jogador associado
     var player: Player?
     

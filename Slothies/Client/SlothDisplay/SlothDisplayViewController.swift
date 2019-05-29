@@ -341,19 +341,17 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     func slothyIdleInterfaceInner() {
         var slothSprite: UIImage
         
-        if(slothy!.hunger < Sloth.hungerMaxValue * 0.3 ||
-           slothy!.sleep < Sloth.sleepMaxValue * 0.3 ||
-            slothy!.sloth < Slothometer.maxValue) {
-            if(slothy!.sex == .male) {
-                slothSprite = UIImage(named: "Male Slothy Dying")!
-            } else {
-                slothSprite = UIImage(named: "Female Slothy Dying")!
-            }
-        } else {
+        if(slothy!.happy) {
             if(slothy!.sex == .male) {
                 slothSprite = UIImage(named: "Male Slothy Idle")!
             } else {
                 slothSprite = UIImage(named: "Female Slothy Idle")!
+            }
+        } else {
+            if(slothy!.sex == .male) {
+                slothSprite = UIImage(named: "Male Slothy Dying")!
+            } else {
+                slothSprite = UIImage(named: "Female Slothy Dying")!
             }
         }
         SlothySprite.image = slothSprite
