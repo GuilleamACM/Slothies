@@ -226,7 +226,26 @@ class NetworkHandler {
         }
     }
     
-    
+     func wipeRoom(room: RoomGroup, completion: @escaping (_ room: RoomGroup?, _ error : String?) -> ()) {
+        //reset players
+        let players = room.players
+        for player in players{
+            if let player = player{
+                db.collection("players").document(player.user).delete() { err in
+                    if let err = err{
+                        print("Error removing socument: \(err)")
+                    }else{
+                        print("Document sucessfully removed!")
+                    }
+                }
+            }
+        }
+        //reset room
+        let roomNew = RoomGroup(name:room.name,pass:room.pass)
+        writeRoom(room: roomNew)
+        //crash
+        crash("reset app")
+    }
     
     let runRoomInit = false
     let staticPlayers = false
