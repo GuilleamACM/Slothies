@@ -38,7 +38,9 @@ class SlothyStoreViewController: UIViewController {
     }
     
     @IBAction func Debug0Teste(_ sender: UIButton) {
-        print("hi, im debug0, debug me")
+        print("Debugging wipe room")
+        NetworkHandler.singleton.wipeRoom(room: room!) { (room:RoomGroup?,err: String?) in }
+        
         
     }
     override func viewDidLoad() {
