@@ -29,9 +29,12 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-rd-nHk" userLabel="Help">
-                                <rect key="frame" x="325" y="50" width="52" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-rd-nHk" userLabel="Help">
+                                <rect key="frame" x="335.33333333333331" y="63.666666666666657" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="JlE-gC-i7k"/>
+                                    <constraint firstAttribute="height" constant="54" id="lgb-cF-cd6"/>
+                                </constraints>
                                 <state key="normal" image="Help"/>
                                 <connections>
                                     <action selector="helpButtonPressed:" destination="HBl-Jb-07Q" eventType="touchUpInside" id="Ezt-EG-I5d"/>
@@ -262,6 +265,7 @@
                             <constraint firstItem="3k3-ko-elF" firstAttribute="trailing" secondItem="E8S-Gd-991" secondAttribute="trailing" id="JXb-6j-VK3"/>
                             <constraint firstItem="kA8-EI-TnX" firstAttribute="top" secondItem="3k3-ko-elF" secondAttribute="top" id="QND-DV-WC5"/>
                             <constraint firstItem="ffk-uN-rXp" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.35" id="Txb-da-LiF"/>
+                            <constraint firstItem="JTo-rd-nHk" firstAttribute="centerX" secondItem="3k3-ko-elF" secondAttribute="centerX" multiplier="1.75" id="YOd-BU-gtc"/>
                             <constraint firstItem="3k3-ko-elF" firstAttribute="trailing" secondItem="kA8-EI-TnX" secondAttribute="trailing" id="acb-zB-vlf"/>
                             <constraint firstItem="1Zg-ht-mNi" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.6" id="aib-aU-0qr"/>
                             <constraint firstAttribute="bottom" secondItem="E8S-Gd-991" secondAttribute="bottom" id="cjV-u4-hBo"/>
@@ -275,6 +279,7 @@
                             <constraint firstItem="LA8-Cz-tfR" firstAttribute="centerY" secondItem="tqD-Fr-Vjt" secondAttribute="centerY" id="uft-6P-yQw"/>
                             <constraint firstItem="zwo-OS-qWZ" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.6" id="v6e-vz-BtQ"/>
                             <constraint firstItem="DBY-B1-3gp" firstAttribute="leading" secondItem="3k3-ko-elF" secondAttribute="leading" constant="20" id="x2K-qX-V4q"/>
+                            <constraint firstItem="JTo-rd-nHk" firstAttribute="centerY" secondItem="3k3-ko-elF" secondAttribute="centerY" multiplier="0.2" id="xPh-B3-rRV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3k3-ko-elF"/>
                     </view>
