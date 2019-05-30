@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPO-Ad-8Kq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPO-Ad-8Kq">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1053,10 +1053,10 @@
         <image name="Female Slothy Sleeping" width="1980" height="2800"/>
         <image name="Male Slothy Face Idle" width="1565" height="1545"/>
         <image name="Sloth Icon" width="500" height="500"/>
-        <image name="Slothy1 Face" width="1201" height="1047"/>
-        <image name="Slothy2 Face" width="897" height="1035"/>
-        <image name="Slothy3 Face" width="877" height="1155"/>
-        <image name="Spleep Icon" width="512" height="512"/>
+        <image name="Slothy1 Face" width="900.75" height="785.25"/>
+        <image name="Slothy2 Face" width="672.75" height="776.25"/>
+        <image name="Slothy3 Face" width="657.75" height="866.25"/>
+        <image name="Spleep Icon" width="409.60000610351562" height="409.60000610351562"/>
         <image name="cloud" width="375" height="254"/>
         <image name="tree" width="375" height="731"/>
     </resources>
