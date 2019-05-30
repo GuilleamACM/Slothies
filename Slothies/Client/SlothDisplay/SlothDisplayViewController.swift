@@ -92,6 +92,9 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
         super.viewDidLoad()
         NetworkHandler.listenerDispatch = self
         
+        //FF749C
+        self.navigationController?.navigationBar.tintColor = UIColor(red:1.00, green:0.45, blue:0.61, alpha:1.0)
+        
         DispatchQueue.main.async {
             self.showSlothyStatus()
             if let sloth = self.slothy as Sloth? {

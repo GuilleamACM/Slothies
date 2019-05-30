@@ -35,7 +35,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-JC-J9S">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-JC-J9S">
                                 <rect key="frame" x="177" y="658.66666666666663" width="60" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="brU-1J-Y5j"/>
@@ -63,6 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hPI-JC-J9S" firstAttribute="centerX" secondItem="oJB-Hd-Qc1" secondAttribute="centerX" id="1Es-qv-ngH"/>
                             <constraint firstItem="vaL-Wf-W2g" firstAttribute="top" secondItem="oJB-Hd-Qc1" secondAttribute="bottom" constant="-200" id="1Jb-IO-vhW"/>
                             <constraint firstItem="oJB-Hd-Qc1" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1vt-x5-oqd"/>
                             <constraint firstAttribute="trailing" secondItem="oJB-Hd-Qc1" secondAttribute="trailing" constant="15" id="9r1-kL-wfu"/>
