@@ -87,7 +87,18 @@ class GameViewController: UIViewController, GameDataUpdateable {
     private static let updateInterval: Double = secondsPerMinute * 10
     
     func initiatePeriodicUpdating() {
-        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: false) { (timer) in
+        NetworkHandler.singleton.requestUpdate(room: self.room!, player: self.player!, completion: { (result: (room: RoomGroup, player: Player)?, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            if let result = result {
+                self.room!.copyFrom(room: result.room)
+                self.player = result.player
+                self.loadRoom()
+            }
+        })
+        Timer.scheduledTimer(withTimeInterval: GameViewController.updateInterval, repeats: true) { (timer) in
             NetworkHandler.singleton.requestUpdate(room: self.room!, player: self.player!, completion: { (result: (room: RoomGroup, player: Player)?, err) in
                 if let err = err {
                     print(err)
