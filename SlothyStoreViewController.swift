@@ -81,10 +81,12 @@ class SlothyStoreViewController: UIViewController, GameDataUpdateable {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkHandler.listenerDispatch = self
-        debug0.layer.cornerRadius = 5
-        debug1.layer.cornerRadius = 5
-        debug2.layer.cornerRadius = 5
-        debug3.layer.cornerRadius = 5
+        DispatchQueue.main.async {
+            self.debug0.layer.cornerRadius = 5
+            self.debug1.layer.cornerRadius = 5
+            self.debug2.layer.cornerRadius = 5
+            self.debug3.layer.cornerRadius = 5
+        }
     }
     
     func receiveData(room: RoomGroup, player: Player) {

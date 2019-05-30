@@ -26,16 +26,18 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
-        LoginButton.layer.cornerRadius = 10
-        LoginButton.layer.masksToBounds = true
-        
         GIDSignIn.sharedInstance().uiDelegate = self
-        // TODO(developer) Configure the sign-in button look/feel
+        DispatchQueue.main.async {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = true
+            self.navigationController?.view.backgroundColor = .clear
+            
+            self.LoginButton.layer.cornerRadius = 10
+            self.LoginButton.layer.masksToBounds = true
+            
+            // TODO(developer) Configure the sign-in button look/feel
+        }
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -60,11 +62,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 if let room = room {
                     self.user = user
                     self.room = room
-                    self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "ToGameScreen", sender: self)
+                    }
                 } else {
                     if err! == "new player" {
                         self.player = Player(user: user)
-                        self.performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "ToLobbyScreen", sender: self)
+                        }
                     }
                 }
             }

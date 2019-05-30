@@ -22,13 +22,17 @@ class SlothCreationViewController: UIViewController {
     @IBOutlet weak var SlothySprite: UIImageView!
     
     @IBAction func MaleSlothyButton(_ sender: UIButton) {
-        SlothySprite.image = UIImage(named: "Male Slothy Idle")
+        DispatchQueue.main.async {
+            self.SlothySprite.image = UIImage(named: "Male Slothy Idle")
+        }
         sex = .male
         
     }
     
     @IBAction func FemaleSlothyButton(_ sender: UIButton) {
-        SlothySprite.image = UIImage(named: "Female Slothy Idle")
+        DispatchQueue.main.async {
+            self.SlothySprite.image = UIImage(named: "Female Slothy Idle")
+        }
         sex = .female
     }
     
@@ -55,8 +59,10 @@ class SlothCreationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CreateSlothyButton.layer.cornerRadius = 10
-        CreateSlothyButton.layer.masksToBounds = true
+        DispatchQueue.main.async {
+            self.CreateSlothyButton.layer.cornerRadius = 10
+            self.CreateSlothyButton.layer.masksToBounds = true
+        }
     }
     
     func receiveData (player: Player, group: RoomGroup, index: Int) {
@@ -66,7 +72,9 @@ class SlothCreationViewController: UIViewController {
     }
     
     @IBAction func helpButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "ToTutorialScreen", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ToTutorialScreen", sender: self)
+        }
     }
     
     

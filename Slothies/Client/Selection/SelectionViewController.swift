@@ -22,45 +22,54 @@ class SelectionViewController: UIViewController {
     }
     
     func loadRoom(room: RoomGroup) {
-        for (index, player) in room.players.enumerated() {
-            if let _ = player {
-                let image: UIImage
-                if(room.getSlothy(index: index)!.sex == .male) {
-                    image = UIImage(named: "Male Slothy Face Idle")!
-                } else {
-                    image = UIImage(named: "Female Slothy Face Idle")!
+        DispatchQueue.main.async {
+            for (index, player) in room.players.enumerated() {
+                if let _ = player {
+                    let image: UIImage
+                    if(room.getSlothy(index: index)!.sex == .male) {
+                        image = UIImage(named: "Male Slothy Face Idle")!
+                    } else {
+                        image = UIImage(named: "Female Slothy Face Idle")!
+                    }
+                    self.SlotsButton[index].setBackgroundImage(nil, for: .normal)
+                    self.SlotsButton[index].setImage(image, for: .normal)
+                    self.SlotsButton[index].setBackgroundImage(nil, for: .disabled)
+                    self.SlotsButton[index].setImage(image, for: .disabled)
+                    self.SlotsButton[index].isEnabled = false
+                    self.SlotsButton[index].alpha = 1
                 }
-                SlotsButton[index].setBackgroundImage(nil, for: .normal)
-                SlotsButton[index].setImage(image, for: .normal)
-                SlotsButton[index].setBackgroundImage(nil, for: .disabled)
-                SlotsButton[index].setImage(image, for: .disabled)
-                SlotsButton[index].isEnabled = false
-                SlotsButton[index].alpha = 1
             }
         }
     }
     
     @IBAction func Slot1Pressed(_ sender: Any) {
         slotPressed = 0
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        }
     }
     
     @IBAction func Slot2Pressed(_ sender: Any) {
         slotPressed = 1
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        }
 
     }
     
     @IBAction func Slot3Pressed(_ sender: Any) {
         slotPressed = 2
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        }
 
     }
     
     @IBAction func Slot4Pressed(_ sender: Any) {
         slotPressed = 3
-        performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
-
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "ToSlothCreationScreen", sender: self)
+        }
     }
     
     func receiveData(room: RoomGroup, player:Player) {

@@ -25,8 +25,10 @@ class LobbyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ConfirmButton.layer.cornerRadius = 10
-        ConfirmButton.layer.masksToBounds = true
+        DispatchQueue.main.async {
+            self.ConfirmButton.layer.cornerRadius = 10
+            self.ConfirmButton.layer.masksToBounds = true
+        }
         //rooms.append(tempRoom)
         // Do any additional setup after loading the view.
     }
@@ -37,7 +39,9 @@ class LobbyViewController: UIViewController {
                 NetworkHandler.singleton.fetchRoom(code: roomCode, pass: password) { (room, errStr) in
                     if let room = room {
                         self.room = room
-                        self.performSegue(withIdentifier: "ToSelectionScreen", sender: self)
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "ToSelectionScreen", sender: self)
+                        }
                     } else {
                         print(errStr!)
                     }

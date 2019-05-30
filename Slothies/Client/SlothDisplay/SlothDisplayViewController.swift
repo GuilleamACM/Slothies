@@ -417,7 +417,15 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     @IBAction func feedButtonPressed(_ sender: Any) {
         NetworkHandler.singleton.requestFeedSloth(room: room!, slothy: slothy!) { (result: (room: RoomGroup?, slothy: Sloth?)?, err: String?) in
             if let err = err {
-                print(err)
+                if self.slothy!.state != .dead && err == "could not feed slothy" {
+                    DispatchQueue.main.async {
+                        self.SlothyBubbleLabel.text = "I'm full!"
+                        self.SlothyBubbleLabel.isHidden = false
+                        self.SlothyBubble.isHidden = false
+                    }
+                } else {
+                    print(err)
+                }
             }else{
                 self.room!.copyFrom(room: result!.room!)
                 self.slothy = result!.slothy!
@@ -430,7 +438,15 @@ class SlothDisplayViewController: UIViewController, GameDataUpdateable {
     @IBAction func sleepButtonPressed(_ sender: Any) {
         NetworkHandler.singleton.requestSleepSloth(room: room!, slothy: slothy!) { (result: (room:RoomGroup?, slothy: Sloth?)?, err:String?) in
             if let err = err {
-                print(err)
+                if self.slothy!.state != .dead && err == "could not feed slothy" {
+                    DispatchQueue.main.async {
+                        self.SlothyBubbleLabel.text = "I just woke up!"
+                        self.SlothyBubbleLabel.isHidden = false
+                        self.SlothyBubble.isHidden = false
+                    }
+                } else {
+                    print(err)
+                }
             }else{
                 self.room!.copyFrom(room: result!.room!)
                 self.slothy = result!.slothy!
