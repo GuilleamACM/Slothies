@@ -572,10 +572,17 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="61j-5b-2SP"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="WP7-p4-wqg">
-                                                <rect key="frame" x="0.0" y="450" width="414" height="694"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-UL-1ej">
+                                                <rect key="frame" x="0.0" y="436" width="414" height="700"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="WP7-p4-wqg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="700" id="vdz-Wh-efG"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
                                             <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQg-py-aag">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTP-9q-yRW">
@@ -583,7 +590,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-BI-i5N">
-                                                            <rect key="frame" x="70" y="241.33333333333337" width="274" height="40"/>
+                                                            <rect key="frame" x="70" y="251.33333333333337" width="274" height="40"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spleep Icon" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-jf-hF3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -614,13 +621,13 @@
                                                             </subviews>
                                                         </stackView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Female Slothy Sleeping" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-Fk-QeZ" userLabel="Slothy Sprite">
-                                                            <rect key="frame" x="60" y="420" width="294" height="432"/>
+                                                            <rect key="frame" x="60" y="391.33333333333326" width="294" height="460.66666666666674"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cC-bE-UKg">
-                                                            <rect key="frame" x="67" y="141.33333333333334" width="280" height="80"/>
+                                                            <rect key="frame" x="57" y="131.33333333333334" width="300" height="100"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="280" id="FgU-ds-53b"/>
-                                                                <constraint firstAttribute="height" constant="80" id="PaO-Kv-VTk"/>
+                                                                <constraint firstAttribute="width" constant="300" id="FgU-ds-53b"/>
+                                                                <constraint firstAttribute="height" constant="100" id="PaO-Kv-VTk"/>
                                                             </constraints>
                                                             <string key="text">If a slothy doesn't get its daily good night's sleep, it will become tired and grow slothful, meaning its sloth will increase faster.</string>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -629,7 +636,7 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="JEg-Fk-QeZ" firstAttribute="top" secondItem="bSB-BI-i5N" secondAttribute="bottom" constant="138.66666666666663" id="eIt-MD-sco"/>
+                                                        <constraint firstItem="JEg-Fk-QeZ" firstAttribute="top" secondItem="bSB-BI-i5N" secondAttribute="bottom" constant="100" id="eIt-MD-sco"/>
                                                         <constraint firstItem="bSB-BI-i5N" firstAttribute="top" secondItem="3cC-bE-UKg" secondAttribute="bottom" constant="20" id="rbn-PA-b5H"/>
                                                     </constraints>
                                                 </view>
@@ -653,11 +660,14 @@
                             <constraint firstItem="QuB-mI-bs0" firstAttribute="bottom" secondItem="ybv-aU-ZJL" secondAttribute="bottom" id="G6A-Ep-gwW"/>
                             <constraint firstItem="MfV-Yo-q48" firstAttribute="bottom" secondItem="JEg-Fk-QeZ" secondAttribute="bottom" constant="10" id="Gmf-WL-GLL"/>
                             <constraint firstItem="WQg-py-aag" firstAttribute="bottom" secondItem="um4-XG-Wjy" secondAttribute="bottom" id="K4P-Lw-8yu"/>
+                            <constraint firstItem="cb8-UL-1ej" firstAttribute="leading" secondItem="MfV-Yo-q48" secondAttribute="leading" id="RV9-7T-YUB"/>
                             <constraint firstItem="MfV-Yo-q48" firstAttribute="trailing" secondItem="QuB-mI-bs0" secondAttribute="trailing" id="UTd-e8-Pr0"/>
+                            <constraint firstItem="cb8-UL-1ej" firstAttribute="bottom" secondItem="um4-XG-Wjy" secondAttribute="bottom" constant="240" id="XOC-2P-j7W"/>
                             <constraint firstItem="MfV-Yo-q48" firstAttribute="trailing" secondItem="um4-XG-Wjy" secondAttribute="trailing" id="bt0-ir-JDo"/>
                             <constraint firstItem="bSB-BI-i5N" firstAttribute="leading" secondItem="MfV-Yo-q48" secondAttribute="leading" constant="70" id="c93-Sk-aYr"/>
                             <constraint firstItem="MfV-Yo-q48" firstAttribute="trailing" secondItem="bSB-BI-i5N" secondAttribute="trailing" constant="70" id="dJb-nB-jej"/>
                             <constraint firstItem="MfV-Yo-q48" firstAttribute="leading" secondItem="JEg-Fk-QeZ" secondAttribute="leading" constant="-60" id="dpT-i7-FXt"/>
+                            <constraint firstItem="MfV-Yo-q48" firstAttribute="trailing" secondItem="cb8-UL-1ej" secondAttribute="trailing" id="dwD-Qo-Xbm"/>
                             <constraint firstItem="3cC-bE-UKg" firstAttribute="centerX" secondItem="MfV-Yo-q48" secondAttribute="centerX" id="eEy-B3-Xxh"/>
                             <constraint firstAttribute="top" secondItem="QuB-mI-bs0" secondAttribute="top" id="i3A-v3-ASt"/>
                             <constraint firstItem="3cC-bE-UKg" firstAttribute="centerY" secondItem="MfV-Yo-q48" secondAttribute="centerY" multiplier="0.4" id="i6D-Ay-KdW"/>
@@ -681,17 +691,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7YP-Lq-7GL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YP-Lq-7GL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bpr-7H-nSi">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpr-7H-nSi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiW-M3-4FJ">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiW-M3-4FJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jtj-h5-HXD" userLabel="Status View">
                                                         <rect key="frame" x="70" y="200" width="274" height="160"/>
@@ -801,20 +808,25 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <viewLayoutGuide key="safeArea" id="xIQ-2B-Fwe"/>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="83L-z0-KWs">
-                                                        <rect key="frame" x="0.0" y="450" width="414" height="694"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
-                                                    <visualEffectView opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USD-jY-PD1">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RQt-ax-YIe">
+                                                        <rect key="frame" x="0.0" y="436" width="414" height="700"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="83L-z0-KWs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="700" id="hOw-bP-Xne"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <visualEffectView opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USD-jY-PD1">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Mxv-W0-M6X">
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mxv-W0-M6X">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-0w-lBu">
-                                                                    <rect key="frame" x="90" y="307" width="205" height="45"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-0w-lBu">
+                                                                    <rect key="frame" x="70" y="251.33333333333337" width="274" height="45"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sloth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="2aV-Cf-u99">
                                                                             <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -824,16 +836,16 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fXF-cM-35Z">
-                                                                            <rect key="frame" x="55" y="0.0" width="150" height="31.333333333333332"/>
+                                                                            <rect key="frame" x="55" y="0.0" width="219" height="31.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slothometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xx-wW-g8g">
-                                                                                    <rect key="frame" x="28" y="0.0" width="94" height="20.333333333333332"/>
+                                                                                    <rect key="frame" x="62.666666666666657" y="0.0" width="94" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.45000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-Dn-LaN" userLabel="Slothometer Progress View">
-                                                                                    <rect key="frame" x="0.0" y="28.333333333333332" width="150" height="3"/>
+                                                                                    <rect key="frame" x="34.666666666666657" y="28.333333333333343" width="150" height="3"/>
                                                                                     <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="150" id="129-Di-SxA"/>
@@ -844,26 +856,25 @@
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-Fu-QHu">
-                                                                    <rect key="frame" x="-331" y="247" width="1076" height="22"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-Fu-QHu">
+                                                                    <rect key="frame" x="57" y="131.33333333333334" width="300" height="100"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="300" id="UcU-2S-Qga"/>
+                                                                        <constraint firstAttribute="height" constant="100" id="mJK-jh-b1X"/>
+                                                                    </constraints>
                                                                     <string key="text">If a slothy doesn't get its daily good night's sleep, it will become tired and grow slothful, meaning its sloth will increase faster.</string>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-Zq-iyU">
-                                                                    <rect key="frame" x="207" y="269" width="0.0" height="0.0"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Dying" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-Ka-fXE" userLabel="Slothy Sprite">
-                                                                    <rect key="frame" x="90" y="420" width="237" height="319"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Female Slothy Dying" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-Ka-fXE" userLabel="Slothy Sprite">
+                                                                    <rect key="frame" x="60" y="396.33333333333326" width="294" height="455.66666666666674"/>
                                                                 </imageView>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="L8p-0w-lBu" firstAttribute="top" secondItem="uOg-Fu-QHu" secondAttribute="bottom" constant="20" id="64R-az-eFI"/>
+                                                                <constraint firstItem="v4H-Ka-fXE" firstAttribute="top" secondItem="L8p-0w-lBu" secondAttribute="bottom" constant="100" id="gzv-n0-Apa"/>
+                                                            </constraints>
                                                         </view>
                                                         <blurEffect style="dark"/>
                                                     </visualEffectView>
@@ -881,6 +892,34 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="leading" secondItem="v4H-Ka-fXE" secondAttribute="leading" constant="-60" id="0Os-2N-i16"/>
+                            <constraint firstItem="RiW-M3-4FJ" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" id="215-pG-gc1"/>
+                            <constraint firstItem="USD-jY-PD1" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" id="3qL-8U-ceW"/>
+                            <constraint firstItem="Bpr-7H-nSi" firstAttribute="top" secondItem="RiW-M3-4FJ" secondAttribute="top" id="4ds-ky-EYv"/>
+                            <constraint firstItem="uOg-Fu-QHu" firstAttribute="centerY" secondItem="Sd3-IT-3yJ" secondAttribute="centerY" multiplier="0.4" id="73R-eY-aNy"/>
+                            <constraint firstItem="Bpr-7H-nSi" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" id="8sN-kP-7JD"/>
+                            <constraint firstItem="7YP-Lq-7GL" firstAttribute="bottom" secondItem="wlW-Qw-8iZ" secondAttribute="bottom" id="Ayp-OA-kOZ"/>
+                            <constraint firstItem="7YP-Lq-7GL" firstAttribute="top" secondItem="Bpr-7H-nSi" secondAttribute="top" id="NEW-mk-5nW"/>
+                            <constraint firstItem="Bpr-7H-nSi" firstAttribute="bottom" secondItem="7YP-Lq-7GL" secondAttribute="bottom" id="P9H-4r-k6Y"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="bottom" secondItem="v4H-Ka-fXE" secondAttribute="bottom" constant="10" id="RcG-42-tfq"/>
+                            <constraint firstItem="RiW-M3-4FJ" firstAttribute="bottom" secondItem="Bpr-7H-nSi" secondAttribute="bottom" id="Xym-dC-8VT"/>
+                            <constraint firstItem="7YP-Lq-7GL" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" id="Y7R-fn-jpe"/>
+                            <constraint firstItem="USD-jY-PD1" firstAttribute="bottom" secondItem="RiW-M3-4FJ" secondAttribute="bottom" id="YQ1-7I-I5Y"/>
+                            <constraint firstAttribute="top" secondItem="7YP-Lq-7GL" secondAttribute="top" id="ZfL-Sh-f7l"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="Bpr-7H-nSi" secondAttribute="trailing" id="eZZ-ds-Ubx"/>
+                            <constraint firstItem="RQt-ax-YIe" firstAttribute="bottom" secondItem="RiW-M3-4FJ" secondAttribute="bottom" constant="240" id="iBW-DY-stO"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="L8p-0w-lBu" secondAttribute="trailing" constant="70" id="kCf-af-Lxt"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="7YP-Lq-7GL" secondAttribute="trailing" id="kKL-x1-725"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="USD-jY-PD1" secondAttribute="trailing" id="lE4-ED-O0t"/>
+                            <constraint firstItem="L8p-0w-lBu" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" constant="70" id="lIF-Ue-lau"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="RQt-ax-YIe" secondAttribute="trailing" id="ofW-G0-Fqy"/>
+                            <constraint firstItem="RQt-ax-YIe" firstAttribute="leading" secondItem="Sd3-IT-3yJ" secondAttribute="leading" id="qsV-aU-c8Z"/>
+                            <constraint firstItem="RiW-M3-4FJ" firstAttribute="top" secondItem="USD-jY-PD1" secondAttribute="top" id="tQK-Ow-Ni1"/>
+                            <constraint firstItem="uOg-Fu-QHu" firstAttribute="centerX" secondItem="Sd3-IT-3yJ" secondAttribute="centerX" id="vgp-qy-yY2"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="v4H-Ka-fXE" secondAttribute="trailing" constant="60" id="wz2-wr-RyD"/>
+                            <constraint firstItem="Sd3-IT-3yJ" firstAttribute="trailing" secondItem="RiW-M3-4FJ" secondAttribute="trailing" id="zgv-9p-KBC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sd3-IT-3yJ"/>
                     </view>
                 </viewController>
