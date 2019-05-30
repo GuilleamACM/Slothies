@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SlothCreationViewController: UIViewController {
+class SlothCreationViewController: UIViewController, UITextFieldDelegate {
     
     var player: Player? = nil
     var room: RoomGroup? = nil
     var index: Int? = nil
     var sex: Sex? = nil
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
     @IBOutlet weak var CreateSlothyButton: UIButton!
     
@@ -26,7 +31,6 @@ class SlothCreationViewController: UIViewController {
             self.SlothySprite.image = UIImage(named: "Male Slothy Idle")
         }
         sex = .male
-        
     }
     
     @IBAction func FemaleSlothyButton(_ sender: UIButton) {
@@ -59,6 +63,7 @@ class SlothCreationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SlothyNameField.delegate = self
         DispatchQueue.main.async {
             self.CreateSlothyButton.layer.cornerRadius = 10
             self.CreateSlothyButton.layer.masksToBounds = true

@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate  {
 
     @IBOutlet weak var EnterUsernameField: UITextField!
     
@@ -24,9 +24,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     var player:Player? = nil
     var hasSigned = false
     
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+        EnterUsernameField.delegate = self
+        EnterPasswordField.delegate = self
         DispatchQueue.main.async {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationController?.navigationBar.shadowImage = UIImage()

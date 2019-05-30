@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LobbyViewController: UIViewController {
+class LobbyViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var ConfirmButton: UIButton!
     @IBOutlet weak var RoomCodeField: UITextField!
@@ -21,10 +21,15 @@ class LobbyViewController: UIViewController {
     //hardcoded room
     //let tempRoom = RoomGroup(name: "room", pass: "pass")
     
-
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.RoomCodeField.delegate = self
+        self.PasswordField.delegate = self
         DispatchQueue.main.async {
             self.ConfirmButton.layer.cornerRadius = 10
             self.ConfirmButton.layer.masksToBounds = true
