@@ -26,15 +26,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-fZ-sSs">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-z8-vt7">
+                                <rect key="frame" x="0.0" y="450" width="414" height="694"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-fZ-sSs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0uO-Mr-qTd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Female Slothy Idle" translatesAutoresizingMaskIntoConstraints="NO" id="UZ8-Rw-AvZ" userLabel="Slothy Sprite">
-                                            <rect key="frame" x="60" y="402" width="294" height="445"/>
-                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-9Z-5f0" userLabel="Status View">
                                             <rect key="frame" x="70" y="232" width="274" height="160"/>
                                             <subviews>
@@ -157,6 +158,9 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Female Slothy Idle" translatesAutoresizingMaskIntoConstraints="NO" id="UZ8-Rw-AvZ" userLabel="Slothy Sprite">
+                                            <rect key="frame" x="90" y="420" width="237" height="319"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UZ8-Rw-AvZ" firstAttribute="top" secondItem="hfJ-9Z-5f0" secondAttribute="bottom" constant="10" id="Dge-9d-NSQ"/>
@@ -166,7 +170,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jcg-RY-Nze" firstAttribute="trailing" secondItem="UZ8-Rw-AvZ" secondAttribute="trailing" constant="60" id="0pJ-bw-s4U"/>
                             <constraint firstItem="4jk-Yq-l19" firstAttribute="leading" secondItem="jcg-RY-Nze" secondAttribute="leading" constant="40" id="4Qm-KF-EMf"/>
@@ -311,6 +315,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <viewLayoutGuide key="safeArea" id="HUw-vc-LAd"/>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-Cb-g5Y">
+                                        <rect key="frame" x="0.0" y="450" width="414" height="694"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-bv-Zif">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -318,10 +326,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Eating" translatesAutoresizingMaskIntoConstraints="NO" id="kWm-b7-gKX" userLabel="Slothy Sprite">
-                                                    <rect key="frame" x="83" y="436" width="249" height="396"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't let your Slothy starve." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQs-ty-LAi">
                                                     <rect key="frame" x="88" y="129" width="240" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -376,16 +380,20 @@
                                                     </subviews>
                                                     <viewLayoutGuide key="safeArea" id="aFg-vb-bfI"/>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Eating" translatesAutoresizingMaskIntoConstraints="NO" id="XvN-pf-czL" userLabel="Slothy Sprite">
+                                                    <rect key="frame" x="90" y="420" width="237" height="319"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <viewLayoutGuide key="safeArea" id="GBc-ts-O1L"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.47980844969999997" blue="0.61090028289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fSm-Th-7AF"/>
                     </view>
                 </viewController>
@@ -517,6 +525,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="61j-5b-2SP"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="WP7-p4-wqg">
+                                                <rect key="frame" x="0.0" y="450" width="414" height="694"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQg-py-aag">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -524,10 +536,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Sleeping" translatesAutoresizingMaskIntoConstraints="NO" id="aCG-x4-ALg" userLabel="Slothy Sprite">
-                                                            <rect key="frame" x="83" y="436" width="249" height="396"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bSB-BI-i5N">
                                                             <rect key="frame" x="88" y="256" width="200" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -567,16 +575,20 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Sleeping" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-Fk-QeZ" userLabel="Slothy Sprite">
+                                                            <rect key="frame" x="90" y="420" width="237" height="319"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <blurEffect style="dark"/>
                                             </visualEffectView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <viewLayoutGuide key="safeArea" id="ozd-F0-25G"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <viewLayoutGuide key="safeArea" id="Odk-g9-VO8"/>
                             </view>
                         </subviews>
@@ -716,6 +728,10 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <viewLayoutGuide key="safeArea" id="xIQ-2B-Fwe"/>
                                                     </view>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="83L-z0-KWs">
+                                                        <rect key="frame" x="0.0" y="450" width="414" height="694"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                     <visualEffectView opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USD-jY-PD1">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -723,10 +739,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Dying" translatesAutoresizingMaskIntoConstraints="NO" id="yY0-1T-wse" userLabel="Slothy Sprite">
-                                                                    <rect key="frame" x="83" y="436" width="249" height="396"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-0w-lBu">
                                                                     <rect key="frame" x="90" y="307" width="205" height="45"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -773,12 +785,16 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Female Slothy Dying" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-Ka-fXE" userLabel="Slothy Sprite">
+                                                                    <rect key="frame" x="90" y="420" width="237" height="319"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
                                                             </subviews>
                                                         </view>
                                                         <blurEffect style="dark"/>
                                                     </visualEffectView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.65107798579999998" green="0.88771253819999996" blue="0.65878087279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <viewLayoutGuide key="safeArea" id="pmP-dG-6hK"/>
                                             </view>
                                         </subviews>
@@ -880,7 +896,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.42792421580000001" green="0.69627994299999996" blue="0.87060850860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="05R-y0-GdQ" firstAttribute="centerX" secondItem="6vR-Hr-fdb" secondAttribute="centerX" id="5A4-aU-dEN"/>
                             <constraint firstAttribute="top" secondItem="Efg-67-k9L" secondAttribute="top" id="6gW-xE-nJQ"/>
@@ -916,6 +932,7 @@
     </scenes>
     <resources>
         <image name="Apple Icon" width="256" height="256"/>
+        <image name="Copa" width="375" height="231"/>
         <image name="Female Slothy Dying" width="1980" height="2800"/>
         <image name="Female Slothy Eating" width="1980" height="2800"/>
         <image name="Female Slothy Idle" width="1980" height="2800"/>
