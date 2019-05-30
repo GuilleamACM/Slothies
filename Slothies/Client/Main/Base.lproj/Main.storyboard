@@ -19,17 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="oJB-Hd-Qc1">
-                                <rect key="frame" x="15" y="321.33333333333337" width="384" height="307.33333333333337"/>
+                                <rect key="frame" x="15" y="321.33333333333337" width="384.00000000000045" height="307.3333333333336"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oJB-Hd-Qc1" secondAttribute="height" multiplier="5:4" id="FVE-1y-PjW"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-RW-mm7">
-                                <rect key="frame" x="0.0" y="420" width="414" height="694"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-JC-J9S">
-                                <rect key="frame" x="178" y="658.66666666666663" width="58" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vaL-Wf-W2g">
+                                <rect key="frame" x="0.0" y="428.66666666666669" width="414" height="697.33333333333326"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Copa" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-RW-mm7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="697.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="700" id="Ll4-bk-nRQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-JC-J9S">
+                                <rect key="frame" x="177" y="658.66666666666663" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="brU-1J-Y5j"/>
+                                    <constraint firstAttribute="width" constant="60" id="zKV-Gp-IZC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="1" green="0.47980844974517822" blue="0.61090028285980225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,17 +49,31 @@
                                     <action selector="toLoginScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UxY-5l-Ha4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-th-0Em">
-                                <rect key="frame" x="0.0" y="-39" width="414" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lja-Eg-dgr">
+                                <rect key="frame" x="0.0" y="-32" width="414" height="290.66666666666669"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-th-0Em">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="290.66666666666669"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="254" id="4cN-mZ-E4Z"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.55482524629999996" green="0.85948818920000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vaL-Wf-W2g" firstAttribute="top" secondItem="oJB-Hd-Qc1" secondAttribute="bottom" constant="-200" id="1Jb-IO-vhW"/>
                             <constraint firstItem="oJB-Hd-Qc1" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1vt-x5-oqd"/>
                             <constraint firstAttribute="trailing" secondItem="oJB-Hd-Qc1" secondAttribute="trailing" constant="15" id="9r1-kL-wfu"/>
-                            <constraint firstItem="hPI-JC-J9S" firstAttribute="centerX" secondItem="oJB-Hd-Qc1" secondAttribute="centerX" id="AJh-Fq-pVh"/>
+                            <constraint firstItem="Lja-Eg-dgr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fjh-sU-eGu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vaL-Wf-W2g" secondAttribute="trailing" id="NJS-dB-Hll"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Lja-Eg-dgr" secondAttribute="top" constant="120" id="VsF-hv-T8L"/>
+                            <constraint firstItem="hPI-JC-J9S" firstAttribute="top" secondItem="Lja-Eg-dgr" secondAttribute="bottom" constant="400" id="YDV-5V-K10"/>
+                            <constraint firstItem="vaL-Wf-W2g" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="230" id="bGd-kz-3h0"/>
                             <constraint firstItem="hPI-JC-J9S" firstAttribute="top" secondItem="oJB-Hd-Qc1" secondAttribute="bottom" constant="30" id="baR-V9-JYc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lja-Eg-dgr" secondAttribute="trailing" id="d5P-n0-6dl"/>
+                            <constraint firstItem="vaL-Wf-W2g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i2o-D9-BTq"/>
                             <constraint firstItem="oJB-Hd-Qc1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="qsc-bS-Xyn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
